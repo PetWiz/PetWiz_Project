@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PetWiz.iml" filepath="$PROJECT_DIR$/PetWiz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PetWiz-grailsPlugins.iml" filepath="$PROJECT_DIR$/PetWiz-grailsPlugins.iml" />
+    </modules>
+  </component>
+</project>
