@@ -9,6 +9,10 @@ class Other_Service {
     String name;
     String oth_description;
 
+    static belongsTo = [
+            persons:Person
+    ]
+
     static constraints = {
     }
 }

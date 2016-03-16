@@ -10,6 +10,8 @@ class Service {
     long ser_phone;
     String ser_description;
 
+    static hasMany = [persons:Person,pets:Pet]
+
     static constraints = {
     }
 }

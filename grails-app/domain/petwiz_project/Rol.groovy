@@ -7,6 +7,7 @@ class Rol {
 
     String rol_id;
     String rol_name;
+    static hasMany = [persons:Person]
     static constraints = {
     }
 }

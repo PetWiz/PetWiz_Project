@@ -14,8 +14,10 @@ class Person {
     String email;
     long phone;
 
-    static hasMany = [pets : Pet, events: Event, persons:Person]
-
+    static hasMany = [
+            pets : Pet, events: Event, persons:Person,other_services:Other_Service
+    ]
+    static belongsTo = [rols:Rol]
     static constraints = {
     }
 }
