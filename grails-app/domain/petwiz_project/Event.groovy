@@ -11,6 +11,12 @@ class Event {
     String eve_description;
     Date date;
 
+
+    static hasMany = [pets:Pet]
+    static belongsTo = [person:Person]
+
+
+
     static constraints = {
     }
 }
