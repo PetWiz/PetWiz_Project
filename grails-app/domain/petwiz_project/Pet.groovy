@@ -11,7 +11,6 @@ class Pet {
     String pet_genre;
     Date pet_age;
 
-    static hasMany = [events:Event]
     static belongsTo = [person:Person]
 
     static constraints = {
