@@ -18,5 +18,10 @@ class Event {
 
 
     static constraints = {
+        eve_id(nullable: false,blank:false,unique:true)
+        eve_name(nullable: false,blank:false)
+        eve_address(nullable: false,blank:false)
+        eve_description(nullable: false,blank:false)
+        date(nullable: false,blank:false)
     }
 }

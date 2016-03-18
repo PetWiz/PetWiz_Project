@@ -14,5 +14,10 @@ class Pet {
     static belongsTo = [person:Person]
 
     static constraints = {
+        pet_id(nullable: false,blank:false,unique:true)
+        pet_type(nullable: false,blank:false)
+        pet_name(nullable: false,blank:false)
+        pet_genre(nullable: false,blank:false)
+        pet_age(nullable: true)
     }
 }
