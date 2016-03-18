@@ -6,7 +6,7 @@ package petwiz_project
 class Other_Service {
 
     String oth_id;
-    String name;
+    String oth_name;
     String oth_description;
 
     static belongsTo = [
@@ -14,5 +14,8 @@ class Other_Service {
     ]
 
     static constraints = {
+        oth_id(nullable: false,blank:false, unique:true)
+        oth_name(nullable: false,blank:false)
+        oth_description(nullable: false,blank:false)
     }
 }

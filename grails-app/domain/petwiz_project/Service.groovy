@@ -13,5 +13,9 @@ class Service {
     static hasMany = [persons:Person,pets:Pet]
 
     static constraints = {
+        ser_id(nullable: false,blank:false, unique: true)
+        ser_name(nullable: false,blank:false)
+        ser_phone(nullable: false,blank:false, unique: true)
+        ser_description(nullable: false,blank:false)
     }
 }
