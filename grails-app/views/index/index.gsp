@@ -30,19 +30,19 @@
     <!-- Nav -->
     <div class="navbar-fixed">
         <nav class="nav-wrapper petwiz-blue">
-            <div class="row z-depth-5">
+            <div class="row">
 
 
                 <!------------------- lateral Nav Bar---------------------------->
                 <div class="col s2 m1 l1 left">
-                    <a href="#" data-activates="nav-lat" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+                    <a href="#" data-activates="nav-lat" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
                     <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
-                        <li><a href="index.gsp" class="menulat-item-active menulat-item"><span class="font-white"><i class="mdi-action-home left"></i>Home</span></a></li>
+                        <li><a href="index.gsp" class="menulat-item-active menulat-item"><span class="font-white"><i class="material-icons left">Home</i>Home</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Perfil</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Mascotas</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Eventos</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Contacto</span></a></li>
-                        <li><a href="" class="menulat-item"><span class="font-white"><i class="mdi-action-help left"></i>Help</span></a></li>
+                        <li><a href="" class="menulat-item"><span class="font-white"><i class="material-icons left">help</i>Help</span></a></li>
                     </ul>
                 </div>
 
@@ -111,11 +111,11 @@
                         <asset:image class="activator" src="catplay.jpg"/>
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Mascotas<i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator grey-text text-darken-4">Mascotas<i class="material-icons right">more_vert</i></span>
                         <p><a href="#">Visitar Mascotas</a></p>
                     </div>
                     <div class="card-reveal petwiz-grey">
-                        <span class="card-title petwiz-blue-text">Mascotas<i class="mdi-navigation-close right"></i></span>
+                        <span class="card-title petwiz-blue-text">Mascotas<i class="material-icons right">close</i></span>
                         <p class=" petwiz-blue-text">En este lugar podras ver todo lo que tu mascota realiza, sus travesuras y aventuras</p>
                     </div>
                 </div>
@@ -127,11 +127,11 @@
                         <asset:image class="activator" src="2dogs.jpg"/>
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator">Eventos<i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator">Eventos<i class="material-icons right">more_vert</i></span>
                         <p><a href="#">Visitar Eventos</a></p>
                     </div>
                     <div class="card-reveal petwiz-grey">
-                        <span class="card-title  petwiz-blue-text">Eventos<i class="mdi-navigation-close right"></i></span>
+                        <span class="card-title  petwiz-blue-text">Eventos<i class="material-icons right">more_vert</i></span>
                         <p class=" petwiz-blue-text">Vamos a Jugar, realiza divertidas actividades donde conoceras otras mascotas y poderas aprender nuevas cosas</p>
                     </div>
                 </div>
@@ -143,11 +143,11 @@
                         <asset:image class="activator" src="login2.jpg"/>
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Contacto<i class="mdi-navigation-more-vert right"></i></span>
+                        <span class="card-title activator grey-text text-darken-4">Contacto<i class="material-icons right">more_vert</i></span>
                         <p><a href="#">Contactanos</a></p>
                     </div>
                     <div class="card-reveal petwiz-grey">
-                        <span class="card-title grey-text text-darken-4">Contacto<i class="mdi-navigation-close right"></i></span>
+                        <span class="card-title grey-text text-darken-4">Contacto<i class="material-icons right">close</i></span>
                         <p class="petwiz-blue-text">Mas preguntas que respuestas?, Tranquilo comunicate con nosotros y resolveremos tus dudas, y  sino pues ya haremos algo</p>
                     </div>
                 </div>
@@ -188,6 +188,10 @@
             </div>
         </footer>
     </div>
+<div class="petwiz-blue hide-on-med-and-up">
+    <br><br>
+    <br><br>
+</div>
 
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

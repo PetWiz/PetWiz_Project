@@ -114,28 +114,32 @@
 
 </header>
 <!-- Nav -->
-<div class="navbar-fixed ">
-    <nav class="petwiz-blue">
-        <!------------------- lateral Nav Bar---------------------------->
-        <div class="col s2 m1 l1 left">
-            <a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
-                <li><a href="" class="white-text"><i class="left material-icons">search</i>Buscar</a></li>
-                <li><a href="" class="white-text"><i class="left material-icons">help</i>Ayuda</a></li>
-                <li><a href="" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
-            </ul>
-        </div>
+<div class="navbar-fixed">
+    <nav class="nav-wrapper petwiz-blue">
+        <div class="row">
+            <!------------------- lateral Nav Bar---------------------------->
+            <div class="col s2 m1 l1 left">
+                <a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
+                    <li><a href="" class="white-text"><i class="left material-icons">search</i>Buscar</a></li>
+                    <li><a href="" class="white-text"><i class="left material-icons">help</i>Ayuda</a></li>
+                    <li><a href="" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
+                </ul>
+            </div>
 
-        <!-------------------------Nav Responsive menu--------------------------->
-        <div class="left margin-left">
-            <img class="brand-logo" src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/>
-        </div>
-        <div class="nav-wrapper tabs-wrapper row hide-on-med-and-down">
-            <ul class="right">
-                <li><a href=""><i class="material-icons">search</i></a></li>
-                <li><a href=""><i class="material-icons">help</i></a></li>
-                <li><a href=""><i class="material-icons">more_vert</i></a></li>
-            </ul>
+
+            <!-------------------------Nav Responsive menu--------------------------->
+            <div class="left margin-left">
+                <a href="PetWizTeam.html" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+            </div>
+            <div class="col s9 m1 l9 right ">
+                <ul class="hide-on-med-and-down right">
+                    <li><a href=""><i class="material-icons">search</i></a></li>
+                    <li><a href=""><i class="material-icons">help</i></a></li>
+                    <li><a href=""><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+
         </div>
     </nav>
 </div>
