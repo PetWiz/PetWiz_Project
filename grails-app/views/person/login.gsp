@@ -5,8 +5,8 @@
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <asset:stylesheet src="materialize.min.css" media="screen,projection"/>
+    <asset:stylesheet src="style.css"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Vollkorn:700' rel='stylesheet' type='text/css'>
@@ -128,29 +128,29 @@
 </div>
 
 <div class="parallax-container row">
-    <div class="parallax"><img src="images/login11.jpg"></div>
+    <div class="parallax"><asset:image src="login11.jpg"/></div>
     <br><br><br><br><br><br><br><br>
     <div class="container center petwiz-opacity">
-            <h1 class="header white-text text-lighten-2 big-size-text petwiz-font">
-                    <span>
-                        PetWiz
-                    </span>
-            </h1>
-            <div class="row">
-                <h5 class="header petwiz-letra1">Lo mejor para ti y tus mascotas</h5>
-            </div>
-            <div class="row">
-                <!--
+        <h1 class="header white-text text-lighten-2 big-size-text petwiz-font">
+            <span>
+                PetWiz
+            </span>
+        </h1>
+        <div class="row">
+            <h5 class="header petwiz-letra1">Lo mejor para ti y tus mascotas</h5>
+        </div>
+        <div class="row">
+            <!--
               <a href="" scope="public_profile,email" onlogin="checkLoginState();" class="waves-effect btn-large reg-btn">Inicia con Facebook</a>
              <a scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button">Inicia con Facebook</a>
 
              <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-             </fb:login-button>
-             -->
+            </fb:login-button>
+            -->
 
-                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"
-                     scope="public_profile,email" onlogin="checkLoginState();">Inicia con Facebook</div>
-            </div>
+            <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"
+                 scope="public_profile,email" onlogin="checkLoginState();">Inicia con Facebook</div>
+        </div>
 
     </div>
 
@@ -201,8 +201,8 @@
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
+<asset:javascript src="materialize.js"/>
+<asset:javascript src="init.js"/>
 
 
 </body>
