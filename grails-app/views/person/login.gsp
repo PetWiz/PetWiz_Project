@@ -108,11 +108,10 @@
 -->
 
 <!-- Header -->
-
 <header class="">
 
-
 </header>
+
 <!-- Nav -->
 <div class="navbar-fixed">
     <nav class="nav-wrapper petwiz-blue">
@@ -126,8 +125,6 @@
                     <li><a href="" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
                 </ul>
             </div>
-
-
             <!-------------------------Nav Responsive menu--------------------------->
             <div class="left margin-left">
                 <a href="PetWizTeam.html" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
