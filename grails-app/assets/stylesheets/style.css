@@ -1,0 +1,126 @@
+.body{
+    background-color: black;
+}
+
+.prueba-bordes{
+    border: solid black;
+}
+
+.inverse:hover{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+/*--------------------------PetWiz Gen--------------------------------*/
+.petwiz-conn-ico-container{
+    padding-right: 340px;
+}
+.waves-effect.waves-grey .waves-ripple {
+    /* The alpha value allows the text and background color
+    of the button to still show through. */
+    color: #000000;
+    background-color: rgba(56, 56, 56, 1);
+}
+
+.card-reveal.petwiz-grey{
+    background-color: #b9cacc;
+    color: white;
+}
+
+
+.no-mar-top{
+    margin-top: -100px;
+}
+
+.petwiz-modal:hover{
+    color: white;
+    background-color: #027A93;
+}
+.petwiz-modal:hover{
+    color: white;
+    background-color: #027A93;
+}
+.petwiz-conn-ico{
+    margin-left: 10px;
+}
+.petwiz-font{
+    font-family: 'Lato', sans-serif;
+}
+.petwiz-blue{
+    background-color: #1A3139;
+}
+.petwiz-blue-text{
+    color: #1A3139;
+}
+.petwiz-smoke{
+    background-color: #527980;
+}
+.petwiz-teal{
+    background-color: #027A93;
+}
+
+
+.petwiz-letra1{
+    font-family: 'Open Sans', sans-serif;
+    color: #ffc00e;
+    font-size: 30px;
+}
+
+.petwiz-footer{
+    padding-top: 70px;
+    height: 220px;
+}
+
+/*-----------------------menu and nav-------------------------*/
+.menu-item:hover, .menu-item-active{
+    background-color: #027A93;
+    height: 64px;
+}
+.menulat-item:hover, .menulat-item-active {
+    background-color: #1A3139;
+
+}
+
+.font-orange{
+    color: orange;
+}
+.font-yellow{
+    color: yellow;
+}
+.font-white{
+    color: white;
+}
+.petwiz-opacity{
+    opacity: 0.7;
+}
+
+.petwiz-opacity:hover{
+    opacity: 1;
+}
+.reg-btn{
+    background-color: #000000;
+}
+.reg-btn:hover{
+    background-color: rgb(255, 217, 123);
+    color: black;
+}
+
+
+/*---------------------------Slider------------------*/
+.slider .indicators .indicator-item {
+    background-color: #daaa4b;
+    border: 3px solid #ffffff;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.slider .indicators .indicator-item.active {
+    background-color: #1A3139;
+}
+.slider {
+    margin-bottom: -43px
+}
+.slider .indicators {
+    bottom: 60px;
+    z-index: 100;
+    /* text-align: left; */
+}
