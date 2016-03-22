@@ -118,8 +118,8 @@
     <nav>
         <div class="nav-wrapper petwiz-blue tabs-wrapper row">
             <ul class="right hide-on-med-and-down">
-                <li><a href=""><i class="mdi-action-search"></i></a></li>
-                <li><a href=""><i class="mdi-action-view-module"></i></a></li>
+                <li><a href=""><i class="material-icons">search</i></a></li>
+                <li><a href="../PetWizTeam.html"><i class="material-icons">view_module</i></a></li>
                 <li><a href=""><i class="mdi-navigation-refresh"></i></a></li>
                 <li><a href=""><i class="mdi-navigation-more-vert"></i></a></li>
             </ul>
@@ -198,7 +198,9 @@
         </div>
     </div>
 </footer>
-
+<div class="petwiz-blue">
+    <br><br>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <asset:javascript src="materialize.js"/>
