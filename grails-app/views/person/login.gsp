@@ -114,14 +114,27 @@
 
 </header>
 <!-- Nav -->
-<div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper petwiz-blue tabs-wrapper row">
-            <ul class="right hide-on-med-and-down">
+<div class="navbar-fixed ">
+    <nav class=" petwiz-blue">
+        <!------------------- lateral Nav Bar---------------------------->
+        <div class="col s2 m1 l1 left">
+            <a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
+                <li><a href="" class="white-text"><i class="left material-icons">search</i>Buscar</a></li>
+                <li><a href="" class="white-text"><i class="left material-icons">help</i>Ayuda</a></li>
+                <li><a href="" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
+            </ul>
+        </div>
+
+        <!-------------------------Nav Responsive menu--------------------------->
+        <div class="left">
+            <img class="brand-logo" src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/>
+        </div>
+        <div class="nav-wrapper tabs-wrapper row hide-on-med-and-down">
+            <ul class="right">
                 <li><a href=""><i class="material-icons">search</i></a></li>
-                <li><a href="../PetWizTeam.html"><i class="material-icons">view_module</i></a></li>
-                <li><a href=""><i class="mdi-navigation-refresh"></i></a></li>
-                <li><a href=""><i class="mdi-navigation-more-vert"></i></a></li>
+                <li><a href=""><i class="material-icons">help</i></a></li>
+                <li><a href=""><i class="material-icons">more_vert</i></a></li>
             </ul>
         </div>
     </nav>
@@ -166,6 +179,7 @@
 <div class="petwiz-blue  row transparent"></div>
 <div class="petwiz-blue  row transparent"></div>
 
+
 <footer class="petwiz-footer petwiz-blue">
     <div class="container">
         <div class="row">
@@ -196,9 +210,16 @@
                 </li>
             </ul>
         </div>
+
     </div>
+
 </footer>
 <div class="petwiz-blue">
+    <br><br>
+    <br><br>
+</div>
+<div class="petwiz-blue hide-on-med-and-up">
+    <br><br>
     <br><br>
 </div>
 

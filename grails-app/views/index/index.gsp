@@ -44,10 +44,7 @@
                         <li><a href="" class="menulat-item"><span class="font-white">Contacto</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white"><i class="mdi-action-help left"></i>Help</span></a></li>
                     </ul>
-
-
                 </div>
-
 
                 <!-------------------------Nav Responsive menu--------------------------->
                 <div class="left">
