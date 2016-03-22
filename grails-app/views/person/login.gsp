@@ -115,7 +115,7 @@
 </header>
 <!-- Nav -->
 <div class="navbar-fixed ">
-    <nav class=" petwiz-blue">
+    <nav class="petwiz-blue">
         <!------------------- lateral Nav Bar---------------------------->
         <div class="col s2 m1 l1 left">
             <a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -127,7 +127,7 @@
         </div>
 
         <!-------------------------Nav Responsive menu--------------------------->
-        <div class="left">
+        <div class="left margin-left">
             <img class="brand-logo" src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/>
         </div>
         <div class="nav-wrapper tabs-wrapper row hide-on-med-and-down">
