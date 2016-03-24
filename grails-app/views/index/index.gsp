@@ -132,7 +132,7 @@
             <div class="col s9 m1 l9 right ">
                 <ul class="hide-on-med-and-down right">
                     <li><a href=""><i class="material-icons">search</i></a></li>
-                    <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}"><i class="material-icons">help</i></a></li>
+                    <li><a href="${createLink(uri:'/index/petwizTeam.gsp')}"><i class="material-icons">help</i></a></li>
                     <li><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons">more_vert</i></a></li>
                 </ul>
             </div>
