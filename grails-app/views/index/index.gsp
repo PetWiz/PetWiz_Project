@@ -122,7 +122,7 @@
                 <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
                     <li><a href="" class="white-text"><i class="left material-icons">search</i>Buscar</a></li>
                     <li><a href="" class="white-text"><i class="left material-icons">help</i>Ayuda</a></li>
-                    <li><a href="" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
+                    <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
                 </ul>
             </div>
                 <!-------------------------Nav Responsive menu--------------------------->
@@ -132,8 +132,8 @@
             <div class="col s9 m1 l9 right ">
                 <ul class="hide-on-med-and-down right">
                     <li><a href=""><i class="material-icons">search</i></a></li>
-                    <li><a href="${createLink(uri:'/index/petwizTeam.gsp')}"><i class="material-icons">help</i></a></li>
-                    <li><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons">more_vert</i></a></li>
+                    <li><a href=""><i class="material-icons">help</i></a></li>
+                    <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}"><i class="material-icons">more_vert</i></a></li>
                 </ul>
             </div>
 
