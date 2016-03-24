@@ -5539,3 +5539,9 @@ n:287:org/codehaus/groovy/grails/web/pages/discovery/GroovyPageScriptSource
 n:3359:org/codehaus/groovy/grails/web/pages/discovery/GroovyPageCompiledScriptSource
 n:1919:org/apache/log4j/DefaultThrowableRenderer
 n:200:org/apache/log4j/spi/ThrowableRenderer
+y:9606:com/sun/tools/javac/code/Symbol$ClassSymbol
+y:1702:grails/plugin/cache/util/ClassUtils
+n:9764:com/sun/tools/javac/resources/javac
+n:17324:org/codehaus/groovy/grails/scaffolding/AbstractGrailsTemplateGenerator
+n:32440:grails/plugin/cache/web/filter/PageFragmentCachingFilter
+y:2269:grails/plugin/cache/CustomCacheKeyGenerator
