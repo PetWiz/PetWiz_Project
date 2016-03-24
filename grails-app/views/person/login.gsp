@@ -125,15 +125,15 @@
                     <li><a href="" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
                 </ul>
             </div>
-            <!-------------------------Nav Responsive menu--------------------------->
+                <!-------------------------Nav Responsive menu--------------------------->
             <div class="left margin-left">
-                <a href="PetWizTeam.html" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+                <a href=""><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
             </div>
             <div class="col s9 m1 l9 right ">
                 <ul class="hide-on-med-and-down right">
                     <li><a href=""><i class="material-icons">search</i></a></li>
-                    <li><a href=""><i class="material-icons">help</i></a></li>
-                    <li><a href=""><i class="material-icons">more_vert</i></a></li>
+                    <li><a href="${createLink(uri:'/index/index.gsp')}"><i class="material-icons">help</i></a></li>
+                    <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}"><i class="material-icons">more_vert</i></a></li>
                 </ul>
             </div>
 

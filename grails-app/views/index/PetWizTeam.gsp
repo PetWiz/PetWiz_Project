@@ -5,8 +5,8 @@
     <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="../assets/stylesheets/materialize.min.css" media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="../assets/stylesheets/style.css">
+    <asset:stylesheet src="materialize.min.css" media="screen,projection"/>
+    <asset:stylesheet src="style.css"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Vollkorn:700' rel='stylesheet' type='text/css'>
@@ -45,7 +45,7 @@
 
             <!-------------------------Nav Responsive menu--------------------------->
             <div class="left">
-                <a href="PetWizTeam.html" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+                <a href="PetWizTeam.gsp" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
             </div>
             <div class="col s9 m1 l9 right ">
                 <ul class="hide-on-med-and-down">

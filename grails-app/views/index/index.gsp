@@ -48,7 +48,7 @@
 
                 <!-------------------------Nav Responsive menu--------------------------->
                 <div class="left">
-                    <a href="PetWizTeam.html" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+                    <a href="PetWizTeam.gsp" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
                 </div>
                 <div class="col s9 m1 l9 right ">
                     <ul class="hide-on-med-and-down">
@@ -131,7 +131,7 @@
                         <p><a href="#">Visitar Eventos</a></p>
                     </div>
                     <div class="card-reveal petwiz-grey">
-                        <span class="card-title  petwiz-blue-text">Eventos<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title  petwiz-blue-text">Eventos<i class="material-icons right">close</i></span>
                         <p class=" petwiz-blue-text">Vamos a Jugar, realiza divertidas actividades donde conoceras otras mascotas y poderas aprender nuevas cosas</p>
                     </div>
                 </div>
