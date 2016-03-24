@@ -90,14 +90,14 @@
                         <div id="Carlos" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <img src="../assets/images/Biohazard2.JPG" height=250px width=250px>
+                                    <asset:image src="Biohazard2.JPG"/>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
                                                 <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
-                                                <p>Estudiante de la Universidad nacional</p>
+                                                <p>Estudiante de la Universidad nacional, me gusta mucho la música, los deportes y las peliculas, pero sobre todo la comida, divertirse siempre es la opcion y para lo que necesites puedes pedir mi ayuda, #TeamPerritos</p>
                                             </div>
                                         </div>
                                     </div>
@@ -111,13 +111,13 @@
                         <div id="Jessica" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
+                                    <asset:image src=""/>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
-                                                <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
+                                                <h4><span class="card-title petwiz-font">Jessica Casas</span></h4>
                                                 <p>Estudiante de la Universidad nacional</p>
                                             </div>
                                         </div>
@@ -131,13 +131,13 @@
                         <div id="Santiago" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
+                                    <asset:image src=""/>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
-                                                <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
+                                                <h4><span class="card-title petwiz-font">Santiago Blanco</span></h4>
                                                 <p>Estudiante de la Universidad nacional</p>
                                             </div>
                                         </div>
@@ -151,13 +151,13 @@
                         <div id="Michael" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
+                                    <asset:image src=""/>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
-                                                <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
+                                                <h4><span class="card-title petwiz-font">Michael Gonzales</span></h4>
                                                 <p>Estudiante de la Universidad nacional</p>
                                             </div>
                                         </div>
@@ -171,13 +171,13 @@
                         <div id="Erin" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
+                                    <asset:image src=""/>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
-                                                <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
+                                                <h4><span class="card-title petwiz-font">Erin Rincon</span></h4>
                                                 <p>Estudiante de la Universidad nacional</p>
                                             </div>
                                         </div>
