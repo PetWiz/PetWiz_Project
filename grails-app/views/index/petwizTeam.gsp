@@ -45,7 +45,7 @@
 
             <!-------------------------Nav Responsive menu--------------------------->
             <div class="left">
-                <a href="PetWizTeam.html" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+                <a href="PetWizTeam.gsp" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
             </div>
             <div class="col s9 m1 l9 right ">
                 <ul class="hide-on-med-and-down">
@@ -90,7 +90,7 @@
                         <div id="Carlos" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <asset:image src="Biohazard2.JPG" height="250px" width="250px"/>
+                                    <img src="../assets/images/Biohazard2.JPG" height=250px width=250px>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
@@ -111,7 +111,7 @@
                         <div id="Jessica" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <asset:image src="Biohazard2.JPG" height="150px" width="150px"/>
+                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
@@ -131,7 +131,7 @@
                         <div id="Santiago" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <asset:image src="Biohazard2.JPG" height="150px" width="150px"/>
+                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
@@ -151,7 +151,7 @@
                         <div id="Michael" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <asset:image src="Biohazard2.JPG" height="150px" width="150px"/>
+                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
@@ -171,7 +171,7 @@
                         <div id="Erin" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <asset:image src="Biohazard2.JPG" height="150px" width="150px"/>
+                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
@@ -233,8 +233,8 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<asset:javascript src="materialize.js"/>
-<asset:javascript src="init.js"/>
+<script src="../assets/javascripts/materialize.js"></script>
+<script src="../assets/javascripts/init.js"></script>
 
 </body>
 </html>

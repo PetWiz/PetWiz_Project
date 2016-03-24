@@ -5525,3 +5525,17 @@ n:728:org/codehaus/groovy/runtime/dgm$1112
 n:1389:java_io_PrintWriter$println$0
 n:2302:org/codehaus/groovy/grails/project/compiler/GrailsProjectWatcher$2
 n:375:org/codehaus/groovy/grails/project/compiler/GrailsProjectWatcher$ClassUpdate
+n:2273:org/codehaus/groovy/grails/commons/GrailsApplication$isArtefactOfType
+n:1543:org/apache/commons/logging/Log$isDebugEnabled
+n:311:org/codehaus/groovy/reflection/ClassInfo$ClassInfoAction
+n:3377:org/springframework/util/ConcurrentReferenceHashMap$EntrySet
+n:3649:org/springframework/util/ConcurrentReferenceHashMap$EntryIterator
+n:1206:org/springframework/web/servlet/view/AbstractCachingViewResolver$1
+n:3030:org/springframework/context/support/MessageSourceAccessor
+n:11498:org/springframework/web/servlet/view/AbstractView
+n:1588:org/springframework/web/servlet/view/AbstractUrlBasedView
+n:290:org/springframework/scripting/ScriptSource
+n:287:org/codehaus/groovy/grails/web/pages/discovery/GroovyPageScriptSource
+n:3359:org/codehaus/groovy/grails/web/pages/discovery/GroovyPageCompiledScriptSource
+n:1919:org/apache/log4j/DefaultThrowableRenderer
+n:200:org/apache/log4j/spi/ThrowableRenderer
