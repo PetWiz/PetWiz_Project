@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <asset:stylesheet src="materialize.min.css" media="screen,projection"/>
+    <asset:stylesheet src="materialize.css" media="screen,projection"/>
     <asset:stylesheet src="style.css"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
@@ -31,7 +32,7 @@
             <div class="col s2 m1 l1 left">
                 <a href="#" data-activates="nav-lat" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
                 <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
-                    <li><a href="Home.html" class="menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
+                    <li><a href="${createLink(uri:'/person/home.gsp')}" class="menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
                     <li><a href="" class="menulat-item"><span class="font-white">Perfil</span></a></li>
                     <li><a href="" class="menulat-item"><span class="font-white">Mascotas</span></a></li>
                     <li><a href="" class="menulat-item"><span class="font-white">Eventos</span></a></li>
@@ -45,11 +46,11 @@
 
             <!-------------------------Nav Responsive menu--------------------------->
             <div class="left">
-                <a href="PetWizTeam.gsp" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+                <a href="" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
             </div>
             <div class="col s9 m1 l9 right ">
                 <ul class="hide-on-med-and-down">
-                    <li class="col s2 m1 l2 menu-item "><a href="Home.html">Home</a></li>
+                    <li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/person/home.gsp')}">Home</a></li>
                     <li class="col s2 m1 l2 menu-item "><a href="">Mascotas</a></li>
                     <li class="col s2 m1 l2 menu-item "><a href="" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
                     <li class="col s2 m1 l2 menu-item "><a href="">Contacto</a></li>
@@ -117,7 +118,7 @@
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
-                                                <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
+                                                <h4><span class="card-title petwiz-font">Jessica Casas</span></h4>
                                                 <p>Estudiante de la Universidad nacional</p>
                                             </div>
                                         </div>
@@ -137,7 +138,7 @@
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
-                                                <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
+                                                <h4><span class="card-title petwiz-font">Santiago Blanco</span></h4>
                                                 <p>Estudiante de la Universidad nacional</p>
                                             </div>
                                         </div>
@@ -157,7 +158,7 @@
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
-                                                <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
+                                                <h4><span class="card-title petwiz-font">Michael Gonzales</span></h4>
                                                 <p>Estudiante de la Universidad nacional</p>
                                             </div>
                                         </div>
@@ -177,7 +178,7 @@
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
-                                                <h4><span class="card-title petwiz-font">Carlos Cogua</span></h4>
+                                                <h4><span class="card-title petwiz-font">Erin Rincon</span></h4>
                                                 <p>Estudiante de la Universidad nacional</p>
                                             </div>
                                         </div>
@@ -233,8 +234,8 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="../assets/javascripts/materialize.js"></script>
-<script src="../assets/javascripts/init.js"></script>
+<asset:javascript src="materialize.js"/>
+<asset:javascript src="init.js"/>
 
 </body>
 </html>
