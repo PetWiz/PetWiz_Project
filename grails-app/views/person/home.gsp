@@ -38,7 +38,7 @@
                 <div class="col s2 m1 l1 left">
                     <a href="#" data-activates="nav-lat" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
                     <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
-                        <li><a href="home.gsp" class="menulat-item-active menulat-item"><span class="font-white"><i class="material-icons left">Home</i>Home</span></a></li>
+                        <li><a href="home.gsp" class="menulat-item-active menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Perfil</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Mascotas</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Eventos</span></a></li>
@@ -49,15 +49,15 @@
 
                 <!-------------------------Nav Responsive menu--------------------------->
                 <div class="left">
-                    <a href="../index/PetWizTeam.gsp" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+                    <a href="" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
                 </div>
                 <div class="col s9 m1 l9 right ">
                     <ul class="hide-on-med-and-down">
-                        <li class="col s2 m1 l2 menu-item "><a href="index-gsp">Home</a></li>
+                        <li class="col s2 m1 l2 menu-item menu-item-active"><a href="">Home</a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="">Mascotas</a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="">Contacto</a></li>
-                        <li class="col s2 m1 l2 menu-item "><a href="">About Us</a></li>
+                        <li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">About Us</a></li>
                         <li class="col s2 m1 l1 menu-item "><a href="">Help</a></li>
                     </ul>
                 </div>

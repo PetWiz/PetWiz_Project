@@ -31,7 +31,7 @@
             <div class="col s2 m1 l1 left">
                 <a href="#" data-activates="nav-lat" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
                 <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
-                    <li><a href="Home.html" class="menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
+                    <li><a href="${createLink(uri:'/person/home.gsp')}" class="menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
                     <li><a href="" class="menulat-item"><span class="font-white">Perfil</span></a></li>
                     <li><a href="" class="menulat-item"><span class="font-white">Mascotas</span></a></li>
                     <li><a href="" class="menulat-item"><span class="font-white">Eventos</span></a></li>
@@ -49,7 +49,7 @@
             </div>
             <div class="col s9 m1 l9 right ">
                 <ul class="hide-on-med-and-down">
-                    <li class="col s2 m1 l2 menu-item "><a href="Home.html">Home</a></li>
+                    <li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/person/home.gsp')}">Home</a></li>
                     <li class="col s2 m1 l2 menu-item "><a href="">Mascotas</a></li>
                     <li class="col s2 m1 l2 menu-item "><a href="" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
                     <li class="col s2 m1 l2 menu-item "><a href="">Contacto</a></li>
@@ -233,8 +233,9 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="../assets/javascripts/materialize.js"></script>
-<script src="../assets/javascripts/init.js"></script>
+<asset:javascript src="materialize.js"/>
+<asset:javascript src="init.js"/>
+
 
 </body>
 </html>
