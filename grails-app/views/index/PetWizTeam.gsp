@@ -112,14 +112,14 @@
                         <div id="Jessica" class="modal">
                             <div class="modal-content row">
                                 <div class="col">
-                                    <img src="../assets/images/Biohazard2.JPG" height=150px width=150px>
+                                    <img src="http://41.media.tumblr.com/bc685a2bd54b3f4058e2318fac26d671/tumblr_o4ixt9AO581solvhmo1_250.png" height=150px; width=150px;>
                                 </div>
                                 <div class="row">
                                     <div class="col s12 m6">
                                         <div class="card petwiz-blue darken-1" >
                                             <div class="card-content white-text">
                                                 <h4><span class="card-title petwiz-font">Jessica Casas</span></h4>
-                                                <p>Estudiante de la Universidad nacional</p>
+                                                <p>Estudiante de Ingeniería de Sistemas y Computacion de la Universidad Nacional de Colombia. Me gusta ver series, escuchar música y leer. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -199,7 +199,7 @@
             <div class="row">
                 <div class="col s12 l6">
                     <h5 class="white-text petwiz-font">PetWiz Info</h5>
-                    <p class="grey-text text-lighten-4">Poner Descripcion</p>
+                    <p class="grey-text text-lighten-4">Esta apliación es la mejor para que tu y tus mascotas puedan compartir los mejores momentos. Aquí encontrarás multiples eventos y servicios a los cuáles tu mascota podrá asistir y disfrutar para que tu puedas devolver todo el cariño que el te brinda.</p>
                 </div>
                 <div class="col">
                     <h5 class="col white-text">Unete:</h5>

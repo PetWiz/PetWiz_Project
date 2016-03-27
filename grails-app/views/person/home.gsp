@@ -160,7 +160,7 @@
                 <div class="row">
                     <div class="col l6 s12">
                         <h5 class="white-text petwiz-font">PetWiz Info</h5>
-                        <p class="grey-text text-lighten-4">Poner Descripcion</p>
+                        <p class="grey-text text-lighten-4">Esta apliación es la mejor para que tu y tus mascotas puedan compartir los mejores momentos. Aquí encontrarás multiples eventos y servicios a los cuáles tu mascota podrá asistir y disfrutar para que tu puedas devolver todo el cariño que el te brinda.</p>
                     </div>
                     <div class="col">
                         <h5 class="col white-text">Unete:</h5>
