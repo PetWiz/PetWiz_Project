@@ -108,80 +108,73 @@
 -->
 
 <!-- Header -->
-<header class="">
+<header>
+    <!-- Nav -->
+    <div class="navbar-fixed">
+        <nav class="nav-wrapper petwiz-blue">
+            <div class="row">
+                <!------------------- lateral Nav Bar---------------------------->
+                <div class="col s2 m1 l1 left">
+                    <a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
+                        <li><a href="" class="white-text"><i class="left material-icons">search</i>Buscar</a></li>
+                        <li><a href="" class="white-text"><i class="left material-icons">help</i>Ayuda</a></li>
+                        <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
+                    </ul>
+                </div>
+                <!-------------------------Nav Responsive menu--------------------------->
+                <div class="left margin-left">
+                    <a href=""><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+                </div>
+                <div class="col s9 m1 l9 right ">
+                    <ul class="hide-on-med-and-down right">
+                        <li><a href=""><i class="material-icons">search</i></a></li>
+                        <li><a href=""><i class="material-icons">help</i></a></li>
+                        <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}"><i class="material-icons">more_vert</i></a></li>
+                    </ul>
+                </div>
 
+            </div>
+        </nav>
+    </div>
 </header>
 
-<!-- Nav -->
-<div class="navbar-fixed">
-    <nav class="nav-wrapper petwiz-blue">
-        <div class="row">
-            <!------------------- lateral Nav Bar---------------------------->
-            <div class="col s2 m1 l1 left">
-                <a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
-                    <li><a href="" class="white-text"><i class="left material-icons">search</i>Buscar</a></li>
-                    <li><a href="" class="white-text"><i class="left material-icons">help</i>Ayuda</a></li>
-                    <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
-                </ul>
+<main>
+
+    <div class="parallax-container row">
+        <div class="parallax"><asset:image src="login11.jpg"/></div>
+        <br><br><br><br><br><br><br><br>
+        <div class="container center petwiz-opacity">
+            <h1 class="header white-text text-lighten-2 big-size-text petwiz-font">
+                <span>
+                    PetWiz
+                </span>
+            </h1>
+            <div class="row">
+                <h5 class="header petwiz-letra1">Lo mejor para ti y tus mascotas</h5>
             </div>
-                <!-------------------------Nav Responsive menu--------------------------->
-            <div class="left margin-left">
-                <a href=""><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
-            </div>
-            <div class="col s9 m1 l9 right ">
-                <ul class="hide-on-med-and-down right">
-                    <li><a href=""><i class="material-icons">search</i></a></li>
-                    <li><a href=""><i class="material-icons">help</i></a></li>
-                    <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}"><i class="material-icons">more_vert</i></a></li>
-                </ul>
+            <div class="row">
+                <!--
+                  <a href="" scope="public_profile,email" onlogin="checkLoginState();" class="waves-effect btn-large reg-btn">Inicia con Facebook</a>
+                 <a scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button">Inicia con Facebook</a>
+                 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+                -->
+
+                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"
+                     scope="public_profile,email" onlogin="checkLoginState();">Inicia con Facebook</div>
             </div>
 
         </div>
-    </nav>
-</div>
-
-<div class="parallax-container row">
-    <div class="parallax"><asset:image src="login11.jpg"/></div>
-    <br><br><br><br><br><br><br><br>
-    <div class="container center petwiz-opacity">
-        <h1 class="header white-text text-lighten-2 big-size-text petwiz-font">
-            <span>
-                PetWiz
-            </span>
-        </h1>
-        <div class="row">
-            <h5 class="header petwiz-letra1">Lo mejor para ti y tus mascotas</h5>
-        </div>
-        <div class="row">
-            <!--
-              <a href="" scope="public_profile,email" onlogin="checkLoginState();" class="waves-effect btn-large reg-btn">Inicia con Facebook</a>
-             <a scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button">Inicia con Facebook</a>
-
-             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-            </fb:login-button>
-            -->
-
-            <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"
-                 scope="public_profile,email" onlogin="checkLoginState();">Inicia con Facebook</div>
-        </div>
-
     </div>
 
+    <!--
+    <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+    -->
 
-</div>
+    <div class="petwiz-blue no-mar-top row transparent"></div>
+</main>
 
-<!--
-<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
--->
-
-<div class="petwiz-blue no-mar-top row transparent"></div>
-<div class="petwiz-blue  row transparent"></div>
-<div class="petwiz-blue  row transparent"></div>
-<div class="petwiz-blue  row transparent"></div>
-
-
-<footer class="petwiz-footer petwiz-blue">
+<footer class="footer-copyright petwiz-blue">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -213,16 +206,8 @@
         </div>
 
     </div>
-
 </footer>
-<div class="petwiz-blue">
-    <br><br>
-    <br><br>
-</div>
-<div class="petwiz-blue hide-on-med-and-up">
-    <br><br>
-    <br><br>
-</div>
+
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <asset:javascript src="materialize.js"/>
