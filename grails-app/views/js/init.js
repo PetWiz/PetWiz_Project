@@ -1,12 +1,7 @@
 (function($){
   $(function(){
     $('.dropdown-button').dropdown({hover:true} );
-    $('.button-collapse').sideNav({
-          menuWidth: 225, // Default is 240
-          edge: 'left', // Choose the horizontal origin
-          closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-        }
-    );
+    $(".button-collapse").sideNav();
     $('.collapsible').collapsible({hover:true});
     $('.parallax').parallax();
     $('.slider').slider({full_width: true});

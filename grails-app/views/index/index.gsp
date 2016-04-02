@@ -140,7 +140,6 @@
 </header>
 
 <main>
-
     <div class="parallax-container row">
         <div class="parallax"><asset:image src="login11.jpg"/></div>
         <br><br><br><br><br><br><br><br>

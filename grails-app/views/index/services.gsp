@@ -1,15 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Andres
-  Date: 21/03/2016
-  Time: 18:07
---%>
-
 <!DOCTYPE html>
 <html>
 <head>
-
-    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,12 +15,10 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <asset:javascript src="materialize.js"/>
     <asset:javascript src="init.js"/>
-
 </head>
-
 <body>
-
-<header>
+<!-- Header -->
+<header class="center">
     <!-- Nav -->
     <div class="navbar-fixed">
         <nav class="nav-wrapper petwiz-blue petwiz-font">
@@ -37,7 +27,7 @@
                 <div class="col s2 m1 l1 left">
                     <a href="#" data-activates="nav-lat" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
                     <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
-                        <li><a href="home.gsp" class="menulat-item-active menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
+                        <li><a href="${createLink(uri:'/person/home.gsp')}" class="menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Perfil</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Mascotas</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Eventos</span></a></li>
@@ -52,7 +42,7 @@
                 </div>
                 <div class="col s9 m1 l9 right ">
                     <ul class="hide-on-med-and-down">
-                        <li class="col s2 m1 l2 menu-item menu-item-active"><a href="">Home</a></li>
+                        <li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/person/home.gsp')}">Home</a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="">Mascotas</a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="">Contacto</a></li>
@@ -63,91 +53,71 @@
 
                 <ul id="events" class="dropdown-content drop-menu">
                     <li><a href="#!" class="navdrop">Propios</a></li>
-                    <li><a href="${createLink(uri:'/index/services.gsp')}" class="navdrop">Servicios</a></li>
+                    <li><a href="${createLink(uri:'/index/services.gsp')}" class="menulat-item-active navdrop">Servicios</a></li>
                 </ul>
             </div>
         </nav>
     </div>
 </header>
 
-<main class="petwiz-blue">
-    <div class="slider">
-        <ul class="slides z-depth-4">
-            <li>
-                <asset:image src="Dog-Cat-Playing.jpg"/>
-                <div class="caption center-align petwiz-font petwiz-letra1">
-                    <titulo class="big-text blue-border-text">Bienvenido A La Mejor Aplicacion para mascotas</titulo>
-                </div>
-            </li>
-            <li>
-                <asset:image src="catcolors.jpg"/>
-                <div class="caption left-align">
-                    <titulo class="medium-text pink-border-text">Comparte divertidos</titulo>
-                    <titulo class="medium-text pink-border-text">momentos</titulo>
-                </div>
-            </li>
-            <li class="row">
-                <asset:image src="relax.jpg"/>
-                <div class="caption right-align col l2">
-                    <titulo class="medium-text">Lo mejor para que disfruten tus mascotas</titulo>
-                </div>
-            </li>
-            <li>
-                <asset:image src="aquadog.jpg"/>
-                <div class="caption center-align">
-                    <br><br><br><br><br><br><br><br><br><br>
-                    <titulo class="medium-text trans-text">Vamos no hay tiempo que perder!</titulo>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="black">
+<main>
+
+    <div class="container">
         <div class="row">
-            <div class="col s12 m6 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <asset:image class="activator" src="catplay.jpg"/>
+            <ul class="collapsible col l6 s6" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">local_pharmacy</i>Veterinarias</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>Lista</li>
+                        </ul>
                     </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Mascotas<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">Visitar Mascotas</a></p>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">pets</i>Guarderias</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>Lista</li>
+                        </ul>
                     </div>
-                    <div class="card-reveal petwiz-grey">
-                        <span class="card-title petwiz-blue-text">Mascotas<i class="material-icons right">close</i></span>
-                        <p class=" petwiz-blue-text">En este lugar podras ver todo lo que tu mascota realiza, sus travesuras y aventuras</p>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">face</i>Cuidadores</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>Lista</li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <asset:image class="activator" src="2dogs.jpg"/>
+                </li>
+            </ul>
+
+            <ul class="collapsible col l6 s6" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">spa</i>Aseo</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>Lista</li>
+                        </ul>
                     </div>
-                    <div class="card-content">
-                        <span class="card-title activator">Eventos<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">Visitar Eventos</a></p>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">fitness_center</i>Training</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>Lista</li>
+                        </ul>
                     </div>
-                    <div class="card-reveal petwiz-grey">
-                        <span class="card-title  petwiz-blue-text">Eventos<i class="material-icons right">close</i></span>
-                        <p class=" petwiz-blue-text">Vamos a Jugar, realiza divertidas actividades donde conoceras otras mascotas y poderas aprender nuevas cosas</p>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">local_hospital</i>Hospitales</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>Lista</li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <asset:image class="activator" src="login2.jpg"/>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Contacto<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">Contactanos</a></p>
-                    </div>
-                    <div class="card-reveal petwiz-grey">
-                        <span class="card-title grey-text text-darken-4">Contacto<i class="material-icons right">close</i></span>
-                        <p class="petwiz-blue-text">Mas preguntas que respuestas?, Tranquilo comunicate con nosotros y resolveremos tus dudas, y  sino pues ya haremos algo</p>
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ul>
+
         </div>
     </div>
 </main>

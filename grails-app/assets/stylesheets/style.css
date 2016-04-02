@@ -1,16 +1,44 @@
-.body{
-    background-color: black;
+/*------------------------   Class   ----------------------------------*/
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-.prueba-bordes{
-    border: solid black;
+main {
+    flex: 1 0 auto;
 }
 
-.inverse:hover{
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+titulo{
+    font-family: 'Open Sans', sans-serif;
+
 }
 /*--------------------------PetWiz Gen--------------------------------*/
+.blue-border-text{
+    color: #027A93;
+    -webkit-text-stroke: 2px #025c75;
+}
+.pink-border-text{
+    color: #ffc4e4;
+    -webkit-text-stroke: 2px #ff9890;
+}
+.trans-text{
+    opacity: 0.6;
+}
+
+.big-text{
+    font-size: 74px;
+    opacity: 0.8;
+}
+
+.medium-text{
+    font-size: 47px;
+}
+.small-text{
+
+
+}
+
 .petwiz-conn-ico-container{
     padding-right: 340px;
 }
@@ -26,11 +54,12 @@
     color: white;
 }
 
-
 .no-mar-top{
     margin-top: -100px;
 }
-
+.no-mar-bot{
+    margin-bottom: -100px;
+}
 .petwiz-modal:hover{
     color: white;
     background-color: #027A93;
@@ -48,6 +77,9 @@
 .petwiz-blue{
     background-color: #1A3139;
 }
+footer.page-footer.petwiz-blue{
+    background-color: #1A3139;
+}
 .petwiz-blue-text{
     color: #1A3139;
 }
@@ -57,7 +89,6 @@
 .petwiz-teal{
     background-color: #027A93;
 }
-
 
 .petwiz-letra1{
     font-family: 'Open Sans', sans-serif;
@@ -75,11 +106,18 @@
     background-color: #027A93;
     height: 64px;
 }
+
 .menulat-item:hover, .menulat-item-active {
     background-color: #1A3139;
-
 }
 
+.image-box{
+    background-color: rgba(255, 0, 36, 1);
+    width: 225px;
+    height: 225px;
+
+
+}
 .margin-left{
     margin-left: 100px;
 }
@@ -107,6 +145,16 @@
     background-color: rgb(255, 217, 123);
     color: black;
 }
+/*-------        other        -----*/
+.prueba-bordes{
+    border: solid black;
+}
+
+.inverse:hover{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
 
 
 /*---------------------------Slider------------------*/
@@ -128,3 +176,4 @@
     z-index: 100;
     /* text-align: left; */
 }
+
