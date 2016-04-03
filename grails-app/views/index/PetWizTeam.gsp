@@ -148,7 +148,7 @@
                 </div>
                 <ul id="events" class="dropdown-content drop-menu">
                     <li><a href="#!" class="navdrop">Propios</a></li>
-                    <li><a href="${createLink(uri:'/index/services.gsp')}" class="navdrop">Servicios</a></li>
+                    <li><a href="${createLink(uri:'/person/services.gsp')}" class="navdrop">Servicios</a></li>
                 </ul>
 
             </div>

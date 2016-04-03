@@ -42,8 +42,7 @@
         } else {
             // The person is not logged into Facebook, so we're not sure if
             // they are logged into this app or not.
-            document.getElementById('status').innerHTML = 'Please log ' +
-                    'into Facebook.';
+            window.location = "https://petwiz.herokuapp.com"
         }
     }
 
@@ -142,7 +141,7 @@
                         <li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">Nosotros</a></li>
                         <li class="col s2 m1 l1 menu-item "><a><i class="material-icons center">help</i></a></li>
                         <li class="col s2 m1 l1" style="margin-left: 20px; margin-top: -25px">
-                            <div class="fb-login-button" data-max-rows="1" data-size="small" data-show-faces="false" data-auto-logout-link="true"></div>
+                            <div class="fb-login-button" data-max-rows="1" onclick="checkLoginState();" data-size="small" data-show-faces="false" data-auto-logout-link="true"></div>
                         </li>
                     </li>
 
@@ -150,7 +149,7 @@
                 </div>
                 <ul id="events" class="dropdown-content drop-menu">
                     <li><a href="#!" class="navdrop">Propios</a></li>
-                    <li><a href="${createLink(uri:'/index/services.gsp')}" class="navdrop">Servicios</a></li>
+                    <li><a href="${createLink(uri:'/person/services.gsp')}" class="navdrop">Servicios</a></li>
                 </ul>
 
             </div>
@@ -160,12 +159,12 @@
 </header>
 
 <main class="petwiz-blue">
-    <div class="slider">
+    <div class="slider ">
         <ul class="slides z-depth-4">
             <li>
                 <asset:image src="Dog-Cat-Playing.jpg"/>
                 <div class="caption center-align petwiz-font petwiz-letra1">
-                    <titulo class="big-text blue-border-text">Bienvenido A La Mejor Aplicacion para mascotas</titulo>
+                    <titulo class="medium-text blue-border-text">Bienvenido A La Mejor Aplicacion para mascotas</titulo>
                 </div>
             </li>
             <li>
@@ -184,7 +183,7 @@
             <li>
                 <asset:image src="aquadog.jpg"/>
                 <div class="caption center-align">
-                    <br><br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br>
                     <titulo class="medium-text trans-text">¡No hay tiempo que perder!</titulo>
                 </div>
             </li>

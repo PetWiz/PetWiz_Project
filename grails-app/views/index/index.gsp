@@ -141,7 +141,7 @@
                 <h5 class="header petwiz-letra1">Lo mejor para ti y tus mascotas</h5>
             </div>
             <div class="row">
-                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+                <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
             </div>
 
         </div>
