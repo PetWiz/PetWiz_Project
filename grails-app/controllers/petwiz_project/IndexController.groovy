@@ -8,7 +8,4 @@ class IndexController {
     def PetWizTeam(){
         render(controller:'index',view:'/index/PetWizTeam')
     }
-    def services(){
-        render(controller:'index',view:'/person/services')
-    }
 }

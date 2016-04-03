@@ -38,11 +38,11 @@
 
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
-            window.location = "https://petwiz.herokuapp.com"
+            window.location = "${createLink(uri:'/index/index.gsp')}"
         } else {
             // The person is not logged into Facebook, so we're not sure if
             // they are logged into this app or not.
-            window.location = "https://petwiz.herokuapp.com"
+            window.location = "${createLink(uri:'/index/index.gsp')}"
         }
     }
 
@@ -58,6 +58,7 @@
     window.fbAsyncInit = function() {
         FB.init({
             appId      : '988173204609860',
+            //appId      : '1522259314749966',//local test
             cookie     : true,  // enable cookies to allow the server to access
                                 // the session
             xfbml      : true,  // parse social plugins on this page
@@ -87,7 +88,8 @@
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=988173204609860";
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=988173204609860'";
+        //js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=1522259314749966"; local test
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
@@ -105,6 +107,7 @@
         FB.logout(function(response) {
             // user is now logged out
         });
+        window.location = "https://petwiz.herokuapp.com";
     }
 
 </script>
@@ -141,7 +144,7 @@
                         <li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">Nosotros</a></li>
                         <li class="col s2 m1 l1 menu-item "><a><i class="material-icons center">help</i></a></li>
                         <li class="col s2 m1 l1" style="margin-left: 20px; margin-top: -25px">
-                            <div class="fb-login-button" data-max-rows="1" onclick="checkLoginState();" data-size="small" data-show-faces="false" data-auto-logout-link="true"></div>
+                            <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState();" data-size="small" data-show-faces="false" data-auto-logout-link="true"></div>
                         </li>
                     </li>
 

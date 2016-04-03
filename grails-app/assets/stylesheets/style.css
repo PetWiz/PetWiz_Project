@@ -131,14 +131,24 @@ footer.page-footer.petwiz-blue{
 .font-orange{
     color: orange;
 }
+.font-brown{
+    color: #a52a2a;
+}
 .font-yellow{
     color: yellow;
+}
+.font-teal{
+    color: #527980;
 }
 .font-white{
     color: white;
 }
 .petwiz-opacity{
     opacity: 0.7;
+}
+
+.italic{
+    font-style: italic;
 }
 
 .petwiz-opacity:hover{

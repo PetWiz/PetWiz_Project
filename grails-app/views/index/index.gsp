@@ -31,7 +31,7 @@
         // for FB.getLoginStatus().
         if (response.status === 'connected') {
             // Logged into your app and Facebook.
-            window.location = "https://petwiz.herokuapp.com/person/home.gsp"
+            window.location = "${createLink(uri:'/person/home.gsp')}"
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
             document.getElementById('status').innerHTML = 'Please log ' +
@@ -56,6 +56,7 @@
     window.fbAsyncInit = function() {
         FB.init({
             appId      : '988173204609860',
+            //appId      : '1522259314749966',//local test
             cookie     : true,  // enable cookies to allow the server to access
                                 // the session
             xfbml      : true,  // parse social plugins on this page
@@ -85,7 +86,8 @@
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=988173204609860";
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=988173204609860'";
+        //js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=1522259314749966"; local test
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
@@ -130,15 +132,11 @@
 <main>
     <div class="parallax-container">
         <div class="parallax"><asset:image src="login11.jpg"/></div>
-        <br><br><br><br><br><br><br><br>
-        <div class="container center petwiz-opacity">
-            <h1 class="header white-text text-lighten-2 big-size-text petwiz-font">
-                <span>
-                    PetWiz
-                </span>
-            </h1>
+        <br><br><br><br><br><br>
+        <div class="container center">
+            <h1 class="petwiz-font big-text font-white petwiz-opacity"> PetWiz </h1>
             <div class="row">
-                <h5 class="header petwiz-letra1">Lo mejor para ti y tus mascotas</h5>
+                <h5 class="header font-teal petwiz-font medium-text italic trans-hover petwiz-opacity">Lo mejor para ti y tus mascotas</h5>
             </div>
             <div class="row">
                 <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
