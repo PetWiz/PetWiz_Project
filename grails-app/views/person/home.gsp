@@ -1,9 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Andres
-  Date: 21/03/2016
-  Time: 18:07
---%>
 
 <!DOCTYPE html>
 <html>
@@ -28,16 +22,106 @@
 
 <body>
 
+<div id="fb-root"></div>
+<script>
+    // This is called with the results from from FB.getLoginStatus().
+
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this app.';
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                    'into Facebook.';
+        }
+    }
+
+    // This function is called when someone finishes with the Login
+    // Button.  See the onlogin handler attached to it in the sample
+    // code below.
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '988173204609860',
+            cookie     : true,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.5' // use graph api version 2.5
+        });
+
+        // Now that we've initialized the JavaScript SDK, we call
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    function login() {
+        FB.login(function(response) {
+
+            // handle the response
+            console.log("Response goes here!");
+
+        }, {scope: 'read_stream,publish_stream,publish_actions,read_friendlists'});
+    }
+
+    function logout() {
+        FB.logout(function(response) {
+            // user is now logged out
+        });
+    }
+
+</script>
+
 <header>
     <!-- Nav -->
     <div class="navbar-fixed">
         <nav class="nav-wrapper petwiz-blue petwiz-font">
             <div class="row">
+
                 <!------------------- lateral Nav Bar---------------------------->
                 <div class="col s2 m1 l1 left">
                     <a href="#" data-activates="nav-lat" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
                     <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
-                        <li><a href="home.gsp" class="menulat-item-active menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
+                        <li><a href="" class="menulat-item-active menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Perfil</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Mascotas</span></a></li>
                         <li><a href="" class="menulat-item"><span class="font-white">Eventos</span></a></li>
@@ -52,20 +136,26 @@
                 </div>
                 <div class="col s9 m1 l9 right ">
                     <ul class="hide-on-med-and-down">
-                        <li class="col s2 m1 l2 menu-item menu-item-active"><a href="">Home</a></li>
+                        <li class="col s2 m1 l1 menu-item menu-item-active"><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons center">home</i></a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="">Mascotas</a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
                         <li class="col s2 m1 l2 menu-item "><a href="">Contacto</a></li>
-                        <li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">About Us</a></li>
-                        <li class="col s2 m1 l1 menu-item "><a href="">Help</a></li>
+                        <li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">Nosotros</a></li>
+                        <li class="col s2 m1 l1 menu-item "><a><i class="material-icons center">help</i></a></li>
+                        <li class="col s2 m1 l1" style="margin-left: 20px; margin-top: -25px">
+                            <div class="fb-login-button" data-max-rows="1" data-size="small" data-show-faces="false" data-auto-logout-link="true"></div>
+                        </li>
+                    </li>
+
                     </ul>
                 </div>
-
                 <ul id="events" class="dropdown-content drop-menu">
                     <li><a href="#!" class="navdrop">Propios</a></li>
                     <li><a href="${createLink(uri:'/index/services.gsp')}" class="navdrop">Servicios</a></li>
                 </ul>
+
             </div>
+
         </nav>
     </div>
 </header>
@@ -96,7 +186,7 @@
                 <asset:image src="aquadog.jpg"/>
                 <div class="caption center-align">
                     <br><br><br><br><br><br><br><br><br><br>
-                    <titulo class="medium-text trans-text">Vamos no hay tiempo que perder!</titulo>
+                    <titulo class="medium-text trans-text">¡No hay tiempo que perder!</titulo>
                 </div>
             </li>
         </ul>

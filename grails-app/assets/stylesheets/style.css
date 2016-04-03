@@ -13,7 +13,12 @@ titulo{
     font-family: 'Open Sans', sans-serif;
 
 }
+
 /*--------------------------PetWiz Gen--------------------------------*/
+.fb-login-button{
+
+    margin-bot: 30px;
+}
 .blue-border-text{
     color: #027A93;
     -webkit-text-stroke: 2px #025c75;
@@ -35,7 +40,7 @@ titulo{
     font-size: 47px;
 }
 .small-text{
-
+    font-size: 31px;
 
 }
 
@@ -45,6 +50,7 @@ titulo{
 .waves-effect.waves-grey .waves-ripple {
     /* The alpha value allows the text and background color
     of the button to still show through. */
+
     color: #000000;
     background-color: rgba(56, 56, 56, 1);
 }

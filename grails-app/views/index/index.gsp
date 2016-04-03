@@ -4,29 +4,34 @@
 
     <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <asset:stylesheet src="materialize.min.css" media="screen,projection"/>
     <asset:stylesheet src="style.css"/>
+    <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Vollkorn:700' rel='stylesheet' type='text/css'>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <asset:javascript src="materialize.js"/>
+    <asset:javascript src="init.js"/>
 
 </head>
 <body>
-<!-- FB Script -->
+
 <script>
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
-
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
         // Full docs on the response object can be found in the documentation
         // for FB.getLoginStatus().
         if (response.status === 'connected') {
             // Logged into your app and Facebook.
-            testAPI();
+            window.location = "https://petwiz.herokuapp.com/person/home.gsp"
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
             document.getElementById('status').innerHTML = 'Please log ' +
@@ -50,7 +55,7 @@
 
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : '988173204609860',
+            appId      : '1522259314749966',
             cookie     : true,  // enable cookies to allow the server to access
                                 // the session
             xfbml      : true,  // parse social plugins on this page
@@ -80,32 +85,15 @@
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/es_LA/sdk.js";
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=1522259314749966";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-            console.log('Successful login for: ' + response.name);
-            document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
-        });
-    }
 </script>
 
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
 
 
-    <div id="status">
-    </div>
 
--->
 
 <!-- Header -->
 <header>
@@ -129,7 +117,7 @@
                 <div class="col s9 m1 l9 right ">
                     <ul class="hide-on-med-and-down right">
                         <li><a href=""><i class="material-icons">search</i></a></li>
-                        <li><a href=""><i class="material-icons">help</i></a></li>
+                        <li><a href="${createLink(uri:'/index/prueba.gsp')}"><i class="material-icons">help</i></a></li>
                         <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}"><i class="material-icons">more_vert</i></a></li>
                     </ul>
                 </div>
@@ -140,7 +128,7 @@
 </header>
 
 <main>
-    <div class="parallax-container row">
+    <div class="parallax-container">
         <div class="parallax"><asset:image src="login11.jpg"/></div>
         <br><br><br><br><br><br><br><br>
         <div class="container center petwiz-opacity">
@@ -153,24 +141,12 @@
                 <h5 class="header petwiz-letra1">Lo mejor para ti y tus mascotas</h5>
             </div>
             <div class="row">
-                <!--
-                  <a href="" scope="public_profile,email" onlogin="checkLoginState();" class="waves-effect btn-large reg-btn">Inicia con Facebook</a>
-                 <a scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button">Inicia con Facebook</a>
-                 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-                -->
-
-                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"
-                     scope="public_profile,email" onlogin="checkLoginState();">Inicia con Facebook</div>
+                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
             </div>
 
         </div>
     </div>
 
-    <!--
-    <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
-    -->
-
-    <div class="petwiz-blue no-mar-top row transparent"></div>
 </main>
 
 <footer class="footer-copyright petwiz-blue">
@@ -206,11 +182,6 @@
 
     </div>
 </footer>
-
-
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<asset:javascript src="materialize.js"/>
-<asset:javascript src="init.js"/>
 
 
 </body>
