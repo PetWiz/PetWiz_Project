@@ -159,66 +159,120 @@
     </div>
 </header>
 <main>
-
     <div class="container">
         <div class="row">
-            <ul class="collapsible col l6 s6" data-collapsible="accordion">
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">local_pharmacy</i>Veterinarias</div>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>Lista</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">pets</i>Guarderias</div>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>Lista</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">face</i>Cuidadores</div>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>Lista</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+            <div class="col s12 l12 m12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a class="active" href="#test1"><i class="material-icons">local_pharmacy</i>Veterinarias</a></li>
+                    <li class="tab col s3"><a href="#test2"><i class="material-icons">pets</i>Guarderias</a></li>
+                    <li class="tab col s3"><a href="#test3"><i class="material-icons">face</i>Cuidadores</a></li>
+                    <li class="tab col s3"><a href="#test4"><i class="material-icons">spa</i>Aseo</a></li>
+                    <li class="tab col s3"><a href="#test5"><i class="material-icons">fitness_center</i>Training</a></li>
+                    <li class="tab col s3"><a href="#test6"><i class="material-icons">local_hospital</i>Hospitales</a></li>
+                </ul>
+            </div>
+            <div id="test1" class="col s12">
+                <ul>
 
-            <ul class="collapsible col l6 s6" data-collapsible="accordion">
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">spa</i>Aseo</div>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>Lista</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">fitness_center</i>Training</div>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>Lista</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">local_hospital</i>Hospitales</div>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>Lista</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+                </ul>
+            </div>
+            <div id="test2" class="col s12">
+                <ul>
 
+                </ul>
+            </div>
+            <div id="test3" class="col s12">
+                <ul>
+
+                </ul>
+            </div>
+            <div id="test4" class="col s12">
+                <ul>
+
+                </ul>
+            </div>
+            <div id="test5" class="col s12">
+                <ul>
+
+                </ul>
+            </div>
+            <div id="test6" class="col s12">
+                <ul>
+
+                </ul>
+            </div>
         </div>
     </div>
 </main>
+
+<div id="map" class="container google-maps"></div>
+
+<script type="text/javascript">
+
+    var markers = [];
+    var map;
+
+    function initMap()
+    {
+        var mapOptions = {
+            center: new google.maps.LatLng(4.6561754,-74.0552325),
+            zoom: 11,
+            scrollwheel: true,
+            disableDefaultUI: false,
+
+        };
+        map = new google.maps.Map(document.getElementById("map"),mapOptions);
+
+        google.maps.event.addDomListener(window, "resize", function() {
+            var center = map.getCenter();
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(center);
+        });
+    }
+
+    function ace()
+    {
+        lista = new google.maps.LatLng(4.6219903005919445, -74.13864778478413)
+        addMarker( lista )
+    }
+
+    function addMarker(location) {
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+        markers.push(marker);
+    }
+
+    // Sets the map on all markers in the array.
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    // Removes the markers from the map, but keeps them in the array.
+    function clearMarkers() {
+        setMapOnAll(null);
+    }
+
+    // Shows any markers currently in the array.
+    function showMarkers() {
+        setMapOnAll(map);
+    }
+
+    // Deletes all markers in the array by removing references to them.
+    function deleteMarkers() {
+        clearMarkers();
+        markers = [];
+    }
+
+
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgobfAe2NzWl-0G2O_khAWLVJ9bCOi4mE&callback=initMap">
+</script>
 
 <footer class="footer-copyright petwiz-blue">
     <div class="container">

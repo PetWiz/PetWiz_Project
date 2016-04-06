@@ -8,4 +8,5 @@ class PersonController {
     def services(){
         render(controller:'person',view:'/person/services')
     }
+
 }
