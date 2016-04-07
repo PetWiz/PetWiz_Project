@@ -67,7 +67,6 @@
 
 .petwiz-footer{
     padding-top: 70px;
-    height: 220px;
 }
 
 /*-----------------------menu and nav-------------------------*/
@@ -79,6 +78,18 @@
     background-color: #1A3139;
 
 }
+
+.back-color{
+    background-color: #1A3139 !important;
+}
+.back-color:hover{
+    background-color: #027A93 !important;
+}
+
+.icon-color{
+    background-color: #005AB3 !important;
+}
+
 
 .margin-left{
     margin-left: 100px;
@@ -127,4 +138,13 @@
     bottom: 60px;
     z-index: 100;
     /* text-align: left; */
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
