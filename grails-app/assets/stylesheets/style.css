@@ -78,16 +78,22 @@
     background-color: #1A3139;
 
 }
-
 .back-color{
     background-color: #1A3139 !important;
+    min-width:  270px;
+    max-width: 320px;
 }
 .back-color:hover{
     background-color: #027A93 !important;
+    min-width:  270px;
+    max-width: 320px;
 }
 
 .icon-color{
     background-color: #005AB3 !important;
+}
+.form-ba-color{
+    color: #027A93 !important;
 }
 
 
@@ -147,4 +153,17 @@ body {
 
 main {
     flex: 1 0 auto;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #027A93;
+    box-shadow: 0 1px 0 0 #027A93;
+}
+
+.input-field input[type=date]:focus{
+    background-color: #1A3139;
+}
+.input-field .prefix.active {
+    color: #027A93;
 }

@@ -8,4 +8,7 @@ class PersonController {
     def mypets() {
         render(controller: 'person', view: '/person/mypets');
     }
+    def createpet() {
+        render(controller: 'person', view: '/person/createpet');
+    }
 }

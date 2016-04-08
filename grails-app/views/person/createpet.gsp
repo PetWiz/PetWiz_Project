@@ -2,8 +2,9 @@
   Created by IntelliJ IDEA.
   User: mssg_
   Date: 4/6/2016
-  Time: 10:07 PM
+  Time: 10:30 PM
 --%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
 <header></header>
 
 
-<body class="white ">
+<body class="white">
 <main>
     <!-- Nav -->
     <div class="navbar-fixed">
@@ -69,7 +70,7 @@
     </div>
     <div class="row ">
         <div class=" ">
-            <ul class="container  m6 l3 collection prueba-bordes col s3 black-text petwiz-modal back-color white-text ">
+            <ul class="container  m6 l3 collection prueba-bordes col s3  petwiz-modal back-color white-text ">
                 <li class=" collection-item  avatar hoverable menu-item back-color">
                     <i class="material-icons circle icon-color">perm_identity</i>
                     <span class="title left-align">Mi perfil</span>
@@ -97,62 +98,49 @@
             </ul>
 
         </div>
+        <div  class="col s8 m6 12 form-ba-color">
 
-        <div class="col s3 m6 l3">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img src="/PetWiz/assets/cat1.jpg" class="activator"/>
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator black-text">Fido<i class="material-icons right">more_vert</i></span>
-                </div>
-                <div class="card-reveal petwiz-grey">
-                    <span class="card-title  petwiz-blue-text">Fido<i class="material-icons right">close</i></span>
-                    <p class=" petwiz-blue-text">
-                    <li>Felino</li>
-                    <li>3 Años</li>
-                    <li>Macho</li>
-                </p>
-                </div>
-            </div>
-        </div>
-        <div class="col s3 m6 l3">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img src="/PetWiz/assets/wolf.jpg" class="activator"/>
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator black-text">Havoc<i class="material-icons right">more_vert</i></span>
+                <form>
+                    <div class="row">
+                        <div class="input-field col s12 m8">
+                            <input id="pet_name" type="text" class="validate">
+                            <label for="pet_name" >Nombre de Mascota</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12  m8 ">
+                            <input id="pet_type" type="text" class="validate">
+                            <label for="pet_type">Tipo</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m8 ">
+                            <select class="icons ">
+                                <option class="" value="" disabled selected>Escoja el genero</option>
+                                <option value="pet_genre" data-icon="/PetWiz/assets/masc.png" class="circle">Masculino</option>
+                                <option value="pet_genre" data-icon="/PetWiz/assets/Femenino.png" class="circle">Femenino</option>
+                            </select>
+                            <label>Genero de la Mascota</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m8 ">
+                            <input type="date" class="datepicker" >
+                            <label>Edad de la Mascota</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m8 ">
+                            <button class="btn waves-effect waves-light right petwiz-teal" type="submit" name="action">Crear Mascota
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
 
-                </div>
-                <div class="card-reveal petwiz-grey">
-                    <span class="card-title  petwiz-blue-text">Havoc<i class="material-icons right">close</i></span>
-                    <p class=" petwiz-blue-text">
-                    <li>Canino</li>
-                    <li>5 Años</li>
-                    <li>Macho</li>
-                </p>
-                </div>
-            </div>
-        </div>
-        <div class="col s3 m6 l3">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img src="/PetWiz/assets/dog1.jpg" class="activator"/>
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator black-text">Tony<i class="material-icons right">more_vert</i></span>
 
-                </div>
-                <div class="card-reveal petwiz-grey">
-                    <span class="card-title  petwiz-blue-text">Tony<i class="material-icons right">close</i></span>
-                    <p class=" petwiz-blue-text">
-                    <li>Felino</li>
-                    <li>3 Años</li>
-                    <li>Macho</li>
-                </p>
-                </div>
-            </div>
+                </form>
+
+
         </div>
 
 
@@ -201,6 +189,7 @@
 <script src="/PetWiz/assets/materialize.js?compile=false" type="text/javascript" ></script>
 
 <script src="/PetWiz/assets/init.js?compile=false" type="text/javascript" ></script>
+
 
 </body>
 
