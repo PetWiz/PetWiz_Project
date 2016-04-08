@@ -11,4 +11,8 @@ class PersonController {
     def createpet() {
         render(controller: 'person', view: '/person/createpet');
     }
+
+    def test() {
+        render(controller: 'person', view: '/person/test');
+    }
 }

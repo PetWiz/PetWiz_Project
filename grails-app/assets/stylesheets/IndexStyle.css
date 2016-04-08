@@ -5,12 +5,8 @@ body {
 }
 
 main { flex: 1 0 auto;
-    padding-left: 240px;}
-
-
-footer, header{
-    padding-left: 240px;
 }
+
 
 @media only screen and (max-width : 992px) {
     header, main, footer {
@@ -216,10 +212,6 @@ footer.page-footer.petwiz-blue{
 
 }
 
-.padding-center{
-    margin-left: 50px;
-}
-
 
 /*-----------------------menu and nav-------------------------*/
 .menu-item:hover, .menu-item-active{
@@ -237,19 +229,8 @@ footer.page-footer.petwiz-blue{
     padding-top: 20px;
     margin-left: 0px;
 }
-.datepicker .widget-content {
-    background: #999 none;
-}
-
-.collapsible-header .back-color{
-    background-color: black;
-
-}
-
-
-.collapsible-body:hover{
-    background-color: black;
-
+.menulat-item-main:hover{
+    background-color: #00acc1;
 }
 
 
@@ -284,45 +265,3 @@ overflow: hidden;
     marginheight:0;
     marginwidth:0;
 }
-
-
-
-.picker { outline: none; } /* Optional feature */
-/* Header - Day of the week */
-.picker__weekday-display { background-color: #f57c00; }
-/* Body - Today info */
-.picker__date-display { background-color: #ff9800; }
-/* Buttons of actions */
-.picker__nav--prev:hover { background-color: #fff3e0; }
-.picker__nav--next:hover { background-color: #fff3e0; }
-.picker__nav--prev:before {
-    border-left: 0;
-    border-right: 0.75em solid #ffb74d;
-}
-.picker__nav--next:before {
-    border-right: 0;
-    border-left: 0.75em solid #ffb74d;
-}
-.picker__today { color: #fb8c00; }
-.picker__clear { /* If you want to customize */ }
-.picker__close { color: #fb8c00; }
-.btn-flat.picker__today:active { background-color: #fff3e0; }
-.btn-flat.picker__close:active { background-color: #fff3e0; }
-.btn-flat.picker__clear:active { background-color: #fff3e0; }
-/* Select months of the year */
-.picker__select--month.browser-default {
-    display: inline;
-    background-color: #FFFFFF;
-    width: 34%;
-    border: none;
-    outline: none;
-}
-/* Every month of the year except: today */
-.picker__day { /* If you want to customize */ }
-.picker__day:hover { /* If you want to customize */ }
-.picker__day--infocus:hover { color: #f57c00; }
-.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { color: #f57c00; }
-.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted { background-color: #ffcc80; }
-/* Today */
-.picker__day.picker__day--infocus.picker__day--today.picker__day--selected.picker__day--highlighted { background-color: #ff9800; }
-.picker__day.picker__day--today { color: #f57c00; }
