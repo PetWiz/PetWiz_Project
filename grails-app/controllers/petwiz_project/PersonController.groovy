@@ -5,8 +5,14 @@ class PersonController {
     def home() {
         render(controller: 'person', view: '/person/home');
     }
-    def services(){
-        render(controller:'person',view:'/person/services')
+    def mypets() {
+        render(controller: 'person', view: '/person/mypets');
+    }
+    def createpet() {
+        render(controller: 'person', view: '/person/createpet');
     }
 
+    def services() {
+        render(controller: 'person', view: '/person/services');
+    }
 }

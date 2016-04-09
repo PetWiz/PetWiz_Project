@@ -5,15 +5,6 @@ body {
 }
 
 main { flex: 1 0 auto;
-    padding-left: 240px;}
-
-
-footer, header{
-    padding-left: 240px;
-}
-.padding-google{
-    margin-left: 257px;
-    padding-bottom: 25%;
 }
 
 
@@ -21,10 +12,6 @@ footer, header{
     header, main, footer {
         padding-left: 0;
     }
-    .padding-google{
-        margin-left: 43px;
-    }
-
 }
 
 .prueba-bordes{
@@ -59,11 +46,6 @@ footer, header{
 .petwiz-blue{
     background-color: #1A3139;
 }
-
-.petwiz-blue-dark{
-    background-color: #121d25;
-}
-
 footer.page-footer.petwiz-blue{
     background-color: #1A3139;
 }
@@ -87,7 +69,7 @@ footer.page-footer.petwiz-blue{
 .petwiz-image-box{
     height: 240px;
     width: 240px;
-    background-color: black;
+    border: solid black;
     border-width: 1px;
 }
 
@@ -98,11 +80,6 @@ footer.page-footer.petwiz-blue{
 .petwiz-opacity:hover{
     opacity: 1;
 }
-
-.petwiz-royale{
-    background-color: #005AB3 !important;
-}
-
 
 /*-----------Custom-----------*/
 
@@ -115,36 +92,12 @@ footer.page-footer.petwiz-blue{
 .font-yellow{
     color: yellow;
 }
-
 .font-teal{
-    color: #027A93;
-}
-
-.font-teal.hover-light{
-    color: #027A93;
-}
-.font-teal.hover-light:hover{
-    color: #02a9c5;
-}
-
-.font-royale{
-    color: #005AB3;
+    color: #527980;
 }
 .font-white{
     color: white;
 }
-
-
-.font-orange{
-    color: orange;
-}
-.font-yellow{
-    color: yellow;
-}
-.font-white{
-    color: white;
-}
-
 
 .italic{
     font-style: italic;
@@ -188,7 +141,9 @@ footer.page-footer.petwiz-blue{
     max-width: 320px;
 }
 
-
+.icon-color{
+    background-color: #005AB3 !important;
+}
 .form-ba-color{
     color: #027A93 !important;
 }
@@ -197,6 +152,15 @@ footer.page-footer.petwiz-blue{
     margin-left: 100px;
 }
 
+.font-orange{
+    color: orange;
+}
+.font-yellow{
+    color: yellow;
+}
+.font-white{
+    color: white;
+}
 
 .reg-btn{
     background-color: #000000;
@@ -248,23 +212,14 @@ footer.page-footer.petwiz-blue{
 
 }
 
-.padding-center{
-    margin-left: 50px;
-}
-
 
 /*-----------------------menu and nav-------------------------*/
 .menu-item:hover, .menu-item-active{
     background-color: #027A93;
     height: 64px;
 }
-.menulat-item {
+.menulat-item:hover, .menulat-item-active {
     background-color: #1A3139;
-    width: 239px;
-    height: 65px;
-    text-align: center;
-    padding-top: 20px;
-    margin-left: 0px;
 }
 
 .menulat-item-da{
@@ -274,25 +229,10 @@ footer.page-footer.petwiz-blue{
     padding-top: 20px;
     margin-left: 0px;
 }
-
-.menulat-item-da:hover{
-    background-color: #025c75 !important;
+.menulat-item-main:hover{
+    background-color: #00acc1;
 }
 
-.collapsible-header.pet:hover{
-    background-color: #025c75;
-}
-.collapsible-header.pet{
-    background-color: #1A3139;
-    width: 240px;
-    margin-left: 0px;
-    height: 88.5px;
-}
-
-.modal.small{
-
-    width: 400px;
-}
 
 
 /*---------------------------Slider------------------*/
@@ -315,60 +255,13 @@ footer.page-footer.petwiz-blue{
     /* text-align: left; */
 }
 
+/*-------------maps-----------*/
 
-
-/*-----------picker-----------------*/
-.picker { outline: none; } /* Optional feature */
-/* Header - Day of the week */
-.picker__weekday-display { background-color:  #1A3139; }
-/* Body - Today info */
-.picker__date-display { background-color: #027A93; }
-/* Buttons of actions */
-.picker__nav--prev:hover { background-color: #fff3e0; }
-.picker__nav--next:hover { background-color: #fff3e0; }
-.picker__nav--prev:before {
-    border-left: 0;
-    border-right: 0.75em solid #ffb74d;
-}
-.picker__nav--next:before {
-    border-right: 0;
-    border-left: 0.75em solid #ffb74d;
-}
-.picker__today { color: #fb8c00; }
-.picker__clear { /* If you want to customize */ }
-.picker__close { color: #fb8c00; }
-.btn-flat.picker__today:active { background-color: #fff3e0; }
-.btn-flat.picker__close:active { background-color: #fff3e0; }
-.btn-flat.picker__clear:active { background-color: #fff3e0; }
-/* Select months of the year */
-.picker__select--month.browser-default {
-    display: inline;
-    background-color: #FFFFFF;
-    width: 34%;
-    border: none;
-    outline: none;
-}
-/* Every month of the year except: today */
-.picker__day { /* If you want to customize */ }
-.picker__day:hover { /* If you want to customize */ }
-.picker__day--infocus:hover { color: #f57c00; }
-.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { color: #f57c00; }
-.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted { background-color: #ffcc80; }
-/* Today */
-.picker__day.picker__day--infocus.picker__day--today.picker__day--selected.picker__day--highlighted { background-color: #ff9800; }
-.picker__day.picker__day--today { color: #f57c00; }
-
-/*-----------tabs----------*/
-
-.tabs .tab a{
-    color: #027A93;
-}
-
-.tabs .tab a:hover{
-    color: #02bdd9;
-}
-
-.tabs .indicator {
-
-    background-color: #02a9c5;
+.google-maps {
+    position: relative;
+    padding-bottom: 30%; // This is the aspect ratio
+overflow: hidden;
+    height: 0;
+    marginheight:0;
+    marginwidth:0;
 }
