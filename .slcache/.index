@@ -5596,3 +5596,5 @@ y:12882:org/codehaus/groovy/runtime/MethodRankHelper
 n:445:org/codehaus/groovy/runtime/MethodRankHelper$NullObject
 n:1768:org/codehaus/groovy/runtime/MethodRankHelper$RankableMethod
 n:1887:org/codehaus/groovy/grails/cli/interactive/InteractiveMode$getCurrent
+n:1567:java_io_File$equals$9
+n:1409:java_io_File$getCanonicalPath$10

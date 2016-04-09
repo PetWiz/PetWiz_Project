@@ -4,12 +4,13 @@
 
     <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="layout" content="main"/>
+    <meta name="layout" content="login"/>
 
 </head>
 <body>
 <main>
     <div class="container">
+        <div class="row"></div>
         <div class="row center hoverable">
             <img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=300px height=180px/>
         </div>

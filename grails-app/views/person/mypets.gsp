@@ -1,13 +1,12 @@
 <html>
 <head>
-    <title>An Example Page</title>
+    <title>Mascotas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="layout" content="main" />
 </head>
 <body>
 
 <main>
-
     <!-- Modal Structure -->
     <div id="modal1" class="modal small">
         <div class="modal-content font-teal">
@@ -25,11 +24,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 m8 l3">
+                    <div class="input-field col s4 m8 l4">
                         <label>Edad</label>
                     </div>
-                    <div class="input-field col s12 m8 l6 ">
-                        <input type="date" class="datepicker" name="age">
+                    <div class="input-field col s5 m8 l5 center">
+                        <input type="date" class="datepicker" name="age" id="date">
+                        <label for="date"><i class="material-icons font-teal" style="padding-left: 50px;">today</i></label>
                     </div>
                 </div>
 
@@ -46,23 +46,14 @@
                     <i class="material-icons right">send</i>
                 </button>
             </g:form>
-
-
         </div>
     </div>
-
-
     <div>
         <div class="row">
-
-
             <div class="col s12 m6 l3">
-
                 <div class="card small hoverable">
-
                     <div class="card-image waves-effect waves-block waves-light">
                         <asset:image src="cat1.jpg" class="activator"/>
-
                     </div>
                     <div class="card-content">
                         <div class="row center"><span class="petwiz-font small-text activator">Fido</span></div>
@@ -147,7 +138,6 @@
                 <div class="card small-btn hoverable">
                     <br><span class="font-teal" style="margin-left: -20px">Añadir Mascota</span>
                     <a  href="#modal1" class="modal-trigger btn-floating btn-large waves-effect waves-light petwiz-blue-add"><i class="material-icons">add</i></a>
-
                 </div>
             </div>
 
@@ -155,3 +145,5 @@
     </div>
 
 </main>
+</body>
+</html>

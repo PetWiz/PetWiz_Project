@@ -33,10 +33,10 @@
 							<a class='dropdown-button menulat-item-da' href='#' data-activates='events-lat'><span class="font-white">Eventos</span></a>
 							<!-- Dropdown Structure -->
 							<ul id="events-lat" class="dropdown-content drop-menu">
-								<li><a href="#!" class="" style="padding-top: 20px">Propios</a></li>
+								<li><a href="${createLink(uri:'/person/myevents.gsp')}" class="" style="padding-top: 20px">Propios</a></li>
 								<li><a href="${createLink(uri:'/person/services.gsp')}" class="" style="padding-top: 20px">Servicios</a></li>
 							</ul>
-							<li class="menulat-item-da"><a href="${createLink(uri:'/index/contacto.gsp')}" class=""><span class="font-white">Contacto</span></a></li>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/index/contact.gsp')}" class=""><span class="font-white">Contacto</span></a></li>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class=""><span class="font-white">Nosotros</span></a></li>
 						</ul>
 					</div>
@@ -74,13 +74,13 @@
 						<li class="col s2 m1 l1 menu-item "><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons center">home</i></a></li>
 						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/person/mypets.gsp')}">Mascotas</a></li>
 						<li class="col s2 m1 l2 menu-item "><a href="#" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
-						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/contacto.gsp')}">Contacto</a></li>
+						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/contact.gsp')}">Contacto</a></li>
 						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">Nosotros</a></li>
 						<li class="col s2 m1 l1 menu-item "><a href="${createLink(uri:'/index/help.gsp')}"><i class="material-icons left">help</i></a></li>
 					</ul>
 				</div>
 				<ul id="events" class="dropdown-content drop-menu">
-					<li><a href="#!" class="navdrop">Propios</a></li>
+					<li><a href="${createLink(uri:'/person/myevents.gsp')}" class="navdrop">Propios</a></li>
 					<li><a href="${createLink(uri:'/person/services.gsp')}" class="navdrop">Servicios</a></li>
 				</ul>
 

@@ -47,7 +47,7 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">Mascotas<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">Visitar Mascotas</a></p>
+                        <p><a href="${createLink(uri:'/person/mypets.gsp')}">Visitar Mascotas</a></p>
                     </div>
                     <div class="card-reveal petwiz-grey">
                         <span class="card-title petwiz-blue-text">Mascotas<i class="material-icons right">close</i></span>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator">Eventos<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">Visitar Eventos</a></p>
+                        <p><a href="${createLink(uri:'/person/myevents.gsp')}">Visitar Eventos</a></p>
                     </div>
                     <div class="card-reveal petwiz-grey">
                         <span class="card-title  petwiz-blue-text">Eventos<i class="material-icons right">close</i></span>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">Contacto<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">Contactanos</a></p>
+                        <p><a href="${createLink(uri:'/index/contact.gsp')}">Contactanos</a></p>
                     </div>
                     <div class="card-reveal petwiz-grey">
                         <span class="card-title grey-text text-darken-4">Contacto<i class="material-icons right">close</i></span>
