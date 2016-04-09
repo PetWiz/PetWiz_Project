@@ -20,32 +20,44 @@
 	<!------------------- lateral Nav Bar---------------------------->
 	<div class="col s2 m1 l1 left">
 
-		<ul id="nav-lat" class="side-nav petwiz-blue petwiz-font font-white fixed z-depth-5">
+		<ul id="nav-lat" class="side-nav petwiz-smoke petwiz-font font-white fixed z-depth-5">
 			<div class="petwiz-image-box"></div>
 
 			<ul class="collapsible" data-collapsible="accordion">
 				<li>
-					<div class="collapsible-header"><i class="material-icons">filter_drama</i>PetWiz</div>
+					<div class="collapsible-header pet"><i class="material-icons">filter_drama</i>PetWiz</div>
 					<div class="collapsible-body">
-						<ul class="petwiz-blue">
-							<li><a href="" class="menulat-item"><span class="font-white"><i class="material-icons left">home</i>Home</span></a></li>
-							<li><a href="" class=""><span class="font-white">Perfil</span></a></li>
-							<li><a href="" class=""><span class="font-white">Mascotas</span></a></li>
-							<li><a href="" class=""><span class="font-white">Eventos</span></a></li>
-							<li><a href="" class=""><span class="font-white">Contacto</span></a></li>
+						<ul class="petwiz-blue-dark">
+							<li class="menulat-item-da"><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons font-white"style="padding-top: 20px">home</i></a></li></span>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/person/mypets.gsp')}" class=""><span class="font-white">Mascotas</span></a></li>
+							<!-- Dropdown Trigger -->
+							<a class='dropdown-button menulat-item-da' href='#' data-activates='events-lat'><span class="font-white">Eventos</span></a>
+							<!-- Dropdown Structure -->
+							<ul id="events-lat" class="dropdown-content drop-menu">
+								<li><a href="#!" class="" style="padding-top: 20px">Propios</a></li>
+								<li><a href="${createLink(uri:'/person/services.gsp')}" class="" style="padding-top: 20px">Servicios</a></li>
+							</ul>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/index/contacto.gsp')}" class=""><span class="font-white">Contacto</span></a></li>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class=""><span class="font-white">Nosotros</span></a></li>
 						</ul>
 					</div>
+
 				</li>
 				<li>
-					<div class="collapsible-header"><i class="material-icons">place</i>Cuenta</div>
+					<div class="collapsible-header pet"><i class="material-icons">insert_emoticon</i>Cuenta</div>
 					<div class="collapsible-body">
-						<ul class="petwiz-blue"><span class="font-white">
-							<li class="menulat-item-da"><a class="modal-trigger" href="#modal1"><i class="material-icons circle font-white icon-color">add</i><span class="title font-white left-align">Añadir Mascota</span></a></li></span>
+						<ul class="petwiz-blue-dark"><span class="font-white">
+							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li></span>
+							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Mis Mascotas</span></a></li></span>
+							<li class="menulat-item-da"><a class="modal-trigger" href="#modal1"><i class="material-icons circle font-white petwiz-royale">add</i><span class="title font-white left-align">Añadir Mascota</span></a></li></span>
+							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">input</i><span class="title font-white left-align">Mis Eventos</span></a></li></span>
+							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">add</i><span class="title font-white left-align">Añadir Evento</span></a></li></span>
 						</ul>
 					</div>
 				</li>
+				<li><a href="${createLink(uri:'/index/help.gsp')}" class="collapsible-header pet"><span class=" font-white"><i class="material-icons">help</i>help</span></a></li>
 			</ul>
-			<li><a href="" class=""><span class="font-white"><i class="material-icons left">help</i>Help</span></a></li>
+
 			<ul id='dropdown1' class='dropdown-content'>
 				<li class="menulat-item-main avatar"><i class="material-icons circle icon-color">perm_identity</i><span class="title left-align">Mi perfil</span></li>
 			</ul>
@@ -62,12 +74,12 @@
 				</div>
 				<div class="col s9 m1 l11 right ">
 					<ul class="hide-on-med-and-down center">
-						<li class="col s2 m1 l1 menu-item menu-item-active"><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons center">home</i></a></li>
-						<li class="col s2 m1 l2 menu-item "><a href="">Mascotas</a></li>
-						<li class="col s2 m1 l2 menu-item "><a href="" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
-						<li class="col s2 m1 l2 menu-item "><a href="">Contacto</a></li>
+						<li class="col s2 m1 l1 menu-item "><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons center">home</i></a></li>
+						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/person/mypets.gsp')}">Mascotas</a></li>
+						<li class="col s2 m1 l2 menu-item "><a href="#" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
+						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/contacto.gsp')}">Contacto</a></li>
 						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">Nosotros</a></li>
-						<li class="col s2 m1 l1 menu-item "><a><i class="material-icons left">help</i></a></li></li>
+						<li class="col s2 m1 l1 menu-item "><a href="${createLink(uri:'/index/help.gsp')}"><i class="material-icons left">help</i></a></li>
 					</ul>
 				</div>
 				<ul id="events" class="dropdown-content drop-menu">
@@ -82,23 +94,23 @@
 </header>
 
 <!-- Modal Structure -->
-<div id="modal1" class="modal">
-	<div class="modal-content">
+<div id="modal1" class="modal small">
+	<div class="modal-content font-teal">
 		<form>
 			<div class="row">
-				<div class="input-field col s12 m8">
+				<div class="input-field col s12 m12 l12">
 					<input id="pet_name" type="text" class="validate">
 					<label for="pet_name" >Nombre de Mascota</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s12  m8 ">
+				<div class="input-field col s12  m12 l12">
 					<input id="pet_type" type="text" class="validate">
-					<label for="pet_type">Tipo</label>
+					<label for="pet_type">Especie</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s12 m8 ">
+				<div class="input-field col s12 m12 l12">
 					<select class="icons ">
 						<option class="" value="" disabled selected>Escoja el genero</option>
 						<option value="pet_genre" data-icon="/PetWiz/assets/masc.png" class="circle">Masculino</option>
@@ -108,21 +120,23 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s12 m8 ">
-					<input type="date" class="datepicker">
-					<label>Edad de la Mascota</label>
+				<div class="input-field col s12 m8 l3">
+					<label>Edad</label>
+				</div>
+				<div class="input-field col s12 m8 l6 ">
+					<input type="date">
+				</div>
+				<div class="input-field col s12 m8 l1 ">
+					<a href="" class="datepicker"><i class="material-icons teal-text">today</i></a>
 				</div>
 			</div>
-
 		</form>
-
-	</div>
-	<div class="modal-footer">
-		<div class="col s12 m8 ">
-			<button class="btn modal-action modal-close waves-effect waves-light right petwiz-teal" type="submit" name="action">Crear Mascota
+		<div class="row">
+			<button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" type="submit" name="action">Crear Mascota
 				<i class="material-icons right">send</i>
 			</button>
 		</div>
+
 	</div>
 </div>
 

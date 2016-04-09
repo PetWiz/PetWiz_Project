@@ -12,7 +12,7 @@ class PersonController {
         render(controller: 'person', view: '/person/createpet');
     }
 
-    def test() {
-        render(controller: 'person', view: '/person/test');
+    def services() {
+        render(controller: 'person', view: '/person/services');
     }
 }

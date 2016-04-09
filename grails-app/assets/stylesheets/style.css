@@ -11,11 +11,20 @@ main { flex: 1 0 auto;
 footer, header{
     padding-left: 240px;
 }
+.padding-google{
+    margin-left: 257px;
+    padding-bottom: 25%;
+}
+
 
 @media only screen and (max-width : 992px) {
     header, main, footer {
         padding-left: 0;
     }
+    .padding-google{
+        margin-left: 43px;
+    }
+
 }
 
 .prueba-bordes{
@@ -50,6 +59,11 @@ footer, header{
 .petwiz-blue{
     background-color: #1A3139;
 }
+
+.petwiz-blue-dark{
+    background-color: #121d25;
+}
+
 footer.page-footer.petwiz-blue{
     background-color: #1A3139;
 }
@@ -73,7 +87,7 @@ footer.page-footer.petwiz-blue{
 .petwiz-image-box{
     height: 240px;
     width: 240px;
-    border: solid black;
+    background-color: black;
     border-width: 1px;
 }
 
@@ -84,6 +98,11 @@ footer.page-footer.petwiz-blue{
 .petwiz-opacity:hover{
     opacity: 1;
 }
+
+.petwiz-royale{
+    background-color: #005AB3 !important;
+}
+
 
 /*-----------Custom-----------*/
 
@@ -96,12 +115,36 @@ footer.page-footer.petwiz-blue{
 .font-yellow{
     color: yellow;
 }
+
 .font-teal{
-    color: #527980;
+    color: #027A93;
+}
+
+.font-teal.hover-light{
+    color: #027A93;
+}
+.font-teal.hover-light:hover{
+    color: #02a9c5;
+}
+
+.font-royale{
+    color: #005AB3;
 }
 .font-white{
     color: white;
 }
+
+
+.font-orange{
+    color: orange;
+}
+.font-yellow{
+    color: yellow;
+}
+.font-white{
+    color: white;
+}
+
 
 .italic{
     font-style: italic;
@@ -145,9 +188,7 @@ footer.page-footer.petwiz-blue{
     max-width: 320px;
 }
 
-.icon-color{
-    background-color: #005AB3 !important;
-}
+
 .form-ba-color{
     color: #027A93 !important;
 }
@@ -156,15 +197,6 @@ footer.page-footer.petwiz-blue{
     margin-left: 100px;
 }
 
-.font-orange{
-    color: orange;
-}
-.font-yellow{
-    color: yellow;
-}
-.font-white{
-    color: white;
-}
 
 .reg-btn{
     background-color: #000000;
@@ -226,8 +258,13 @@ footer.page-footer.petwiz-blue{
     background-color: #027A93;
     height: 64px;
 }
-.menulat-item:hover, .menulat-item-active {
+.menulat-item {
     background-color: #1A3139;
+    width: 239px;
+    height: 65px;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: 0px;
 }
 
 .menulat-item-da{
@@ -237,21 +274,25 @@ footer.page-footer.petwiz-blue{
     padding-top: 20px;
     margin-left: 0px;
 }
-.datepicker .widget-content {
-    background: #999 none;
+
+.menulat-item-da:hover{
+    background-color: #025c75 !important;
 }
 
-.collapsible-header .back-color{
-    background-color: black;
-
+.collapsible-header.pet:hover{
+    background-color: #025c75;
+}
+.collapsible-header.pet{
+    background-color: #1A3139;
+    width: 240px;
+    margin-left: 0px;
+    height: 88.5px;
 }
 
+.modal.small{
 
-.collapsible-body:hover{
-    background-color: black;
-
+    width: 400px;
 }
-
 
 
 /*---------------------------Slider------------------*/
@@ -274,24 +315,14 @@ footer.page-footer.petwiz-blue{
     /* text-align: left; */
 }
 
-/*-------------maps-----------*/
-
-.google-maps {
-    position: relative;
-    padding-bottom: 30%; // This is the aspect ratio
-overflow: hidden;
-    height: 0;
-    marginheight:0;
-    marginwidth:0;
-}
 
 
-
+/*-----------picker-----------------*/
 .picker { outline: none; } /* Optional feature */
 /* Header - Day of the week */
-.picker__weekday-display { background-color: #f57c00; }
+.picker__weekday-display { background-color:  #1A3139; }
 /* Body - Today info */
-.picker__date-display { background-color: #ff9800; }
+.picker__date-display { background-color: #027A93; }
 /* Buttons of actions */
 .picker__nav--prev:hover { background-color: #fff3e0; }
 .picker__nav--next:hover { background-color: #fff3e0; }
@@ -326,3 +357,18 @@ overflow: hidden;
 /* Today */
 .picker__day.picker__day--infocus.picker__day--today.picker__day--selected.picker__day--highlighted { background-color: #ff9800; }
 .picker__day.picker__day--today { color: #f57c00; }
+
+/*-----------tabs----------*/
+
+.tabs .tab a{
+    color: #027A93;
+}
+
+.tabs .tab a:hover{
+    color: #02bdd9;
+}
+
+.tabs .indicator {
+
+    background-color: #02a9c5;
+}

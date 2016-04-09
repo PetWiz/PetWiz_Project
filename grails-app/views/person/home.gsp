@@ -9,32 +9,31 @@
 </head>
 <body>
 
-<main class="petwiz-blue">
+<main class="petwiz-blue petwiz-font">
     <div class="slider ">
         <ul class="slides z-depth-4">
             <li>
                 <asset:image src="Dog-Cat-Playing.jpg"/>
-                <div class="caption center-align petwiz-font petwiz-letra1">
-                    <titulo class="medium-text blue-border-text">Bienvenido A La Mejor Aplicacion para mascotas</titulo>
+                <div class="caption center-align">
+                    <titulo class="medium-text">Bienvenido A La Mejor Aplicacion para mascotas</titulo>
                 </div>
             </li>
             <li>
                 <asset:image src="catcolors.jpg"/>
                 <div class="caption left-align">
-                    <titulo class="medium-text pink-border-text">Comparte divertidos</titulo>
-                    <titulo class="medium-text pink-border-text">momentos</titulo>
+                    <titulo class="medium-text trans-text">Comparte divertidos momentos</titulo>
                 </div>
             </li>
             <li class="row">
                 <asset:image src="relax.jpg"/>
                 <div class="caption right-align col l2">
-                    <titulo class="medium-text">Lo mejor para que disfruten tus mascotas</titulo>
+                <titulo class="medium-text trans-text">Tus Mascotas Lo van A Disfrutar</titulo>
                 </div>
             </li>
             <li>
                 <asset:image src="aquadog.jpg"/>
                 <div class="caption center-align">
-                    <titulo class="medium-text trans-text petwiz-font">¡No hay tiempo que perder!</titulo>
+                    <titulo class="medium-text trans-text">¡No hay tiempo que perder!</titulo>
                 </div>
             </li>
         </ul>

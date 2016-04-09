@@ -10,7 +10,7 @@
 <main>
     <div>
         <div class="row">
-            <div class="col s3 m6 l3">
+            <div class="col s12 m6 l3">
                 <div class="card small hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img src="/PetWiz/assets/cat1.jpg" class="activator"/>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s3 m6 l3">
+            <div class="col s12 m6 l3">
                 <div class="card small hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img src="/PetWiz/assets/wolf.jpg" class="activator"/>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s3 m6 l3">
+            <div class="col s12 m6 l3">
                 <div class="card small hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img src="/PetWiz/assets/dog1.jpg" class="activator"/>
