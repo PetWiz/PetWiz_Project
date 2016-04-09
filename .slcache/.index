@@ -5590,3 +5590,9 @@ n:1385:java_io_Closeable$close$0
 n:1013:org/apache/tools/zip/ZipFile$1
 n:2188:org/codehaus/groovy/grails/commons/GrailsApplication$addArtefact$0
 n:1489:org/apache/commons/logging/Log$debug$0
+n:1858:org/codehaus/groovy/grails/scaffolding/view/ScaffoldingViewResolver$clearViewCache
+n:450:org/codehaus/groovy/runtime/ExceptionUtils
+y:12882:org/codehaus/groovy/runtime/MethodRankHelper
+n:445:org/codehaus/groovy/runtime/MethodRankHelper$NullObject
+n:1768:org/codehaus/groovy/runtime/MethodRankHelper$RankableMethod
+n:1887:org/codehaus/groovy/grails/cli/interactive/InteractiveMode$getCurrent

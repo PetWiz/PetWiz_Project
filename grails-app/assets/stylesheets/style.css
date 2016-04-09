@@ -16,6 +16,13 @@ footer, header{
     padding-bottom: 25%;
 }
 
+.fixed-action-btn.horizontal ul li.petwiz{
+    margin-right: 5px;
+}
+.fixed-action-btn.petwiz{
+    position: relative; padding-top: -1px; padding-left: 190px;
+}
+
 
 @media only screen and (max-width : 992px) {
     header, main, footer {
@@ -25,7 +32,11 @@ footer, header{
         margin-left: 43px;
     }
 
+    .fixed-action-btn.petwiz{
+        position: relative; margin-top: -6px; padding-left: 320px;
+    }
 }
+
 
 .prueba-bordes{
     border: solid black;
@@ -75,6 +86,14 @@ footer.page-footer.petwiz-blue{
 }
 .petwiz-teal{
     background-color: #027A93;
+}
+
+.petwiz-blue-add{
+    background-color: #002e5d;
+}
+
+.petwiz-blue-add:hover{
+    background-color: #005AB3;
 }
 
 .petwiz-opacity{
@@ -175,7 +194,12 @@ footer.page-footer.petwiz-blue{
     padding-top: 5px;
 }
 
-
+.circle-pet{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    padding-top: 5px;
+}
 
 .back-color{
     background-color: #1A3139 !important;
@@ -293,6 +317,14 @@ footer.page-footer.petwiz-blue{
 
     width: 400px;
 }
+
+.card.small-btn{
+    height: 150px;
+    width: 150px;
+    padding-left: 47px;
+}
+
+
 
 
 /*---------------------------Slider------------------*/

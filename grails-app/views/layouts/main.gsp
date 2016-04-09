@@ -29,7 +29,6 @@
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark">
 							<li class="menulat-item-da"><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons font-white"style="padding-top: 20px">home</i></a></li></span>
-							<li class="menulat-item-da"><a href="${createLink(uri:'/person/mypets.gsp')}" class=""><span class="font-white">Mascotas</span></a></li>
 							<!-- Dropdown Trigger -->
 							<a class='dropdown-button menulat-item-da' href='#' data-activates='events-lat'><span class="font-white">Eventos</span></a>
 							<!-- Dropdown Structure -->
@@ -48,10 +47,8 @@
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark"><span class="font-white">
 							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li></span>
-							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Mis Mascotas</span></a></li></span>
-							<li class="menulat-item-da"><a class="modal-trigger" href="#modal1"><i class="material-icons circle font-white petwiz-royale">add</i><span class="title font-white left-align">Añadir Mascota</span></a></li></span>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/person/mypets.gsp')}"><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Mis Mascotas</span></a></li></span>
 							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">input</i><span class="title font-white left-align">Mis Eventos</span></a></li></span>
-							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">add</i><span class="title font-white left-align">Añadir Evento</span></a></li></span>
 						</ul>
 					</div>
 				</li>
@@ -93,52 +90,6 @@
 	</div>
 </header>
 
-<!-- Modal Structure -->
-<div id="modal1" class="modal small">
-	<div class="modal-content font-teal">
-		<form>
-			<div class="row">
-				<div class="input-field col s12 m12 l12">
-					<input id="pet_name" type="text" class="validate">
-					<label for="pet_name" >Nombre de Mascota</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12  m12 l12">
-					<input id="pet_type" type="text" class="validate">
-					<label for="pet_type">Especie</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12 m12 l12">
-					<select class="icons ">
-						<option class="" value="" disabled selected>Escoja el genero</option>
-						<option value="pet_genre" data-icon="/PetWiz/assets/masc.png" class="circle">Masculino</option>
-						<option value="pet_genre" data-icon="/PetWiz/assets/Femenino.png" class="circle">Femenino</option>
-					</select>
-					<label>Genero de la Mascota</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12 m8 l3">
-					<label>Edad</label>
-				</div>
-				<div class="input-field col s12 m8 l6 ">
-					<input type="date">
-				</div>
-				<div class="input-field col s12 m8 l1 ">
-					<a href="" class="datepicker"><i class="material-icons teal-text">today</i></a>
-				</div>
-			</div>
-		</form>
-		<div class="row">
-			<button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" type="submit" name="action">Crear Mascota
-				<i class="material-icons right">send</i>
-			</button>
-		</div>
-
-	</div>
-</div>
 
 <g:layoutBody/>
 
