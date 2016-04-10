@@ -28,6 +28,7 @@
 					<div class="collapsible-header pet"><i class="material-icons">filter_drama</i>PetWiz</div>
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark">
+						<sec:ifAllGranted roles="ROLE_USER">
 							<li class="menulat-item-da"><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons font-white"style="padding-top: 20px">home</i></a></li></span>
 							<!-- Dropdown Trigger -->
 							<a class='dropdown-button menulat-item-da' href='#' data-activates='events-lat'><span class="font-white">Eventos</span></a>
@@ -36,6 +37,10 @@
 								<li><a href="${createLink(uri:'/person/myevents.gsp')}" class="" style="padding-top: 20px">Propios</a></li>
 								<li><a href="${createLink(uri:'/person/services.gsp')}" class="" style="padding-top: 20px">Servicios</a></li>
 							</ul>
+							</sec:ifAllGranted>
+							<sec:ifNotLoggedIn>
+								<li class="menulat-item-da"><a href="${createLink(uri:'/index/index.gsp')}" class=""><span class="font-white">Entrar</span></a></li>
+							</sec:ifNotLoggedIn>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/index/contact.gsp')}" class=""><span class="font-white">Contacto</span></a></li>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class=""><span class="font-white">Nosotros</span></a></li>
 						</ul>
@@ -43,12 +48,18 @@
 
 				</li>
 				<li>
+
 					<div class="collapsible-header pet"><i class="material-icons">insert_emoticon</i>Cuenta</div>
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark"><span class="font-white">
-							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li></span>
-							<li class="menulat-item-da"><a href="${createLink(uri:'/person/mypets.gsp')}"><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Mis Mascotas</span></a></li></span>
-							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">input</i><span class="title font-white left-align">Mis Eventos</span></a></li></span>
+						<sec:ifAllGranted roles="ROLE_USER">
+							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/person/mypets.gsp')}"><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Mis Mascotas</span></a></li>
+							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">input</i><span class="title font-white left-align">Mis Eventos</span></a></li>
+						</sec:ifAllGranted>
+						<sec:ifNotLoggedIn>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/index/index.gsp')}"><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Entrar</span></a></li></span>
+						</sec:ifNotLoggedIn>
 						</ul>
 					</div>
 				</li>
@@ -56,7 +67,9 @@
 			</ul>
 
 			<ul id='dropdown1' class='dropdown-content'>
+				<sec:ifAllGranted roles="ROLE_USER">
 				<li class="menulat-item-main avatar"><i class="material-icons circle icon-color">perm_identity</i><span class="title left-align">Mi perfil</span></li>
+				</sec:ifAllGranted>
 			</ul>
 		</ul>
 	</div>
@@ -71,9 +84,14 @@
 				</div>
 				<div class="col s9 m1 l11 right ">
 					<ul class="hide-on-med-and-down center">
+					<sec:ifAllGranted roles="ROLE_USER">
 						<li class="col s2 m1 l1 menu-item "><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons center">home</i></a></li>
 						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/person/mypets.gsp')}">Mascotas</a></li>
 						<li class="col s2 m1 l2 menu-item "><a href="#" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
+					</sec:ifAllGranted>
+					<sec:ifNotLoggedIn>
+						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/index.gsp')}">Entrar</a></li>
+					</sec:ifNotLoggedIn>
 						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/contact.gsp')}">Contacto</a></li>
 						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">Nosotros</a></li>
 						<li class="col s2 m1 l1 menu-item "><a href="${createLink(uri:'/index/help.gsp')}"><i class="material-icons left">help</i></a></li>
