@@ -14,16 +14,12 @@ class Person implements Serializable{
 
     transient springSecurityService
 
-    String id;
-    String firstName;
-    String secondName;
-    String lastName;
-    String secondLastName;
+    int id;
+    String username
     String password
-    int age;
-    String address;
+    Date birthday
+    String hometown
     String email;
-    long phone;
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked
@@ -31,29 +27,27 @@ class Person implements Serializable{
 
 
     static hasMany = [
-            pets : Pet, events: Event, persons:Person,other_services:Other_Service
+            pets : Pet, events: Event, persons:Person,other_services:Other_Service, rols:Rol
     ]
-    static belongsTo = [rols:Rol]
+
     static constraints = {
         id(nullable: false,blank:false,unique:true)
-        firstName(nullable: false,blank:false)
-        secondName(nullable: true)
-        lastName(nullable: false,blank:false)
-        secondLastName(nullable: true)
-        age(nullable: false,blank:false)
-        address(nullable: false,blank:false)
+        username(nullable: false,blank:false)
+        birthday(nullable: false,blank:false)
+        hometown(nullable: false,blank:false)
         email(nullable: false,blank:false,unique:true)
-        phone(nullable: true,blank:false,unique:true)
+        password(nullabale: false, blank:false)
     }
 
-    Person(String firstName, String password, String lastName,int age, String address, String email ) {
+    Person(int id, String username,Date birthday,String hometown, String email, String password ) {
         this()
-        this.firstName = firstName
-        this.password = password
-        this.lastName = lastName
-        this.age = age
-        this.address = address
+        this.id = id
+        this.username =username
+        this.birthday = birthday
+        this.hometown = hometown
         this.email = email
+        this.password = password
+       // encodePassword()
     }
 
     Set<Rol> getAuthorities() {

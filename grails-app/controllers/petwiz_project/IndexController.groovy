@@ -17,4 +17,9 @@ class IndexController {
     def contact() {
         render(controller: 'view', view: '/index/contact');
     }
+
+    def register_login(){
+        print(params)
+        //def user = Person.findById(params.email)
+    }
 }

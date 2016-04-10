@@ -5667,3 +5667,15 @@ n:1414:java_lang_CharSequence$toString
 n:1513:java_lang_CharSequence$length$0
 n:1561:org/codehaus/groovy/grails/io/support/Resource$exists$3
 n:2084:grails/util/PluginBuildSettings$getDescriptorForPlugin
+n:1897:org/codehaus/groovy/grails/project/compiler/GrailsProjectCompiler$compilePlugins
+n:2001:org/codehaus/groovy/grails/project/compiler/GrailsProjectCompiler$compilePlugins$0
+n:1902:org/codehaus/groovy/grails/project/compiler/GrailsProjectCompiler$getAnt$1
+n:1575:org/codehaus/groovy/control/CompilerConfiguration$setTargetDirectory
+n:1885:org/codehaus/groovy/grails/project/compiler/GrailsProjectCompiler$compile$2
+n:1987:org/codehaus/groovy/grails/project/compiler/GrailsProjectCompiler$compile$3
+n:583:groovyjarjarantlr/TokenStreamRecognitionException
+n:523:groovyjarjarantlr/TokenStreamException
+n:1561:org/codehaus/groovy/grails/io/support/Resource$exists$4
+n:1885:grails/util/PluginBuildSettings$getPluginDirectories
+n:2013:grails/util/PluginBuildSettings$getPluginInfo$0
+n:1375:java_util_Map$clear
