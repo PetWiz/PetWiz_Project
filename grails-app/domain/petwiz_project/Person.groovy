@@ -29,7 +29,7 @@ class Person implements Serializable{
     static hasMany = [
             pets : Pet, events: Event, persons:Person,other_services:Other_Service, rols:Rol
     ]
-
+    static transients = ['springSecurityService']
     static constraints = {
         id(nullable: false,blank:false,unique:true)
         username(nullable: false,blank:false)
@@ -51,7 +51,7 @@ class Person implements Serializable{
     }
 
     Set<Rol> getAuthorities() {
-        SecUserSecRole.findAllBySecUser(this)*.Rol
+        SecUserSecRole.findAllBySecUser(this).collect{it.secRole}
     }
 
     def beforeInsert() {
@@ -67,9 +67,6 @@ class Person implements Serializable{
     protected void encodePassword() {
         password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
     }
-
-    static transients = ['springSecurityService']
-
 
     static mapping = {
         password column: '`password`'

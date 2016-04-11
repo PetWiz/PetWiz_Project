@@ -12,13 +12,11 @@ class Rol implements Serializable {
 
     private static final long serialVersionUID = 1
 
-    String rol_id;
-    String rol_name;
+    String authority;
     static hasMany = [persons:Person]
     static belongsTo = Person
     static constraints = {
-        rol_id(nullable: false,blank:false,unique:true)
-        rol_name(nullable: false,blank:false)
+        authority(nullable: false,blank:false, unique:true)
     }
     static mapping = {
         cache true
@@ -26,7 +24,6 @@ class Rol implements Serializable {
 
     Rol (int id, String name){
         this()
-        this.rol_id = id
-        this.rol_name = name
+        this.authority = name
     }
 }

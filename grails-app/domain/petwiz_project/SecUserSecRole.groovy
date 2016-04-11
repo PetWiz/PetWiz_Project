@@ -55,6 +55,7 @@ class SecUserSecRole implements Serializable {
 		def instance = new SecUserSecRole(secUser: secUser, secRole: secRole)
 		instance.save(flush: flush, insert: true)
 		instance
+		return instance
 	}
 
 	static boolean remove(Person u, Rol r, boolean flush = false) {
@@ -99,5 +100,9 @@ class SecUserSecRole implements Serializable {
 	static mapping = {
 		id composite: ['secUser', 'secRole']
 		version false
+	}
+
+	public print(){
+		print secUser.username + ' ' + secRole.authority
 	}
 }
