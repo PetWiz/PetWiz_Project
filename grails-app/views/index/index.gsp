@@ -38,7 +38,6 @@
                 var email = response.email;
                 var birthday = response.birthday;
                 var hometown = response.hometown;
-
             //Register or login user
                 window.location.href= '${createLink(controller: 'index' , action:'register_login')}?params='
                         + [id,name,email,birthday,hometown];

@@ -14,7 +14,7 @@ class Person implements Serializable{
 
     transient springSecurityService
 
-    int id;
+    long id;
     String username
     String password
     Date birthday
@@ -39,7 +39,7 @@ class Person implements Serializable{
         password(nullabale: false, blank:false)
     }
 
-    Person(int id, String username,Date birthday,String hometown, String email, String password ) {
+    Person(long id, String username,Date birthday,String hometown, String email, String password ) {
         this()
         this.id = id
         this.username =username
