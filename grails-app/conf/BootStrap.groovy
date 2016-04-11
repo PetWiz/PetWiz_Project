@@ -1,6 +1,6 @@
 import petwiz_project.Rol
 import petwiz_project.Person
-
+import petwiz_project.SecUserSecRole
 class BootStrap {
 
     def init = { servletContext ->
@@ -12,10 +12,10 @@ class BootStrap {
         def user = new Person(23231,'Jess',new Date(),"Bogota", "abc@abc.com", "1234" )
         user.addToRols(role_user)
         user.save(failOnError: true, flush: true )
-
-        if (!person.authorities.contains(role_user)) {
+/*
+        if (!user.authorities.contains(role_user)) {
             SecUserSecRole.create person, role_user
-        }
+        }*/
     }
     def destroy ={
     }

@@ -19,7 +19,11 @@ class IndexController {
     }
 
     def register_login(){
-        print(params)
-        //def user = Person.findById(params.email)
+        print "hola"
+        print params.get('params')
+        def f =  params.get('params').toString().split(',')
+        print f[1]
+
+        redirect(controller: 'person', action: 'home');
     }
 }
