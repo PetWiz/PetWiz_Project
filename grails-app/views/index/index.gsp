@@ -117,7 +117,7 @@
             </div>
             <div class="row">
                 <!--<div class="fb-login-button",  data-max-rows="1" onlogin="checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
-                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true", scope="public_profile,email,user_birthday,user_hometown">Entra con Facebook</div><!--,user_birthday,user_hometown-->
+                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true", scope="public_profile,email,user_birthday,user_hometown" onlogin="checkLoginState();"></div><!--,user_birthday,user_hometown-->
             </div>
 
         </div>

@@ -15,14 +15,19 @@
 <body onload="${pageProperty(name:'body.onload')}">
 
 <body>
+
+
+
 <header>
 	<!-- Nav -->
 	<!------------------- lateral Nav Bar---------------------------->
 	<div class="col s2 m1 l1 left">
 
 		<ul id="nav-lat" class="side-nav petwiz-smoke petwiz-font font-white fixed z-depth-5">
-			<div class="petwiz-image-box"></div>
-
+			<div class="petwiz-image-box" id="facebook-session">
+				<img class="petwiz-fb-img"/>
+				<p class="petwiz-name"></p>
+			</div>
 			<ul class="collapsible" data-collapsible="accordion">
 				<li>
 					<div class="collapsible-header pet"><i class="material-icons">filter_drama</i>PetWiz</div>
@@ -76,31 +81,14 @@
 
 	<div class="navbar-fixed">
 		<nav class="nav-wrapper petwiz-blue petwiz-font">
-			<div class="row">
+			<div class="row center">
 				<!-------------------------Nav Responsive menu--------------------------->
 				<a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
-				<div class="left">
-					<a href="" class="brand-logo" style="padding-left: 7px"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+				<a href="" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
+				<div class="col l12 m11 hide-on-small-only" style="margin-top: 10px; padding-left: 4%">
+					<a href="#" id="login" class="btn face-log">Iniciar</a>
 				</div>
-				<div class="col s9 m1 l11 right ">
-					<ul class="hide-on-med-and-down center">
-					<sec:ifAllGranted roles="ROLE_USER">
-						<li class="col s2 m1 l1 menu-item "><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons center">home</i></a></li>
-						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/person/mypets.gsp')}">Mascotas</a></li>
-						<li class="col s2 m1 l2 menu-item "><a href="#" class="dropdown-button" data-activates="events" data-beloworigin="true">Eventos</a></li>
-					</sec:ifAllGranted>
-					<sec:ifNotLoggedIn>
-						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/index.gsp')}">Entrar</a></li>
-					</sec:ifNotLoggedIn>
-						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/contact.gsp')}">Contacto</a></li>
-						<li class="col s2 m1 l2 menu-item "><a href="${createLink(uri:'/index/PetWizTeam.gsp')}">Nosotros</a></li>
-						<li class="col s2 m1 l1 menu-item "><a href="${createLink(uri:'/index/help.gsp')}"><i class="material-icons left">help</i></a></li>
-					</ul>
-				</div>
-				<ul id="events" class="dropdown-content drop-menu">
-					<li><a href="${createLink(uri:'/person/myevents.gsp')}" class="navdrop">Propios</a></li>
-					<li><a href="${createLink(uri:'/person/services.gsp')}" class="navdrop">Servicios</a></li>
-				</ul>
+
 
 			</div>
 
