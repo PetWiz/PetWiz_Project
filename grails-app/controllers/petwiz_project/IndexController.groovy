@@ -27,8 +27,6 @@ class IndexController {
 
     @Transactional
     def register_login() {
-
-
         print params.get('params')
         def f = params.get('params').toString().split(',')
         def user = Person.findByEmail(f[2])
@@ -55,5 +53,11 @@ class IndexController {
 
         redirect(controller: 'person', action: 'home');
 
+    }
+
+    def logout(){
+        session["user"] = null
+        SecurityContextHolder.getContext().setAuthentication(null)
+        redirect(controler: 'index', action: 'index')
     }
 }

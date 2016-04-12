@@ -97,6 +97,7 @@ $(function() {
                 FB.logout(function(response) {
                     $('#facebook-session').before(btn_login);
                     $('#facebook-session').remove();
+                    window.location.href= _url;
                 })
             }
         })

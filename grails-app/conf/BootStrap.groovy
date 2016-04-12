@@ -11,11 +11,11 @@ class BootStrap {
         role_admin.save(failOnError: true, flush: true)
         def user = new Person(23231,'Jess',new Date(),"Bogota", "abc@abc.com", "1234" )
 
-        user.addToRols(role_user)
+        user.addToRols(role_admin)
         user.save(failOnError: true, flush: true )
 
-        if (!user.authorities.contains(role_user)) {
-            SecUserSecRole.create( user, role_user, true)
+        if (!user.authorities.contains(role_admin)) {
+            SecUserSecRole.create( user, role_admin, true)
         }
     }
     def destroy ={

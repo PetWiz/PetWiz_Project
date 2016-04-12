@@ -10,7 +10,9 @@
     </style>
 </head>
 <body>
-
+<script type = "text/javascript">
+    var _url = '${createLink(controller: 'index' , action:'logout')}?';
+</script>
 <main>
     <div class="container">
         <div class="row">
