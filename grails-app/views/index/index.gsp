@@ -28,11 +28,6 @@
 
             FB.api('/me?fields=id,name,email,birthday,hometown', function(response) {
                 console.log(JSON.stringify(response));
-                console.log(response.email);
-                console.log(response.name);
-                console.log(response.id);
-                console.log(response.birthday);
-                console.log(response.hometown);
                 var id = response.id;
                 var name = response.name;
                 var email = response.email;
@@ -41,8 +36,6 @@
             //Register or login user
                 window.location.href= '${createLink(controller: 'index' , action:'register_login')}?params='
                         + [id,name,email,birthday,hometown];
-
-
             });
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
@@ -117,7 +110,7 @@
             </div>
             <div class="row">
                 <!--<div class="fb-login-button",  data-max-rows="1" onlogin="checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
-                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true", scope="public_profile,email,user_birthday,user_hometown" onlogin="checkLoginState();"></div><!--,user_birthday,user_hometown-->
+                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true", scope="public_profile,email,user_birthday,user_hometown", onlogin="checkLoginState()">Entra desde Facebok</div><!--,user_birthday,user_hometown-->
             </div>
 
         </div>
