@@ -1,21 +1,21 @@
 (function($){
-  $(function(){
-    $('.dropdown-button').dropdown({belowOrigin: true});
-    $(".button-collapse").sideNav();
-    $('.collapsible').collapsible();
-    $('.parallax').parallax();
-    $('.slider').slider({full_width: true});
-    $('.carousel').carousel({dist: -50});
-    $('ul.tabs').tabs();
-    $('.modal-trigger').leanModal();
-    $(document).ready(function() {
-      $('select').material_select();
-    });
-    $('.datepicker').pickadate({
-      selectMonths: true, // Creates a dropdown to control month
-      selectYears: 15, // Creates a dropdown of 15 years to control year
-    });
-  }); // end of document ready
+    $(function(){
+        $('.dropdown-button').dropdown({belowOrigin: true});
+        $(".button-collapse").sideNav();
+        $('.collapsible').collapsible();
+        $('.parallax').parallax();
+        $('.slider').slider({full_width: true});
+        $('.carousel').carousel({dist: -50});
+        $('ul.tabs').tabs();
+        $('.modal-trigger').leanModal();
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year
+        });
+    }); // end of document ready
 })(jQuery); // end of jQuery name space
 
 // Load the SDK asynchronously
@@ -30,13 +30,14 @@
 
 $(function() {
 
-    var app_id = '1522259314749966';
+    var app_id = '1522101791432385';
     var scopes = 'email, user_friends';
 
-    var btn_login = '<a href="#" id="login" class="btn face-log">Iniciar</a>';
+    var btn_login = '<a href="#" id="login" class="btn face-log"></a>';
+    var btn_login2 = "<a href='#' id='loginlat'><img src='https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg'width=20px height='auto' style='padding-top: 15px; margin-left: 55px'/></a>";
 
     var div_session = "<div id='facebook-session'>"+
-        "<a href='#' id='logout' class='btn face-log'>Cerrar sesión</a>"+
+        "<a href='#' id='logout' class='btn face-log'>Salir</a>"+
         "</div>";
 
     window.fbAsyncInit = function() {
@@ -75,6 +76,8 @@ $(function() {
         FB.api('/me', function(response) {
             $('#login').after(div_session);
             $('#login').remove();
+            $('#loginlat').after(div_session);
+            $('#loginlat').remove();
             $('#facebook-session p').text(response.name);
             $('#facebook-session img').attr('src','http://graph.facebook.com/'+response.id+'/picture?type=large');
         });
@@ -96,7 +99,10 @@ $(function() {
             if (data.status === 'connected') {
                 FB.logout(function(response) {
                     $('#facebook-session').before(btn_login);
+                    $('#facebook-session').before(btn_login2);
                     $('#facebook-session').remove();
+                    window.location.href= _url;
+
                 })
             }
         })
@@ -106,6 +112,11 @@ $(function() {
 
 
     $(document).on('click', '#login', function(e) {
+        e.preventDefault();
+
+        facebookLogin();
+    })
+    $(document).on('click', '#loginlat', function(e) {
         e.preventDefault();
 
         facebookLogin();
@@ -121,3 +132,5 @@ $(function() {
     })
 
 });
+
+

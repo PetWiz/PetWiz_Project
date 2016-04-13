@@ -8,7 +8,9 @@
 
 </head>
 <body>
-
+<script type = "text/javascript">
+    var _url = '${createLink(controller: 'index' , action:'logout')}?';
+</script>
 <main class="petwiz-blue petwiz-font">
     <div class="slider ">
         <ul class="slides z-depth-4">
@@ -27,7 +29,7 @@
             <li class="row">
                 <asset:image src="relax.jpg"/>
                 <div class="caption right-align col l2">
-                <titulo class="medium-text trans-text">Tus Mascotas Lo van A Disfrutar</titulo>
+                    <titulo class="medium-text trans-text">Tus Mascotas Lo van A Disfrutar</titulo>
                 </div>
             </li>
             <li>

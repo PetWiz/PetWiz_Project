@@ -2,6 +2,7 @@
 <head>
     <title><g:layoutTitle default="PetWizPage" /></title>
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <asset:stylesheet src="materialize.min.css" media="screen,projection"/>
@@ -82,7 +83,7 @@
                     </a>
                 </li>
                 <li class="petwiz-conn-ico inverse right">
-                    <a href="">
+                    <a href="https://www.facebook.com/profile.php?id=100011386584112&fref=ts">
                         <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"
                              width=40px height="auto"/>
                     </a>

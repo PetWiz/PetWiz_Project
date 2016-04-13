@@ -5916,3 +5916,9 @@ n:690:javax/servlet/http/HttpSessionEvent
 n:6767:sun/tools/native2ascii/Main
 n:1243:sun/tools/native2ascii/N2AFilter
 n:12529:com/google/common/collect/Lists
+n:1487:org/apache/commons/logging/Log$debug
+n:16099:org/codehaus/groovy/grails/plugins/web/filters/FilterConfig
+n:645:org/codehaus/groovy/runtime/dgm$294
+n:1547:groovy/lang/MetaClassRegistry$getMetaClass$0
+n:3536:org/codehaus/groovy/grails/plugins/web/filters/FiltersGrailsPlugin$__clinit__closure4$_closure5
+n:2441:org/codehaus/groovy/grails/plugins/web/filters/FiltersGrailsPlugin$__clinit__closure4$_closure6

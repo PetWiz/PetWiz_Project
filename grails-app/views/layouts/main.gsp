@@ -12,7 +12,7 @@
 
 	<g:layoutHead />
 </head>
-<body onload="${pageProperty(name:'body.onload')}">
+<body onload="${pageProperty(name:'body.onload')};">
 
 <body>
 
@@ -33,6 +33,12 @@
 					<div class="collapsible-header pet"><i class="material-icons">filter_drama</i>PetWiz</div>
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark">
+							<li>
+								<a href="#" id="loginlat">
+									<img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"
+										 width=20px height="auto" style="padding-top: 15px; margin-left: 55px"/>
+								</a>
+							</li>
 						<sec:ifAllGranted roles="ROLE_USER">
 							<li class="menulat-item-da"><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons font-white"style="padding-top: 20px">home</i></a></li></span>
 							<!-- Dropdown Trigger -->
@@ -50,7 +56,6 @@
 							<li class="menulat-item-da"><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class=""><span class="font-white">Nosotros</span></a></li>
 						</ul>
 					</div>
-
 				</li>
 				<li>
 
@@ -85,13 +90,13 @@
 				<!-------------------------Nav Responsive menu--------------------------->
 				<a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
 				<a href="" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
-				<div class="col l12 m11 hide-on-small-only" style="margin-top: 10px; padding-left: 4%">
-					<a href="#" id="login" class="btn face-log">Iniciar</a>
+				<div class="col l12 m9 hide-on-med-and-down" style="margin-top: 10px; padding-left: 4%">
+					<a href="#" id="login" class="btn face-log">
+						<img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"
+							 width=20px height="auto" style="padding-top: 8px"/>
+					</a>
 				</div>
-
-
 			</div>
-
 		</nav>
 	</div>
 </header>
@@ -122,7 +127,7 @@
 					</a>
 				</li>
 				<li class="petwiz-conn-ico inverse right">
-					<a href="">
+					<a href="https://www.facebook.com/profile.php?id=100011386584112&fref=ts">
 						<img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"
 							 width=40px height="auto"/>
 					</a>

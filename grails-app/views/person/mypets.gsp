@@ -7,6 +7,9 @@
 <body>
 
 <main>
+    <script type = "text/javascript">
+        var _url = '${createLink(controller: 'index' , action:'logout')}?';
+    </script>
     <!-- Modal Structure -->
     <div id="modal1" class="modal small">
         <div class="modal-content font-teal">
