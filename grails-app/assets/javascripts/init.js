@@ -30,8 +30,8 @@
 
 $(function() {
 
-    //var app_id = '988173204609860';
-    var app_id = '1522101791432385'; //local test
+    var app_id = '1522101791432385';
+    //var app_id = '1525277721114792'; //local test
 
     var scopes = 'email, user_friends';
 
