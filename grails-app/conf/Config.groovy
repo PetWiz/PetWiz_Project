@@ -118,6 +118,8 @@ log4j.main = {
 
 
 // Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/home'
+grails.plugin.springsecurity.auth.loginFormUrl = '/index/index'
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'petwiz_project.Person'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'petwiz_project.SecUserSecRole'
 grails.plugin.springsecurity.authority.className = 'petwiz_project.Rol'
