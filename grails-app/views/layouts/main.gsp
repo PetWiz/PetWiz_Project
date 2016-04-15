@@ -16,8 +16,6 @@
 
 <body>
 
-
-
 <header>
 	<!-- Nav -->
 	<!------------------- lateral Nav Bar---------------------------->
@@ -143,6 +141,8 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <asset:javascript src="materialize.js"/>
 <asset:javascript src="init.js"/>
+<asset:javascript src="facelogin.js"/>
+
 </body>
 
 </body>
