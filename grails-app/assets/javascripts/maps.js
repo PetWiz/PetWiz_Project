@@ -1,4 +1,6 @@
+
 var markers = [];
+
 var map;
 var base='https://raw.githubusercontent.com/PetWiz/PetWiz_Project/petwizMaps/grails-app/assets/images/icons/';
 function initMap()
@@ -15,9 +17,9 @@ function initMap()
         google.maps.event.trigger(map, "resize");
         map.setCenter(center);
     });
-
 }
-
+var cluster =  new markersClustered('map');
+cluster.addMarker(markers);
 function addMarker(location,image) {
 
     var marker = new google.maps.Marker({
@@ -27,7 +29,6 @@ function addMarker(location,image) {
     });
     markers.push(marker);
 }
-
 
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
@@ -137,13 +138,15 @@ function GuarAH() { lista = new google.maps.LatLng( 4.6288111,-74.1149309);
     //addMarker( lista,image2 );
     addMarker( lista,image ); }
 
-function GuarGC() { lista = new google.maps.LatLng(4.645365,-74.095275);    var image2 = {
-    url: base + 'black.png',
-    size: new google.maps.Size(71, 71),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(17, 34),
-    scaledSize: new google.maps.Size(30, 30)
-};
+function GuarGC() {
+    lista = new google.maps.LatLng(4.645365,-74.095275);
+    var image2 = {
+        url: base + 'black.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(30, 30)
+    };
     var image = {
         url: base + 'sign.png',
         size: new google.maps.Size(71, 71),
@@ -292,7 +295,7 @@ function TraiCA() { lista = new google.maps.LatLng(4.7700123,-74.0756145);
     scaledSize: new google.maps.Size(30, 30)
 };
     var image = {
-        url: base + 'gym.png',
+        url: base + 'gym.png    ',
         size: new google.maps.Size(71, 71),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(15, 32),
