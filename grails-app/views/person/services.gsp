@@ -30,50 +30,56 @@
             </div>
             <div id="test1" class="col s12">
                 <ul>
-                    <li><div class = "btn svc-btn" onclick="VetUnal();" ondblclick="clearMarkers();">Veterinaria Unal</div></li>
-                    <li><div class = "btn svc-btn" onclick="VetAF();">Amigo Fiel</div></li>
-                    <li><a href="#" onclick="showMarkers();">Mostrar Todas las veterinarias</a></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();VetUnal();" ondblclick="clearMarkers();">Veterinaria Unal</div></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();VetAF();">Amigo Fiel</div></li>
+                    <li><a href="#" onclick="veterias();">Mostrar Todas las veterinarias</a></li>
+                    <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
                     <li><a href="#"onclick="clearMarkers();">Ocultar</a></li>
                 </ul>
             </div>
             <div id="test2" class="col s12">
                 <ul>
-                    <li><div class = "btn svc-btn" onclick="GuarAH();">Animals Home</div></li>
-                    <li><div class = "btn svc-btn" onclick="GuarGC();">ABC Guarderia</div></li>
-                    <li><a href="#" onclick="showMarkers();">Mostrar Todas las guarderias</a></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();GuarAH();">Animals Home</div></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();GuarGC();">ABC Guarderia</div></li>
+                    <li><a href="#" onclick="guarderias();">Mostrar Todas las guarderias</a></li>
+                    <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
                 </ul>
             </div>
             <div id="test3" class="col s12">
                 <ul>
-                    <li><div class = "btn svc-btn" onclick="CuidPH();">Pet's Home</div></li>
-                    <li><div class = "btn svc-btn" onclick="CuidPP();">Perros Pilos</div></li>
-                    <li><a href="#" onclick="showMarkers();">Mostrar Todas los cuidadores</a></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();CuidPH();">Pet's Home</div></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();CuidPP();">Perros Pilos</div></li>
+                    <li><a href="#" onclick="cuidadores();">Mostrar Todas los cuidadores</a></li>
+                    <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
                 </ul>
             </div>
             <div id="test4" class="col s12">
                 <ul>
-                    <li><div class = "btn svc-btn" onclick="AseoAS();">Animal's</div></li>
-                    <li><div class = "btn svc-btn" onclick="AseoLL();">Lola Lemont</div></li>
-                    <li><a href="#" onclick="showMarkers();">Mostrar Todos los Spa's</a></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();AseoAS();">Animal's</div></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();AseoLL();">Lola Lemont</div></li>
+                    <li><a href="#" onclick="Aseo();">Mostrar Todos los Spa's</a></li>
+                    <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
                 </ul>
             </div>
             <div id="test5" class="col s12">
                 <ul>
-                    <li><div class = "btn svc-btn" onclick="TraiCA();">Colombia Appa</div></li>
-                    <li><div class = "btn svc-btn" onclick="TraiRA();">RanchoKan</div></li>
-                    <li><a href="#" onclick="showMarkers();">Mostrar Todos Los Entrenadores</a></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();TraiCA();">Colombia Appa</div></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();TraiRA();">RanchoKan</div></li>
+                    <li><a href="#" onclick="Training();">Mostrar Todos Los Entrenadores</a></li>
+                    <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
 
                 </ul>
             </div>
             <div id="test6" class="col s12">
                 <ul>
-                    <li><div class = "btn svc-btn" onclick="HospUV();">Animals Health</div></li>
-                    <li><div class = "btn svc-btn" onclick="HospPT();">Pointer</div></li>
-                    <li><a href="#" onclick="showMarkers();">Mostrar Todos Los Hospitales</a></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();HospUV();">Animals Health</div></li>
+                    <li><div class = "btn svc-btn" onclick="deleteMarkers();HospPT();">Pointer</div></li>
+                    <li><a href="#" onclick="Hospitales();">Mostrar Todos Los Hospitales</a></li>
+                    <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
 
                 </ul>

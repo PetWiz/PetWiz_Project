@@ -1,6 +1,6 @@
 var markers = [];
 var map;
-
+var base='https://raw.githubusercontent.com/PetWiz/PetWiz_Project/petwizMaps/grails-app/assets/images/icons/';
 function initMap()
 {
     var mapOptions = {
@@ -15,80 +15,7 @@ function initMap()
         google.maps.event.trigger(map, "resize");
         map.setCenter(center);
     });
-    MarkVet();
-}
 
-
-function VetUnal() {
-
-    lista = new google.maps.LatLng(4.6327687,-74.0828724); addMarker( lista)
-
-}
-function VetAF() { lista = new google.maps.LatLng( 4.6287051,-74.088666); addMarker( lista );  }
-
-function MarkVet(){
-    VetUnal(); VetAF();
-    clearMarkers();
-}
-
-function GuarAH() { lista = new google.maps.LatLng( 4.6288111,-74.1149309);
-    addMarker( lista ); }
-function GuarGC() { lista = new google.maps.LatLng(4.645365,-74.095275); addMarker(lista); }
-
-function MarkGuar(){
-    GuarAH(); GuarGC();
-    clearMarkers();
-}
-
-function CuidPH() { lista = new google.maps.LatLng(4.7499265,-74.1491903); addMarker( lista );}
-function CuidPP() { lista = new google.maps.LatLng(4.8118385,-74.1387034); addMarker(lista); }
-
-function MarkCuid(){
-    CuidPH(); CuidPP();
-    clearMarkers();
-}
-
-function AseoAS() { lista = new google.maps.LatLng(4.7275715,-74.0643102); addMarker( lista ); }
-function AseoLL() { lista = new google.maps.LatLng(4.7029943,-74.0524164); addMarker(lista); }
-
-function MarkAseo(){
-    AseoAS(); AseoLL();
-    clearMarkers();
-}
-
-function TraiRA() { lista = new google.maps.LatLng(4.8085868,-74.1104617); addMarker( lista ); }
-function TraiCA() { lista = new google.maps.LatLng(4.7700123,-74.0756145); addMarker(lista); }
-
-function MarkTrai(){
-    TraiRA();TraiCA();
-    clearMarkers();
-}
-
-function HospUV() {
-    /*var image2 = {
-        url: 'http://image005.flaticon.com/8/svg/9/9963.svg',
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-    };*/
-    var image = {
-        url: 'https://raw.githubusercontent.com/PetWiz/PetWiz_Project/master/grails-app/assets/images/apple-touch-icon-retina.png',
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(20, 20)
-    };
-    lista = new google.maps.LatLng(4.6940758,-74.0691972);
-    //addMarker( lista,image2 );
-    addMarker( lista,image );
-
-}
-function HospPT() { lista = new google.maps.LatLng(4.7079361,-74.0683807);addMarker(lista); }
-
-function MarkHosp(){
-    HospUV();HospPT();
-    clearMarkers();
 }
 
 function addMarker(location,image) {
@@ -96,7 +23,6 @@ function addMarker(location,image) {
     var marker = new google.maps.Marker({
         position:location,
         map: map,
-        animation: google.maps.Animation.DROP,
         icon: image
     });
     markers.push(marker);
@@ -121,4 +47,313 @@ function showMarkers() {
 function deleteMarkers() {
     clearMarkers();
     markers = [];
+}
+
+
+function showAll(){
+    MarkAseo();
+    MarkCuid();
+    MarkHosp();
+    MarkTrai();
+    MarkVet();
+    MarkGuar();
+    showMarkers();
+}
+
+/*------Veterinarias----*/
+function veterias(){
+    deleteMarkers();
+    MarkVet();
+    showMarkers();
+}
+
+function VetUnal() {
+    lista = new google.maps.LatLng(4.6327687,-74.0828724);
+    var image2 = {
+        url: base + 'black.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(30, 30)
+    };
+    var image = {
+        url: base + 'animals.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+
+}
+function VetAF() {
+    lista = new google.maps.LatLng( 4.6287051,-74.088666);
+    var image2 = {
+        url: base + 'black.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(30, 30)
+    };
+    var image = {
+        url: base + 'animals.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31,31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+
+}
+
+function MarkVet(){
+    VetUnal(); VetAF();
+    clearMarkers();
+}
+
+/*--------Guarderias-------------*/
+function guarderias(){
+    deleteMarkers();
+    MarkGuar();
+    showMarkers();
+}
+function GuarAH() { lista = new google.maps.LatLng( 4.6288111,-74.1149309);
+    var image2 = {
+        url: base + 'black.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(30, 30)
+    };
+    var image = {
+        url: base + 'sign.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image ); }
+
+function GuarGC() { lista = new google.maps.LatLng(4.645365,-74.095275);    var image2 = {
+    url: base + 'black.png',
+    size: new google.maps.Size(71, 71),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(17, 34),
+    scaledSize: new google.maps.Size(30, 30)
+};
+    var image = {
+        url: base + 'sign.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image ); }
+
+function MarkGuar(){
+    GuarAH(); GuarGC();
+    clearMarkers();
+}
+
+/*--------Cuidadores-------------*/
+function cuidadores(){
+    deleteMarkers();
+    MarkCuid();
+    showMarkers();
+}
+
+function CuidPH() {
+    lista = new google.maps.LatLng(4.7499265,-74.1491903);
+    var image2 = {
+        url: base + 'black.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(30, 30)
+    };
+    var image = {
+        url: base + 'man.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+}
+function CuidPP() {
+    lista = new google.maps.LatLng(4.8118385,-74.1387034);
+    var image2 = {
+        url: base + 'black.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(30, 30)
+    };
+    var image = {
+        url: base + 'man.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31,31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+}
+
+function MarkCuid(){
+    CuidPH(); CuidPP();
+    clearMarkers();
+}
+/*--------Aseo-------------*/
+function Aseo(){
+    deleteMarkers();
+    MarkAseo();
+    showMarkers();
+}
+
+
+function AseoAS() { lista = new google.maps.LatLng(4.7275715,-74.0643102);
+    var image2 = {
+        url: base + 'black.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(30, 30)
+    };
+    var image = {
+        url: base + 'scissors.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31,31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+}
+function AseoLL() { lista = new google.maps.LatLng(4.7029943,-74.0524164);
+    var image2 = {
+    url: base + 'black.png',
+    size: new google.maps.Size(71, 71),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(17, 34),
+    scaledSize: new google.maps.Size(30, 30)
+};
+    var image = {
+        url: base + 'scissors.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31,31 )
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+}
+
+function MarkAseo(){
+    AseoAS(); AseoLL();
+    clearMarkers();
+}
+/*--------Training-------------*/
+function Training(){
+    deleteMarkers();
+    MarkTrai();
+    showMarkers();
+}
+
+function TraiRA() { lista = new google.maps.LatLng(4.8085868,-74.1104617);
+    var image2 = {
+    url: base + 'black.png',
+    size: new google.maps.Size(71, 71),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(17, 34),
+    scaledSize: new google.maps.Size(30, 30)
+};
+    var image = {
+        url: base + 'gym.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+}
+function TraiCA() { lista = new google.maps.LatLng(4.7700123,-74.0756145);
+    var image2 = {
+    url: base + 'black.png',
+    size: new google.maps.Size(71, 71),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(17, 34),
+    scaledSize: new google.maps.Size(30, 30)
+};
+    var image = {
+        url: base + 'gym.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+}
+
+function MarkTrai(){
+    TraiRA();TraiCA();
+    clearMarkers();
+}
+
+/*--------Hospitales-------------*/
+function Hospitales(){
+    deleteMarkers();
+    MarkHosp();
+    showMarkers();
+}
+
+function HospUV() {
+    lista = new google.maps.LatLng(4.6940758,-74.0691972);
+    var image2 = {
+        url: base + 'square.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(30, 30)
+    };
+    var image = {
+        url: base + 'medical.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );
+
+}
+function HospPT() {
+    lista = new google.maps.LatLng(4.7079361,-74.0683807);
+    var image2 = {
+    url: base + 'square.png',
+    size: new google.maps.Size(71, 71),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(17, 34),
+    scaledSize: new google.maps.Size(30, 30)
+    };
+    var image = {
+        url: base + 'medical.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+    //addMarker( lista,image2 );
+    addMarker( lista,image );}
+
+function MarkHosp(){
+    HospUV();HospPT();
+    clearMarkers();
 }
