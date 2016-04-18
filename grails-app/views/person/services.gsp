@@ -9,7 +9,7 @@
     html, body { height:100%; width:100%;}
     </style>
 </head>
-<body onload="initMap()">
+<body>
 
 <script type = "text/javascript">
     var _url = '${createLink(controller: 'index' , action:'logout')}?';
@@ -20,12 +20,12 @@
         <div class="row">
             <div class="col s12 l12 m12">
                 <ul class="tabs ">
-                    <li class="tab col s3"><a class="active" href="#test1" onclick="deleteMarkers();MarkVet();"><span class="font-teal hover-light"><i class="material-icons">local_pharmacy</i>Veterinarias</span></a></li>
-                    <li class="tab col s3"><a href="#test2" onclick="deleteMarkers();MarkGuar();"><span class="font-teal hover-light"><i class="material-icons">pets</i>Guarderias</span></a></li>
-                    <li class="tab col s3"><a href="#test3" onclick="deleteMarkers();MarkCuid();"><span class="font-teal hover-light"><i class="material-icons">face</i>Cuidadores</span></a></li>
-                    <li class="tab col s3"><a href="#test4" onclick="deleteMarkers();MarkAseo();"><span class="font-teal hover-light"><i class="material-icons">spa</i>Aseo</span></a></li>
-                    <li class="tab col s3"><a href="#test5" onclick="deleteMarkers();MarkTrai();"><span class="font-teal hover-light"><i class="material-icons">fitness_center</i>Training</span></a></li>
-                    <li class="tab col s3"><a href="#test6"onclick="deleteMarkers();MarkHosp();"><span class="font-teal hover-light"><i class="material-icons">local_hospital</i>Hospitales</span></a></li>
+                    <li class="tab col s3"><a class="active" href="#test1"><span class="font-teal hover-light"><i class="material-icons">local_pharmacy</i>Veterinarias</span></a></li>
+                    <li class="tab col s3"><a href="#test2"><span class="font-teal hover-light"><i class="material-icons">pets</i>Guarderias</span></a></li>
+                    <li class="tab col s3"><a href="#test3"><span class="font-teal hover-light"><i class="material-icons">face</i>Cuidadores</span></a></li>
+                    <li class="tab col s3"><a href="#test4"><span class="font-teal hover-light"><i class="material-icons">spa</i>Aseo</span></a></li>
+                    <li class="tab col s3"><a href="#test5"><span class="font-teal hover-light"><i class="material-icons">fitness_center</i>Training</span></a></li>
+                    <li class="tab col s3"><a href="#test6"><span class="font-teal hover-light"><i class="material-icons">local_hospital</i>Hospitales</span></a></li>
                 </ul>
             </div>
             <div id="test1" class="col s12">
@@ -34,7 +34,7 @@
                     <li><div class = "btn svc-btn" onclick="deleteMarkers();VetAF();">Amigo Fiel</div></li>
                     <li><a href="#" onclick="veterias();">Mostrar Todas las veterinarias</a></li>
                     <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
-                    <li><a href="#"onclick="clearMarkers();">Ocultar</a></li>
+                    <li><a href="#"onclick="deleteMarkers();">Ocultar</a></li>
                 </ul>
             </div>
             <div id="test2" class="col s12">
@@ -43,7 +43,7 @@
                     <li><div class = "btn svc-btn" onclick="deleteMarkers();GuarGC();">ABC Guarderia</div></li>
                     <li><a href="#" onclick="guarderias();">Mostrar Todas las guarderias</a></li>
                     <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
-                    <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
                 </ul>
             </div>
             <div id="test3" class="col s12">
@@ -52,7 +52,7 @@
                     <li><div class = "btn svc-btn" onclick="deleteMarkers();CuidPP();">Perros Pilos</div></li>
                     <li><a href="#" onclick="cuidadores();">Mostrar Todas los cuidadores</a></li>
                     <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
-                    <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
                 </ul>
             </div>
             <div id="test4" class="col s12">
@@ -61,7 +61,7 @@
                     <li><div class = "btn svc-btn" onclick="deleteMarkers();AseoLL();">Lola Lemont</div></li>
                     <li><a href="#" onclick="Aseo();">Mostrar Todos los Spa's</a></li>
                     <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
-                    <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
                 </ul>
             </div>
             <div id="test5" class="col s12">
@@ -70,7 +70,7 @@
                     <li><div class = "btn svc-btn" onclick="deleteMarkers();TraiRA();">RanchoKan</div></li>
                     <li><a href="#" onclick="Training();">Mostrar Todos Los Entrenadores</a></li>
                     <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
-                    <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
 
                 </ul>
             </div>
@@ -80,7 +80,7 @@
                     <li><div class = "btn svc-btn" onclick="deleteMarkers();HospPT();">Pointer</div></li>
                     <li><a href="#" onclick="Hospitales();">Mostrar Todos Los Hospitales</a></li>
                     <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
-                    <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
 
                 </ul>
             </div>
@@ -92,6 +92,7 @@
 
 
 <asset:javascript src="maps.js"/>
+<asset:javascript src="cluster.js"/>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgobfAe2NzWl-0G2O_khAWLVJ9bCOi4mE&callback=initMap">
 </script>

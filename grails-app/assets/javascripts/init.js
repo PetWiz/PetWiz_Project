@@ -5,7 +5,6 @@
         $('.collapsible').collapsible();
         $('.parallax').parallax();
         $('.slider').slider({full_width: true});
-        $('.carousel').carousel({dist: -50});
         $('ul.tabs').tabs();
         $('.modal-trigger').leanModal();
         $(document).ready(function() {

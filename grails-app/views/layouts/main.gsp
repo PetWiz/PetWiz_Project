@@ -13,50 +13,68 @@
 	<g:layoutHead />
 </head>
 <body onload="${pageProperty(name:'body.onload')};">
-
 <body>
 
 <header>
 	<!-- Nav -->
 	<!------------------- lateral Nav Bar---------------------------->
 	<div class="col s2 m1 l1 left">
-
 		<ul id="nav-lat" class="side-nav petwiz-smoke petwiz-font font-white fixed z-depth-5">
 			<div class="petwiz-image-box" id="facebook-session">
 				<img class="petwiz-fb-img"/>
 				<p class="petwiz-name"></p>
 			</div>
+
 			<ul class="collapsible" data-collapsible="accordion">
+
 				<li>
-					<div class="collapsible-header pet"><i class="material-icons">filter_drama</i>PetWiz</div>
+					<div class="collapsible-header pet">
+						<i class="material-icons">filter_drama</i>PetWiz
+					</div>
 					<div class="collapsible-body">
-						<ul class="petwiz-blue-dark">
-							<li>
-								<a href="#" id="loginlat">
-									<img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"
-										 width=20px height="auto" style="padding-top: 15px; margin-left: 55px"/>
-								</a>
-							</li>
-						<sec:ifAllGranted roles="ROLE_USER">
-							<li class="menulat-item-da"><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons font-white"style="padding-top: 20px">home</i></a></li></span>
-							<!-- Dropdown Trigger -->
-							<a class='dropdown-button menulat-item-da' href='#' data-activates='events-lat'><span class="font-white">Eventos</span></a>
-							<!-- Dropdown Structure -->
-							<ul id="events-lat" class="dropdown-content drop-menu">
-								<li><a href="${createLink(uri:'/person/myevents.gsp')}" class="" style="padding-top: 20px">Propios</a></li>
-								<li><a href="${createLink(uri:'/person/services.gsp')}" class="" style="padding-top: 20px">Servicios</a></li>
+						<div class="col s12 m12">
+							<ul class="collapsible petwiz-blue" data-collapsible="expandable">
+								<sec:ifAllGranted roles="ROLE_USER">
+									<li>
+										<div class="collapsible-header petco menulat-item-da">
+											<a href="${createLink(uri:'/person/home.gsp')}">
+												<i class="material-icons font-white" style="padding-left: 50px">home</i>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="collapsible-header petco petwiz-blue" style="padding-left: 100px;">
+											<i class="material-icons" ></i>Eventos</div>
+										<div class="collapsible-body">
+											<ul class="petwiz-blue">
+												<li class="menulat-item-co"><a href="${createLink(uri:'/person/myevents.gsp')}">Propios</a></li>
+												<li class="menulat-item-co"><a href="${createLink(uri:'/person/services.gsp')}">Servicios</a></li>
+											</ul>
+										</div>
+									</li>
+								</sec:ifAllGranted>
+								<sec:ifNotLoggedIn>
+									<li class="menulat-item-da"><a href="${createLink(uri:'/index/index.gsp')}" class=""><span class="font-white">Entrar</span></a></li>
+								</sec:ifNotLoggedIn>
+								<li>
+									<div class="collapsible-header petco menulat-item-da">
+										<a href="${createLink(uri:'/index/contact.gsp')}">
+											<span class="font-white">Contacto</span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="collapsible-header petco menulat-item-da">
+										<a href="${createLink(uri:'/index/PetWizTeam.gsp')}">
+											<span class="font-white">Nosotros</span>
+										</a>
+									</div>
+								</li>
 							</ul>
-							</sec:ifAllGranted>
-							<sec:ifNotLoggedIn>
-								<li class="menulat-item-da"><a href="${createLink(uri:'/index/index.gsp')}" class=""><span class="font-white">Entrar</span></a></li>
-							</sec:ifNotLoggedIn>
-							<li class="menulat-item-da"><a href="${createLink(uri:'/index/contact.gsp')}" class=""><span class="font-white">Contacto</span></a></li>
-							<li class="menulat-item-da"><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class=""><span class="font-white">Nosotros</span></a></li>
-						</ul>
+						</div>
 					</div>
 				</li>
 				<li>
-
 					<div class="collapsible-header pet"><i class="material-icons">insert_emoticon</i>Cuenta</div>
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark"><span class="font-white">

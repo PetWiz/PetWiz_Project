@@ -342,18 +342,42 @@
     margin-left: 0px;
     }
 
+
+
     .menulat-item-da:hover{
     background-color: #025c75 !important;
     }
+    .menulat-item-co{
+        background-color: #22545d;
+        width: 240px;
+        height: 65px;
 
+        text-align: center;
+    }
+    .menulat-item-co:hover{
+        background-color: #025c75 !important;
+    }
     .collapsible-header.pet:hover{
-    background-color: #025c75;
+        background-color: #025c75;
     }
     .collapsible-header.pet{
-    background-color: #1A3139;
-    width: 240px;
-    margin-left: 0px;
-    height: 88.5px;
+        background-color: #1A3139;
+        width: 240px;
+        margin-left: 0px;
+        height: 88.5px;
+    }
+
+    .collapsible-header.petco:hover{
+        background-color: #025c75;
+    }
+
+    .collapsible-header.petco{
+        background-color: #1A3139;
+        width: 240px;
+        margin-left: 0px;
+        padding-top: 0px;
+        margin-left: -10px;
+        height: 70px;
     }
 
     .modal.small{
