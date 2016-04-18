@@ -1,21 +1,23 @@
 package petwiz_project
 
-/**
- * Created by Andres on 16/03/2016.
- */
 class Service {
 
-    String ser_id;
-    String ser_name;
-    long ser_phone;
-    String ser_description;
+    String name
+    long phone
+    String description
+    String direction
+    long coordenate_x
+    long coordenate_y
+    byte[] photo
+    String photoType
 
     static hasMany = [persons:Person,pets:Pet]
 
     static constraints = {
-        ser_id(nullable: false,blank:false, unique: true)
-        ser_name(nullable: false,blank:false)
-        ser_phone(nullable: false,blank:false, unique: true)
-        ser_description(nullable: false,blank:false)
+        name(nullable: false,blank:false)
+        phone(nullable: false,blank:false, unique: true)
+        description(nullable: false,blank:false)
+        coordenate_x(nullable: false, blank:false)
+        coordenate_y(nullable: false, blank:false)
     }
 }

@@ -8,9 +8,6 @@
 
 </head>
 <body>
-<script type = "text/javascript">
-    var _url = '${createLink(controller: 'index' , action:'logout')}?';
-</script>
 <main class="petwiz-blue petwiz-font">
     <div class="slider ">
         <ul class="slides z-depth-4">
@@ -92,4 +89,8 @@
 </main>
 
 </body>
+
+<script type = "text/javascript">
+    var _url = '${createLink(controller: 'index' , action:'logout')}?';
+</script>
 </html>

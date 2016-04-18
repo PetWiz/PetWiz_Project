@@ -12,12 +12,7 @@
 
 	<g:layoutHead />
 </head>
-<body onload="${pageProperty(name:'body.onload')};">
-
-<body>
-
-
-
+<body onload="${pageProperty(name:'body.onload')}">
 <header>
 	<!-- Nav -->
 	<!------------------- lateral Nav Bar---------------------------->
@@ -47,13 +42,18 @@
 							<ul id="events-lat" class="dropdown-content drop-menu">
 								<li><a href="${createLink(uri:'/person/myevents.gsp')}" class="" style="padding-top: 20px">Propios</a></li>
 								<li><a href="${createLink(uri:'/person/services.gsp')}" class="" style="padding-top: 20px">Servicios</a></li>
+
 							</ul>
 							</sec:ifAllGranted>
 							<sec:ifNotLoggedIn>
 								<li class="menulat-item-da"><a href="${createLink(uri:'/index/index.gsp')}" class=""><span class="font-white">Entrar</span></a></li>
 							</sec:ifNotLoggedIn>
+							<sec:ifAllGranted roles="ROLE_ADMIN">
+								<li class="menulat-item-da"><a href="${createLink(uri:'/service/create.gsp')}" class=""><span class="font-white">Crear Servicio</span></a></li>
+							</sec:ifAllGranted>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/index/contact.gsp')}" class=""><span class="font-white">Contacto</span></a></li>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class=""><span class="font-white">Nosotros</span></a></li>
+
 						</ul>
 					</div>
 				</li>
@@ -144,10 +144,4 @@
 <asset:javascript src="materialize.js"/>
 <asset:javascript src="init.js"/>
 </body>
-
-</body>
-
-
-
-
 </html>

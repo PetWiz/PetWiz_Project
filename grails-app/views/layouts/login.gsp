@@ -98,10 +98,5 @@
 <asset:javascript src="materialize.js"/>
 <asset:javascript src="init.js"/>
 </body>
-
 </body>
-
-
-
-
 </html>
