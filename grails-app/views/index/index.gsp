@@ -18,7 +18,7 @@
                 <h5 class="header font-teal petwiz-font medium-text italic trans-hover petwiz-opacity">Lo mejor para ti y tus mascotas</h5>
             </div>
             <div class="row">
-                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,email,user_birthday,user_hometown" onlogin="checkLoginState()">Entra desde Facebok</div>
+                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,email,user_birthday,user_hometown" onlogin="checkLoginState()">Entra desde Facebook</div>
             </div>
 
         </div>

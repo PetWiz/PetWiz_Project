@@ -49,7 +49,7 @@
 								<li class="menulat-item-da"><a href="${createLink(uri:'/index/index.gsp')}" class=""><span class="font-white">Entrar</span></a></li>
 							</sec:ifNotLoggedIn>
 							<sec:ifAllGranted roles="ROLE_ADMIN">
-								<li class="menulat-item-da"><a href="${createLink(uri:'/service/create.gsp')}" class=""><span class="font-white">Crear Servicio</span></a></li>
+								<li class="menulat-item-da"><a href="${createLink(controller: 'service' , action:'service')}" class=""><span class="font-white">Crear Servicio</span></a></li>
 							</sec:ifAllGranted>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/index/contact.gsp')}" class=""><span class="font-white">Contacto</span></a></li>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class=""><span class="font-white">Nosotros</span></a></li>

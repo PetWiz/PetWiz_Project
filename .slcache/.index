@@ -5972,3 +5972,6 @@ n:1391:java_util_Map$keySet$4
 n:2019:java_util_Map$containsKey$5
 n:1896:java_util_Map$get$6
 n:1393:java_lang_Object$getClass$1
+n:1899:grails/util/PluginBuildSettings$getPluginSourceDirectories$0
+n:6916:org/codehaus/groovy/grails/web/mapping/UrlMappingsHolderFactoryBean
+n:397:org/codehaus/groovy/grails/web/mapping/UrlMappings

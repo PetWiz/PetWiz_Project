@@ -13,7 +13,6 @@ import petwiz_project.SecUserSecRole
 @Transactional
 class UserService {
 
-
     def register_login(f){
 
         def user = Person.findByEmail(f[2])
@@ -34,12 +33,9 @@ class UserService {
         print "saved"
         print user
         print user.authorities
-
         List<GrantedAuthority> list = Lists.newArrayList()
-        user.authorities.each{x ->  print x}
         boolean ru = false, ra = false
-        user.authorities.each {x ->if(x.authority.equals('ROLE_USER')) ru = true}
-        user.authorities.each {x ->if(x.authority.equals('ROLE_ADMIN')) ra = true}
+        user.authorities.each {x ->if(x.authority.equals('ROLE_USER')) ru = true; if(x.authority.equals('ROLE_ADMIN')) ra = true}
         if (ru)
             list.add((GrantedAuthority) new GrantedAuthorityImpl("ROLE_USER"))
         if (ra)
