@@ -73,6 +73,7 @@ class PersonController {
         list.each {
           	def listPet =it.pet_name
             	print "PET ADDED: "+ listPet
+            
         }
         print "Number of pets: "+ list.size()
         print "First pet: "+list.getAt(0).pet_name
