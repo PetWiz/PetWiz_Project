@@ -1,3 +1,4 @@
+<%@ page import="petwiz_project.Person" %>
 <html>
 <head>
     <title>Mascotas</title>
@@ -30,8 +31,9 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s4 m8 l4">
-                        <input id="pet_age" type="text" class="validate" name="age">
+                <g:datePicker name="pet_age" precision="day"  value="${petInstance?.pet_age}" default="none" noSelection="['': '']" />
                         <label for="pet_age">Edad</label></div></input>
+                        <label for="pet_age"><i class="material-icons font-teal" style="padding-left: 50px;">today</i></label>
                     </div>
                     <!-- <div class="input-field col s5 m8 l5 center">
                         <input type="date" class="datepicker" name="age" id="date">
@@ -59,93 +61,37 @@
     </div>
     <div>
         <div class="row">
-            <div class="col s12 m6 l3">
-
-                <div class="card small hoverable">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <asset:image src="cat1.jpg" class="activator"/>
-                    </div>
-                    <div class="card-content">
-                        <div class="row center"><span class="petwiz-font small-text activator">Fido</span></div>
-                        <div class="fixed-action-btn petwiz horizontal">
-                            <a class="btn-floating btn-large petwiz-blue">
-                                <i class="large material-icons">pets</i>
-                            </a>
-                            <ul>
-                                <li class="petwiz"><a class="btn-floating activator"><i class="material-icons">insert_chart</i></a></li>
-                                <li class="petwiz"><a class="btn-floating"><i class="material-icons">delete</i></a></li>
-                                <li class="petwiz"><a class="btn-floating"><i class="material-icons">edit</i></a></li>
-                            </ul>
+            <g:each var="item" in="${petwiz_project.Pet?.findAllByPerson(Person.findByUsername(session["user"]))}">
+                <div class="col s12 m6 l3">
+                    <div class="card small hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <asset:image src="cat1.jpg" class="activator"/>
+                        </div>
+                        <div class="card-content">
+                            <div class="row center"><span class="petwiz-font small-text activator">${item.pet_name}</span></div>
+                            <div class="fixed-action-btn petwiz horizontal">
+                                <a class="btn-floating btn-large petwiz-blue">
+                                    <i class="large material-icons">pets</i>
+                                </a>
+                                <ul>
+                                    <li class="petwiz"><a class="btn-floating activator"><i class="material-icons">insert_chart</i></a></li>
+                                    <li class="petwiz"><a class="btn-floating"><i class="material-icons">delete</i></a></li>
+                                    <li class="petwiz"><a class="btn-floating"><i class="material-icons">edit</i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-reveal petwiz-grey">
+                            <span class="card-title  petwiz-blue-text">${item.pet_name}<i class="material-icons right">close</i></span>
+                            <p class=" petwiz-blue-text">
+                            <li>Especie: ${item.pet_type}</li>
+                            <li>Edad: ${item.pet_age?.dateString}</li>
+                            <li>Genero: ${item.pet_genre}</li>
+                        </p>
                         </div>
                     </div>
-                    <div class="card-reveal petwiz-grey">
-                        <span class="card-title  petwiz-blue-text">Fido<i class="material-icons right">close</i></span>
-                        <p class=" petwiz-blue-text">
-                        <li>Felino</li>
-                        <li>3 Años</li>
-                        <li>Macho</li>
-                    </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card small hoverable">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <asset:image src="wolf.jpg" class="activator"/>
-                    </div>
-                    <div class="card-content">
-                        <div class="row center"><span class="petwiz-font small-text activator">Havoc</span></div>
-                        <div class="fixed-action-btn petwiz horizontal">
-                            <a class="btn-floating btn-large petwiz-blue">
-                                <i class="large material-icons">pets</i>
-                            </a>
-                            <ul>
-                                <li class="petwiz"><a class="btn-floating activator"><i class="material-icons">insert_chart</i></a></li>
-                                <li class="petwiz"><a class="btn-floating"><i class="material-icons">delete</i></a></li>
-                                <li class="petwiz"><a class="btn-floating"><i class="material-icons">edit</i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-reveal petwiz-grey">
-                        <span class="card-title  petwiz-blue-text">Havoc<i class="material-icons right">close</i></span>
-                        <p class=" petwiz-blue-text">
-                        <li>Canino</li>
-                        <li>5 Años</li>
-                        <li>Macho</li>
-                    </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card small hoverable">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <asset:image src="dog1.jpg" class="activator"/>
-                    </div>
-                    <div class="card-content">
-                        <div class="row center"><span class="petwiz-font small-text activator">Tony</span></div>
-                        <div class="fixed-action-btn petwiz horizontal">
-                            <a class="btn-floating btn-large petwiz-blue">
-                                <i class="large material-icons">pets</i>
-                            </a>
-                            <ul>
-                                <li class="petwiz"><a class="btn-floating activator"><i class="material-icons">insert_chart</i></a></li>
-                                <li class="petwiz"><a class="btn-floating"><i class="material-icons">delete</i></a></li>
-                                <li class="petwiz"><a class="btn-floating"><i class="material-icons">edit</i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-reveal petwiz-grey">
-                        <span class="card-title  petwiz-blue-text">Tony<i class="material-icons right">close</i></span>
-                        <p class=" petwiz-blue-text">
-                        <li>Felino</li>
-                        <li>3 Años</li>
-                        <li>Macho</li>
-                    </p>
-                    </div>
-                </div>
-            </div>
 
-
+                </div>
+            </g:each>
 
             <div class="col s12 m6 l3">
                 <div class="card small-btn hoverable">
