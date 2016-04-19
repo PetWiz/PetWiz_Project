@@ -40,38 +40,55 @@ class PetController {
         }
     }
 
-    def addPet(){
+    def addPet() {
 
         def user = Person.findByUsername(session["user"])
-        def name = params.name
+
+
         def typePet = (params.typePet).toString()
-        def age = (params.age).toInteger()
+        def name = (params.name).toString()
         def genre = (params.genre).toString()
+        def age = params.age
 
 
-        def pet
-        //pet = new Pet(name:name,description:description,type:typePet,age:age,genre:genre)
-        pet = new Pet(name:name,type:typePet,age:age,genre:genre)
+        println("name pet: "+name)
+        println("type pet: "+typePet)
+        println("age: "+age)
+        println("genre: "+genre)
 
-        print user
+        print "pet not saved"
+        if (user) {
 
-        println("name pet "+name)
-        //println("description pet "+description)
-        println("type pet "+typePet)
-        println("age "+age)
-        println("genre "+genre)
+            print "Current user: " + user.username
+
+            user.save()
 
 
-        user.addToPets(pet)
-        pet.save(flush:true)
-        user.save(flush:true)
-        def list=user.pets//Para recuperar las mascotas que tiene un usuario asociado
+            def pet
+            pet = new Pet(type:typePet,name:name,genre:genre,age:age)
+            pet.pet_type = typePet
+            pet.pet_name = name
+            pet.pet_genre = genre
+            pet.pet_age = age
+            pet.save()
+
+            user.addToPets(pet)
+            user.save(failOnError: true, flush: true)
+        }
+
+        print "pet saved"
+
+        def list=user.pets//Para mirar las mascotas que tiene un usuario
         list.each {
             def listPet =it.pet_name
-            print listPet
+            print "PET ADDED: "+ listPet
         }
-        print "PET ADDED"
-        redirect(controller: 'person', action: 'mypets');
+        print "Number of pets: "+ list.size()
+        print "First pet: "+list.getAt(0).pet_name
+
+
+        redirect(controller: 'person', view: '/person/mypets');
+
     }
 
     def deletePet(){
