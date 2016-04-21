@@ -17,7 +17,7 @@ class Service {
 
     static constraints = {
         name(nullable: false,blank:false)
-        phone(nullable: false,blank:false, unique: true)
+        phone(nullable: false,blank:false)
         description(nullable: false,blank:false)
         coordenate_x(nullable: false, blank:false)
         coordenate_y(nullable: false, blank:false)

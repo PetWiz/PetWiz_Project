@@ -5975,3 +5975,7 @@ n:1393:java_lang_Object$getClass$1
 n:1899:grails/util/PluginBuildSettings$getPluginSourceDirectories$0
 n:6916:org/codehaus/groovy/grails/web/mapping/UrlMappingsHolderFactoryBean
 n:397:org/codehaus/groovy/grails/web/mapping/UrlMappings
+n:1824:grails/util/BuildSettings$getClassesDir
+n:3545:org/codehaus/groovy/grails/plugins/web/GroovyPagesGrailsPlugin$_closure5$_closure26
+n:2324:org/codehaus/groovy/grails/plugins/web/GroovyPagesGrailsPlugin$_closure5$_closure26$_closure27
+n:1505:groovy/lang/GroovyClassLoader$addURL$0
