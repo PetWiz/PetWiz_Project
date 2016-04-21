@@ -33,6 +33,9 @@
                     <li><a href="#" onclick="showMarkers();">Mostrar Todas las veterinarias</a></li>
                     <li><a href="#"onclick="clearMarkers();">Ocultar</a></li>
                 </ul>
+                <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("veterinaria")}">
+                    <petwiz:showServ service="${item}" edit="${false}"/>
+                </g:each>
             </div>
             <div id="test2" class="col s12">
                 <ul>
@@ -40,6 +43,9 @@
                     <li><div class = "btn svc-btn" onclick="GuarGC();">ABC Guarderia</div></li>
                     <li><a href="#" onclick="showMarkers();">Mostrar Todas las guarderias</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("guarderia")}">
+                        <petwiz:showServ service="${item}" edit="${false}"/>
+                    </g:each>
                 </ul>
             </div>
             <div id="test3" class="col s12">
@@ -48,6 +54,9 @@
                     <li><div class = "btn svc-btn" onclick="CuidPP();">Perros Pilos</div></li>
                     <li><a href="#" onclick="showMarkers();">Mostrar Todas los cuidadores</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("cuidadores")}">
+                        <petwiz:showServ service="${item}" edit="${false}"/>
+                    </g:each>
                 </ul>
             </div>
             <div id="test4" class="col s12">
@@ -56,6 +65,9 @@
                     <li><div class = "btn svc-btn" onclick="AseoLL();">Lola Lemont</div></li>
                     <li><a href="#" onclick="showMarkers();">Mostrar Todos los Spa's</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("aseo")}">
+                        <petwiz:showServ service="${item}" edit="${false}"/>
+                    </g:each>
                 </ul>
             </div>
             <div id="test5" class="col s12">
@@ -64,6 +76,9 @@
                     <li><div class = "btn svc-btn" onclick="TraiRA();">RanchoKan</div></li>
                     <li><a href="#" onclick="showMarkers();">Mostrar Todos Los Entrenadores</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("training")}">
+                        <petwiz:showServ service="${item}" edit="${false}"/>
+                    </g:each>
 
                 </ul>
             </div>
@@ -73,6 +88,9 @@
                     <li><div class = "btn svc-btn" onclick="HospPT();">Pointer</div></li>
                     <li><a href="#" onclick="showMarkers();">Mostrar Todos Los Hospitales</a></li>
                     <li><a href="#" onclick="clearMarkers();">Ocultar</a></li>
+                    <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("hospital")}">
+                        <petwiz:showServ service="${item}" edit="${false}"/>
+                    </g:each>
 
                 </ul>
             </div>

@@ -24,7 +24,7 @@ class Service {
         serviceType(nullable: false, blank:false)
         address(nullable: false, blank:false)
         webpage(nullable: true, blank:true)
-        photo(nullable: true, blank:true)
+        photo(nullable: true, blank:true, maxSize: 1024 * 1024)
         photoType(nullable: true, blank:true)
     }
 }

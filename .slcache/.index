@@ -5979,3 +5979,10 @@ n:1824:grails/util/BuildSettings$getClassesDir
 n:3545:org/codehaus/groovy/grails/plugins/web/GroovyPagesGrailsPlugin$_closure5$_closure26
 n:2324:org/codehaus/groovy/grails/plugins/web/GroovyPagesGrailsPlugin$_closure5$_closure26$_closure27
 n:1505:groovy/lang/GroovyClassLoader$addURL$0
+n:503:org/springframework/web/multipart/MultipartHttpServletRequest
+n:912:org/springframework/web/multipart/MultipartRequest
+n:4589:org/springframework/web/multipart/commons/CommonsMultipartFile
+n:510:org/springframework/web/multipart/MultipartFile
+n:19629:org/springframework/http/HttpHeaders
+n:852:org/apache/commons/fileupload/FileItem
+n:302:org/apache/commons/fileupload/FileItemHeadersSupport

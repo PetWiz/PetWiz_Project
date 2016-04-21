@@ -27,38 +27,38 @@
 			<!-- Display Services-->
 		<div id="test1" class="row">
 			<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("veterinaria")}">
-				<petwiz:showServ service="${item}"/>
+				<petwiz:showServ service="${item}" edit="${true}"/>
 			</g:each>
 		</div>
 		<div id="test2" class="row">
 			<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("guarderia")}">
-				<petwiz:showServ service="${item}"/>
+				<petwiz:showServ service="${item}" edit="${true}"/>
 			</g:each>
 		</div>
 		<div id="test3" class="row">
 			<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("cuidadores")}">
-				<petwiz:showServ service="${item}"/>
+				<petwiz:showServ service="${item}" edit="${true}"/>
 			</g:each>
 		</div>
 		<div id="test4" class="row">
 			<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("aseo")}">
-				<petwiz:showServ service="${item}"/>
+				<petwiz:showServ service="${item}" edit="${true}"/>
 			</g:each>
 		</div>
 		<div id="test5" class="row">
 			<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("training")}">
-				<petwiz:showServ service="${item}"/>
+				<petwiz:showServ service="${item}" edit="${true}"/>
 			</g:each>
 		</div>
 		<div id="test6" class="row">
 			<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("hospital")}">
-				<petwiz:showServ service="${item}"/>
+				<petwiz:showServ service="${item}" edit="${true}"/>
 			</g:each>
 		</div>
 		<!---------------------------- End Display Service ----------------------->
 		<!---------------------------- Create a Service -------------------------->
 		<div id="modal1" class="modal small">
-			<g:form controller="service" action="saveService">
+			<g:form controller="service" action="saveService" enctype="multipart/form-data">
 					<div class="row">
 						<div class="input-field col s12 m12 l12">
 							<g:textField id="serv_name" class="validate" name="name" />
@@ -67,13 +67,13 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12 m12 l12">
-							<g:textField id="serv_address" type="text" class="validate" name="address" />
+							<g:field id="serv_address" type="text" class="validate" name="address" />
 							<label for="serv_address" >Dirección</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12  m12 l12">
-							<g:textField id="serv_tel" type="text" class="validate" name="phone" />
+							<g:field id="serv_tel" type="number" class="validate" name="phone" />
 							<label for="serv_tel">Teléfono</label>
 						</div>
 					</div>
@@ -91,13 +91,13 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12 m12 l12">
-							<g:textField id="serv_coord_x" type="text" class="validate" name="coordenate_x" />
+							<g:field id="serv_coord_x" type="number" class="validate" name="coordenate_x" />
 							<label for="serv_coord_x" >Coordenada en X</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12 m12 l12">
-							<g:textField id="serv_coord_y" type="text" class="validate" name="coordenate_y" />
+							<g:field id="serv_coord_y" type="number" class="validate" name="coordenate_y" />
 							<label for="serv_coord_y" >Coordenada en Y </label>
 						</div>
 					</div>
@@ -121,10 +121,19 @@
 							</select>
 						</div>
 					</div>
-					<!--<button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Crear Servicio
-						<i class="material-icons right">send</i>
-					</button>
-					-->
+						<div class="row">
+							<div class="input-field col s12 m12 l12">
+								<label for="imagen" >Imagen </label><br><br>
+								<g:field id="imagen" type="file" class="validate" name="avatar" />
+							</div>
+						</div>
+				<!--<label for="avatar">Imagen</label><br>
+
+                    <input type="file" name="avatar" id="avatar" /></div>
+                <!--<button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Crear Servicio
+                    <i class="material-icons right">send</i>
+                </button>
+                -->
 				   <g:actionSubmit controller ="service" value="Crear Servicio" action="saveService" class="material-icons right btn modal-action modal-close waves-effect waves-grey petwiz-teal"/>
 
 					<br><br><br><br>
