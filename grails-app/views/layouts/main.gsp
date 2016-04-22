@@ -12,21 +12,18 @@
 
 	<g:layoutHead />
 </head>
-<body onload="${pageProperty(name:'body.onload')};">
-<body>
-
+<body onload="${pageProperty(name:'body.onload')}">
 <header>
 	<!-- Nav -->
 	<!------------------- lateral Nav Bar---------------------------->
 	<div class="col s2 m1 l1 left">
+
 		<ul id="nav-lat" class="side-nav petwiz-smoke petwiz-font font-white fixed z-depth-5">
 			<div class="petwiz-image-box" id="facebook-session">
 				<img class="petwiz-fb-img"/>
 				<p class="petwiz-name"></p>
 			</div>
-
 			<ul class="collapsible" data-collapsible="accordion">
-
 				<li>
 					<div class="collapsible-header pet">
 						<i class="material-icons">filter_drama</i>PetWiz
@@ -75,6 +72,7 @@
 					</div>
 				</li>
 				<li>
+
 					<div class="collapsible-header pet"><i class="material-icons">insert_emoticon</i>Cuenta</div>
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark"><span class="font-white">
@@ -162,10 +160,4 @@
 <asset:javascript src="facelogin.js"/>
 
 </body>
-
-</body>
-
-
-
-
 </html>

@@ -9,6 +9,8 @@ import org.springframework.security.core.context.SecurityContextHolder
 
 class IndexController {
 
+    def UserService
+
     def index() {
         render(controller: 'index', view: '/index/index')
     }
@@ -29,30 +31,11 @@ class IndexController {
     def register_login() {
         print params.get('params')
         def f = params.get('params').toString().split(',')
-        def user = Person.findByEmail(f[2])
-        if (!user) {
-            print "not saved"
-            def user1 = new Person(f[0].toLong(), f[1], new Date(), f[4], f[2], f[0])
-            user1.save()
-            print user1.username
-            def r1 = Rol.findByAuthority('ROLE_USER')
-            print r1.authority
-            def r = SecUserSecRole.create(user1, r1, true)
 
-            print r.print()
-            user1.addToRols(r1)
-            user = user1
-            user.save(failOnError: true, flush: true)
-        }
-        print "saved"
-        print user
+        def user = UserService.register_login(f)
         session["user"] = user.username
-        List<GrantedAuthority> list = Lists.newArrayList((GrantedAuthority) new GrantedAuthorityImpl("ROLE_USER"))
-
-        SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(user.username, user.password, list));
 
         redirect(controller: 'person', action: 'home');
-
     }
 
     def logout(){

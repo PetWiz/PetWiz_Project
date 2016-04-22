@@ -99,10 +99,5 @@
 <asset:javascript src="init.js"/>
 <asset:javascript src="facelogin.js"/>
 </body>
-
 </body>
-
-
-
-
 </html>

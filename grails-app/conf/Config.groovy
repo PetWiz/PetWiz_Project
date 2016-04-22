@@ -124,9 +124,10 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'petwiz_project.Pe
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'petwiz_project.SecUserSecRole'
 grails.plugin.springsecurity.authority.className = 'petwiz_project.Rol'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-        '/person/*':          ['ROLE_USER'],
-        '/index/*':          ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/*':               ['IS_AUTHENTICATED_ANONYMOUSLY']
+        '/service/*':          ['ROLE_ADMIN'],
+        '/person/*':           ['ROLE_USER'],
+        '/index/*':            ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/*':                  ['IS_AUTHENTICATED_ANONYMOUSLY']
         //'/person/*':          ['IS_AUTHENTICATED_REMEMBERED'],
         //'/index/*':          ['IS_AUTHENTICATED_ANONYMOUSLY'],
         //'/*':               ['IS_AUTHENTICATED_ANONYMOUSLY']
