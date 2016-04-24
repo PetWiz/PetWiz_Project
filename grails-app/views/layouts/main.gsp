@@ -50,6 +50,10 @@
 										</div>
 									</li>
 								</sec:ifAllGranted>
+								<sec:ifAllGranted roles="ROLE_ADMIN">
+									<li class="menulat-item-da"><a href="${createLink(controller: 'service' , action:'service')}" class=""><span class="font-white">Crear Servicio</span></a></li>
+								</sec:ifAllGranted>
+
 								<sec:ifNotLoggedIn>
 									<li class="menulat-item-da"><a href="${createLink(uri:'/index/index.gsp')}" class=""><span class="font-white">Entrar</span></a></li>
 								</sec:ifNotLoggedIn>
