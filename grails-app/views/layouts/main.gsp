@@ -17,7 +17,6 @@
 	<!-- Nav -->
 	<!------------------- lateral Nav Bar---------------------------->
 	<div class="col s2 m1 l1 left">
-
 		<ul id="nav-lat" class="side-nav petwiz-smoke petwiz-font font-white fixed z-depth-5">
 			<div class="petwiz-image-box" id="facebook-session">
 				<img class="petwiz-fb-img"/>

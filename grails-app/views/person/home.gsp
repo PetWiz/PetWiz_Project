@@ -14,7 +14,7 @@
             <li>
                 <asset:image src="Dog-Cat-Playing.jpg"/>
                 <div class="caption center-align">
-                    <titulo class="medium-text">Bienvenido A La Mejor Aplicacion para mascotas</titulo>
+                    <titulo class="medium-text trans-text">Bienvenido</titulo>
                 </div>
             </li>
             <li>
