@@ -35,7 +35,6 @@
                         <label for="date"><i class="material-icons font-teal" style="padding-left: 50px;">today</i></label>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="input-field col s12 m12 l12">
                         <select name="genre">
@@ -73,11 +72,11 @@
                     </div>
                     <div class="card-reveal petwiz-grey">
                         <span class="card-title  petwiz-blue-text">Fido<i class="material-icons right">close</i></span>
-                        <p class=" petwiz-blue-text">
-                        <li>Felino</li>
-                        <li>3 Años</li>
-                        <li>Macho</li>
-                    </p>
+                        <ul class="">
+                            <li>Felino</li>
+                            <li>3 Años</li>
+                            <li>Macho</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -101,11 +100,11 @@
                     </div>
                     <div class="card-reveal petwiz-grey">
                         <span class="card-title  petwiz-blue-text">Havoc<i class="material-icons right">close</i></span>
-                        <p class=" petwiz-blue-text">
+                        <ul class="">
                         <li>Canino</li>
                         <li>5 Años</li>
                         <li>Macho</li>
-                    </p>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -129,11 +128,11 @@
                     </div>
                     <div class="card-reveal petwiz-grey">
                         <span class="card-title  petwiz-blue-text">Tony<i class="material-icons right">close</i></span>
-                        <p class=" petwiz-blue-text">
+                        <ul class="">
                         <li>Felino</li>
                         <li>3 Años</li>
                         <li>Macho</li>
-                    </p>
+                        </ul>
                     </div>
                 </div>
             </div>
