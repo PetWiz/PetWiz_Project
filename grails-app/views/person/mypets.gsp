@@ -118,8 +118,10 @@
                                 </a>
                                 <ul>
                                     <li class="petwiz"><a class="btn-floating activator"><i class="material-icons">insert_chart</i></a></li>
-                                    <li class="petwiz"><a class="btn-floating" onclick="${remoteFunction(controller: 'person', action: 'deletePet')}"><i class="material-icons">delete</i></a></li>
-                                    <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light" href="#updateData"  ><i class="material-icons">edit</i></a></li>
+                                    <!--<li class="petwiz"><a class="btn-floating" onclick="${remoteFunction(controller: 'person', action: 'deletePet')}"><i class="material-icons">delete</i></a></li>
+                                    -->
+                                    <li class="petwiz"><a class="btn-floating" onclick=""><i class="material-icons">delete</i></a></li>
+                                    <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light" href="#"  ><i class="material-icons">edit</i></a></li>
                                 </ul>
                             </div>
                         </div>
