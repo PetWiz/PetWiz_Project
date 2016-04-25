@@ -62,12 +62,12 @@ $(function() {
 
                 var results = '';
                 for (var i = 0; i < friend_data.length; i++) {
-                    results += '<div class="chip hoverable"><img src="https://graph.facebook.com/' + friend_data[i].id + '/picture">' + friend_data[i].name + '</div>';
+                    results += '<li alt="" class="collection-item avatar svc-btn2 "><img class="circle" src="https://graph.facebook.com/' + friend_data[i].id + '/picture" ><span class="title black-text responsive">' +friend_data[i].name +'</span> <i class=" material-icons secondary-content ">perm_identity</i></li>';
 
                 }
-
-                // and display them at our holder element
-                result_holder.innerHTML = '<center>Amigos</center>' + results;
+                results += '</ul></div>'
+                // and display them at our holde    r element
+                result_holder.innerHTML = '<ul class="font-white svc-btn"><h5 class="center">Amigos</h5><ul class="collection "> ' + results ;
             });
         } else {
             callback(false);

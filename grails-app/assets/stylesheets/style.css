@@ -156,11 +156,19 @@
 
     /*-----------Custom-----------*/
     .svc-btn{
-    background-color: #027A93;
-    }
+          background-color: #027A93 !important;
 
+      }
+
+    .svc-btn2{
+        background-color: #027A93 ;
+    }
+    .svc-btn2:hover{
+        background-color: #02bdd9 !important;
+
+    }
     .svc-btn:hover{
-    background-color: #02bdd9;
+    background-color: #02bdd9 !important;
     }
 
     .font-orange{

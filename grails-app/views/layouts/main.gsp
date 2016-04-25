@@ -63,7 +63,7 @@
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark"><span class="font-white">
 						<sec:ifAllGranted roles="ROLE_USER">
-							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/person/myfriends.gsp')}"><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/person/mypets.gsp')}"><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Mis Mascotas</span></a></li>
 							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">input</i><span class="title font-white left-align">Mis Eventos</span></a></li>
 						</sec:ifAllGranted>
@@ -76,7 +76,7 @@
 				<li><a href="${createLink(uri:'/index/help.gsp')}" class="collapsible-header pet"><span class=" font-white"><i class="material-icons">help</i>help</span></a></li>
 
 			</ul>
-            <div id="result_friends"></div>
+
 			<ul id='dropdown1' class='dropdown-content'>
 				<sec:ifAllGranted roles="ROLE_USER">
 				<li class="menulat-item-main avatar"><i class="material-icons circle icon-color">perm_identity</i><span class="title left-align">Mi perfil</span></li>
