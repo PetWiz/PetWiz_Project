@@ -1,6 +1,11 @@
 package petwiz_project
 
+import grails.transaction.Transactional
+
+@Transactional(readOnly = true)
 class PersonController {
+
+    static allowedMethods = [addPet: "POST", updatePet: "PUT", deletePet: "DELETE"]
 
     def home() {
         render(controller: 'person', view: '/person/home');
@@ -31,7 +36,8 @@ class PersonController {
     }
 
 
-    def addPet() {
+    @Transactional
+    def addPet(Pet pet) {
 
         def user = Person.findByUsername(session["user"])
 
@@ -39,15 +45,16 @@ class PersonController {
         def typePet = (params.typePet).toString()
         def name = (params.name).toString()
         def genre = (params.genre).toString()
-        def age = params.age
+        def age = (params.age).toInteger()
 
 
-        println("name pet: "+name)
-        println("type pet: "+typePet)
-        println("age: "+age)
-        println("genre: "+genre)
 
-	    print "pet not saved"
+        println("name pet: " + name)
+        println("type pet: " + typePet)
+        println("age: " + age)
+        println("genre: " + genre)
+
+        print "pet not saved"
         if (user) {
 
             print "Current user: " + user.username
@@ -55,8 +62,8 @@ class PersonController {
             user.save()
 
 
-            def pet
-            pet = new Pet(type:typePet,name:name,genre:genre,age:age)
+            //def pet
+            pet = new Pet(type: typePet, name: name, genre: genre, age: age)
             pet.pet_type = typePet
             pet.pet_name = name
             pet.pet_genre = genre
@@ -69,19 +76,72 @@ class PersonController {
 
         print "pet saved"
 
-        def list=user.pets//Para mirar las mascotas que tiene un usuario
+        def list = user.pets//Para mirar las mascotas que tiene un usuario
         list.each {
-          	def listPet =it.pet_name
-            	print "PET ADDED: "+ listPet
-            
+            def listPetName = it.pet_name
+
+            print "PET ADDED: " + listPetName
+
         }
-        print "Number of pets: "+ list.size()
-        print "First pet: "+list.getAt(0).pet_name
+        print "Number of pets: " + list.size()
+        print "First pet: " + list.getAt(0).pet_name
 
 
-        redirect(controller: 'person', view: '/person/mypets');
+        render(controller: 'person', view: '/person/mypets');
 
     }
 
+    @Transactional
+    def deletePet(Pet pet) {
+        def userD = Person.findByUsername(session["user"])
+        def currentPet = userD.pets[0]
+
+
+
+        print "Select current pet: " + currentPet.pet_name
+
+        print "Deleting pet..."
+        pet = Pet.get(params.id)
+        //def pet = Pet.get(params.getIdentifier())
+        //pet.getId()
+
+        pet.delete(flush: true)
+
+
+        print "Pet deleted"
+
+        redirect(controller: 'person', view: '/person/home');
+
+    }
+
+    @Transactional
+    def updatePet(Pet pet) {
+
+
+        if (session["user"]) {
+            print "Update data..."
+            //def pet = Pet.get(params.infoIdPet)
+            pet.properties = params
+            pet = Pet.get(params.id)
+
+            pet.pet_type = (params.typePet).toString()
+            pet.pet_name = (params.name).toString()
+            pet.pet_genre = (params.genre).toString()
+            pet.pet_age = (params.age).toInteger()
+
+            //pet.pet_type = params.myTypePet
+            //pet.pet_name = params.myName
+            //pet.pet_genre = params.myGenre
+            //pet.pet_age = params.myAge
+
+            pet.save(flush:true)
+
+            redirect(controller: 'person', action:'mypets');
+        }else{
+            redirect(controller: 'person', action:'home');
+        }
+
+    }
 
 }
+
