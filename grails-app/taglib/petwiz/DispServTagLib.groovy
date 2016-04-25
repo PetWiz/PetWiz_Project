@@ -10,15 +10,26 @@ class DispServTagLib {
         def service = attrs.service
         def edit = attrs.edit
 
-        out << "<div class=\"col s12 m6 l4\">"
+        out << "<div class=\"col s12 m12 l3\">"
         out << "<div class=\"card hoverable\">"
         out << "<div class=\"card-image yeih waves-effect waves-block waves-light\">"
         out << "<img class=\"activator crop\" src=\"${createLink(controller: 'service', action: 'imageHandler', id: service.name)}\"/>"
         out << "</div>"
         out << "<div class=\"card-content\">"
-        out << "<div class=\"row center\"><span class=\"petwiz-font small-text activator\">${service.name}</span></div>"
+        out << "<div class=\"row \"><span class=\"petwiz-font small-text activator\">${service.name}</span></div>"
+        if (!edit) {
+        out <<   "<div class=\"fixed-action-btn petwiz horizontal\">"
+        out <<   "<a class=\"btn-floating btn-large petwiz-blue\">"
+        out <<    "<i class=\"large material-icons\">pets</i>"
+        out <<    "                </a>"
+        out <<   " <ul>"
+        out <<    "<li class=\"petwiz\"><a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y})\" class=\"btn-floating activator\"><i class=\"material-icons\">insert_chart</i></a></li>"
+        out <<   "                 </ul>"
+        out <<   " </div>"
+        }
         if (edit) {
-            out << "<div class=\"fixed-action-btn petwiz horizontal\" style=\"padding-left:170px \">"
+            out << "<div class=\"row\">"
+            out << "<div class=\"fixed-action-btn petwiz horizontal\" style=\"padding-left:173px \">"
             out << "<a class=\"btn-floating btn-large petwiz-blue\">"
             out << "<i class=\"large material-icons\">pets</i>"
             out << "</a>"

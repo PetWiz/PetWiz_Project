@@ -44,6 +44,20 @@ function showAll(){
     showMarkers();
 }
 
+function addService(x,y){
+    lista = new google.maps.LatLng(x,y);
+    console.log(x,y);
+    var image = {
+        url: base + 'animals.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 32),
+        scaledSize: new google.maps.Size(31, 31)
+    };
+
+    add( lista,image );
+
+}
 
 /*------Veterinarias----*/
 function veterias(){

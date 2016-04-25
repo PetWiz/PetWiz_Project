@@ -30,8 +30,6 @@
     </div>
     <div id="test1" class="row">
         <ul class="col s12 m12 l12">
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();VetUnal();" ondblclick="clearMarkers();">Veterinaria Unal</div></li>
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();VetAF();">Amigo Fiel</div></li>
             <li><a href="#" onclick="veterias();">Mostrar Todas las veterinarias</a></li>
             <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
@@ -44,8 +42,6 @@
     </div>
     <div id="test2" class="row">
         <ul class="col s12 m12 l12">
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();GuarAH();">Animals Home</div></li>
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();GuarGC();">ABC Guarderia</div></li>
             <li><a href="#" onclick="guarderias();">Mostrar Todas las guarderias</a></li>
             <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
@@ -58,8 +54,6 @@
     </div>
     <div id="test3" class="row">
         <ul class="col s12 m12 l12">
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();CuidPH();">Pet's Home</div></li>
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();CuidPP();">Perros Pilos</div></li>
             <li><a href="#" onclick="cuidadores();">Mostrar Todas los cuidadores</a></li>
             <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
@@ -72,8 +66,7 @@
     </div>
     <div id="test4" class="row">
         <ul class="col s12 m12 l12">
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();AseoAS();">Animal's</div></li>
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();AseoLL();">Lola Lemont</div></li>
+
             <li><a href="#" onclick="Aseo();">Mostrar Todos los Spa's</a></li>
             <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
@@ -87,8 +80,6 @@
 
     <div id="test5" class="row">
         <ul class="col s12 m12 l12">
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();TraiCA();">Colombia Appa</div></li>
-            <li><div class = "btn svc-btn" onclick="deleteMarkers();TraiRA();">RanchoKan</div></li>
             <li><a href="#" onclick="Training();">Mostrar Todos Los Entrenadores</a></li>
             <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>

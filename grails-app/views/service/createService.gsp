@@ -47,14 +47,14 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m12 l12">
-					<g:field id="serv_coord_x" type="number" class="validate" name="coordenate_x" required="true"/>
-					<label for="serv_coord_x" >Coordenada en X</label>
+					<g:field id="serv_coord_x" type="number" class="validate" name="coordenate_x" step="any" required="true"/>
+					<label for="serv_coord_x" >Longitud</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m12 l12">
-					<g:field id="serv_coord_y" type="number" class="validate" name="coordenate_y" required="true"/>
-					<label for="serv_coord_y" >Coordenada en Y </label>
+					<g:field id="serv_coord_y" type="number" class="validate" name="coordenate_y" step="any" required="true"/>
+					<label for="serv_coord_y" >Latitud </label>
 				</div>
 			</div>
 			<div class="row">

@@ -18,7 +18,9 @@ class UserService {
         def user = Person.findByEmail(f[2])
         if (!user) {
             print "not saved"
-            def user1 = new Person(f[0].toLong(), f[1], new Date(), f[4], f[2], f[0])
+            def date = Date.parse("dd/MM/yyyy", f[3])
+
+            def user1 = new Person(f[0].toLong(), f[1], date, f[4], f[2], f[0])
             user1.save()
             print user1.username
             def r1 = Rol.findByAuthority('ROLE_USER')

@@ -7,8 +7,8 @@ class Service {
     String description
     String address
     String webpage
-    long coordenate_x
-    long coordenate_y
+    float coordenate_x
+    float coordenate_y
     byte[] photo
     String photoType
     String serviceType
