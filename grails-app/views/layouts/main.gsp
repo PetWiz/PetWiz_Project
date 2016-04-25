@@ -15,6 +15,8 @@
 <body onload="${pageProperty(name:'body.onload')}">
 <header>
 	<!-- Nav -->
+
+    <div id="fb-root"></div>
 	<!------------------- lateral Nav Bar---------------------------->
 	<div class="col s2 m1 l1 left">
 		<ul id="nav-lat" class="side-nav petwiz-smoke petwiz-font font-white fixed z-depth-5">
@@ -80,7 +82,7 @@
 					<div class="collapsible-body">
 						<ul class="petwiz-blue-dark"><span class="font-white">
 						<sec:ifAllGranted roles="ROLE_USER">
-							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li>
+							<li class="menulat-item-da"><a href="${createLink(uri:'/person/myfriends.gsp')}"><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li>
 							<li class="menulat-item-da"><a href="${createLink(uri:'/person/mypets.gsp')}"><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Mis Mascotas</span></a></li>
 							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">input</i><span class="title font-white left-align">Mis Eventos</span></a></li>
 						</sec:ifAllGranted>
@@ -91,6 +93,7 @@
 					</div>
 				</li>
 				<li><a href="${createLink(uri:'/index/help.gsp')}" class="collapsible-header pet"><span class=" font-white"><i class="material-icons">help</i>help</span></a></li>
+
 			</ul>
 
 			<ul id='dropdown1' class='dropdown-content'>

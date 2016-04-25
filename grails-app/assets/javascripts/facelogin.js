@@ -45,15 +45,29 @@ $(function() {
         if (response.status === 'connected') {
             console.log(response.authResponse.accessToken);
             getFacebookData();
-            FB.api('/me?fields=id,name,email,birthday,hometown', function(response) {
+            FB.api('/me?fields=id,name,email,birthday,hometown,friends', function(response) {
                 console.log(JSON.stringify(response));
                 var id = response.id;
                 var name = response.name;
                 var email = response.email;
                 var birthday = response.birthday;
                 var hometown = response.hometown;
+                var friends = response.friends;
                 //Register or login user
 
+            });
+            FB.api('/me/friends?', function(response) {
+                var result_holder = document.getElementById('result_friends');
+                var friend_data = response.data;
+
+                var results = '';
+                for (var i = 0; i < friend_data.length; i++) {
+                    results += '<li alt="" class="collection-item avatar svc-btn2 "><img class="circle" src="https://graph.facebook.com/' + friend_data[i].id + '/picture" ><span class="title black-text responsive">' +friend_data[i].name +'</span> <i class=" material-icons secondary-content ">perm_identity</i></li>';
+
+                }
+                results += '</ul></div>'
+                // and display them at our holde    r element
+                result_holder.innerHTML = '<ul class="font-white svc-btn"><h5 class="center">Amigos</h5><ul class="collection "> ' + results ;
             });
         } else {
             callback(false);
@@ -73,6 +87,7 @@ $(function() {
             $('#loginlat').after(div_session);
             $('#loginlat').remove();
             $('#facebook-session p').text(response.name);
+
             $('#facebook-session img').attr('src','http://graph.facebook.com/'+response.id+'/picture?type=large');
         });
     };
