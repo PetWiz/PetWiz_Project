@@ -121,7 +121,7 @@
                                     <!--<li class="petwiz"><a class="btn-floating" onclick="${remoteFunction(controller: 'person', action: 'deletePet')}"><i class="material-icons">delete</i></a></li>
                                     -->
                                     <li class="petwiz"><a class="btn-floating" onclick=""><i class="material-icons">delete</i></a></li>
-                                    <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light" href="#"  ><i class="material-icons">edit</i></a></li>
+                                    <li class="petwiz"><a class="btn-floating waves-effect waves-light" href="#"  ><i class="material-icons">edit</i></a></li>
                                 </ul>
                             </div>
                         </div>
