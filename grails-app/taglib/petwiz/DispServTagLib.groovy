@@ -10,7 +10,7 @@ class DispServTagLib {
         def service = attrs.service
         def edit = attrs.edit
 
-        out << "<div class=\"col s12 m12 l3\">"
+        out << "<div class=\"col s12 m6 l4\">"
         out << "<div class=\"card hoverable\">"
         out << "<div class=\"card-image yeih waves-effect waves-block waves-light\">"
         out << "<img class=\"activator crop\" src=\"${createLink(controller: 'service', action: 'imageHandler', id: service.name)}\"/>"
@@ -18,7 +18,7 @@ class DispServTagLib {
         out << "<div class=\"card-content\">"
         out << "<div class=\"row \"><span class=\"petwiz-font small-text activator\">${service.name}</span></div>"
         if (!edit) {
-        out <<   "<div class=\"fixed-action-btn petwiz horizontal\">"
+        out <<   "<div class=\"fixed-action-btn petwiz horizontal\" style=\\\"padding-left:170px \\\">"
         out <<   "<a class=\"btn-floating btn-large petwiz-blue\">"
         out <<    "<i class=\"large material-icons\">pets</i>"
         out <<    "                </a>"

@@ -12,7 +12,7 @@
 		var _url = '${createLink(controller: 'index' , action:'logout')}?';
 	</script>
 
-	<div id="modal1" class="modal small">
+	<div id="modal1" class="modal">
 		<g:form controller="service" action="saveService" enctype="multipart/form-data">
 			<div class="row">
 				<br><br>
@@ -101,49 +101,52 @@
 					<li class="tab col s3"><a href="#test6"onclick="deleteMarkers();MarkHosp();"><span class="font-teal hover-light"><i class="material-icons">local_hospital</i>Hospitales</span></a></li>
 				</ul>
 			</div>
-			<div id="test1" class="col s12">
-
+			<div id="test1" class="row">
+				<div class="col s12 m12 l12">
 				<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("veterinaria")}">
 					<petwiz:showServ service="${item}" edit="${true}"/>
 				</g:each>
-
+				</div>
 			</div>
-			<div id="test2" class="col s12">
+			<div id="test2" class="row">
+				<div class="col s12 m12 l12">
 				<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("guarderia")}">
 					<petwiz:showServ service="${item}" edit="${true}"/>
 				</g:each>
+				</div>
 			</div>
-			<div id="test3" class="col s12">
-
+			<div id="test3" class="row">
+				<div class="col s12 m12 l12">
 				<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("cuidadores")}">
 					<petwiz:showServ service="${item}" edit="${true}"/>
 				</g:each>
-
+				</div>
 			</div>
-			<div id="test4" class="col s12">
-
+			<div id="test4" class="row">
+				<div class="col s12 m12 l12">
 				<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("aseo")}">
 					<petwiz:showServ service="${item}" edit="${true}"/>
 				</g:each>
-
+				</div>
 			</div>
-			<div id="test5" class="col s12">
-
+			<div id="test5" class="row">
+				<div class="col s12 m12 l12">
 				<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("training")}">
 					<petwiz:showServ service="${item}" edit="${true}"/>
 				</g:each>
-
+				</div>
 			</div>
-			<div id="test6" class="col s12">
-
+			<div id="test6" class="row">
+				<div class="col s12 m12 l12">
 				<g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("hospital")}">
 					<petwiz:showServ service="${item}" edit="${true}"/>
 				</g:each>
+					</div>
 			</div>
 
 
 			<div class="col s12 m6 l3">
-				<div class="card small-btn hoverable">
+				<div class="card small-btn hoverable" style="margin-left: 27px">
 					<br><span class="font-teal" style="margin-left: -20px">Añadir Servicio</span>
 					<a  href="#modal1" class="modal-trigger btn-floating btn-large waves-effect waves-light petwiz-blue-add"><i class="material-icons">add</i></a>
 				</div>
