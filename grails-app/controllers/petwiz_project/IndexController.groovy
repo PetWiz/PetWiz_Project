@@ -29,6 +29,7 @@ class IndexController {
     def register_login() {
         print params.get('params')
         def f = params.get('params').toString().split(',')
+        print f
         def user = Person.findByEmail(f[2])
         if (!user) {
             print "not saved"
@@ -38,7 +39,7 @@ class IndexController {
             def r1 = Rol.findByAuthority('ROLE_USER')
             print r1.authority
             def r = SecUserSecRole.create(user1, r1, true)
-
+            print f[4]
             print r.print()
             user1.addToRols(r1)
             user = user1
@@ -55,6 +56,13 @@ class IndexController {
 
     }
 
+    @Transactional
+    def friends() {
+        print params.get('params')
+        def f = params.get('params').toString().split(',')
+        print f
+        redirect(controller: 'person', action: 'home');
+    }
     def logout(){
         session["user"] = null
         SecurityContextHolder.getContext().setAuthentication(null)

@@ -45,15 +45,29 @@ $(function() {
         if (response.status === 'connected') {
             console.log(response.authResponse.accessToken);
             getFacebookData();
-            FB.api('/me?fields=id,name,email,birthday,hometown', function(response) {
+            FB.api('/me?fields=id,name,email,birthday,hometown,friends', function(response) {
                 console.log(JSON.stringify(response));
                 var id = response.id;
                 var name = response.name;
                 var email = response.email;
                 var birthday = response.birthday;
                 var hometown = response.hometown;
+                var friends = response.friends;
                 //Register or login user
 
+            });
+            FB.api('/me/friends?', function(response) {
+                var result_holder = document.getElementById('result_friends');
+                var friend_data = response.data;
+
+                var results = '';
+                for (var i = 0; i < friend_data.length; i++) {
+                    results += '<div class="chip hoverable"><img src="https://graph.facebook.com/' + friend_data[i].id + '/picture">' + friend_data[i].name + '</div>';
+
+                }
+
+                // and display them at our holder element
+                result_holder.innerHTML = '<center>Amigos</center>' + results;
             });
         } else {
             callback(false);
@@ -73,6 +87,7 @@ $(function() {
             $('#loginlat').after(div_session);
             $('#loginlat').remove();
             $('#facebook-session p').text(response.name);
+
             $('#facebook-session img').attr('src','http://graph.facebook.com/'+response.id+'/picture?type=large');
         });
     };

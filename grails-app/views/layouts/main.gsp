@@ -18,6 +18,8 @@
 
 <header>
 	<!-- Nav -->
+
+    <div id="fb-root"></div>
 	<!------------------- lateral Nav Bar---------------------------->
 	<div class="col s2 m1 l1 left">
 
@@ -72,8 +74,9 @@
 					</div>
 				</li>
 				<li><a href="${createLink(uri:'/index/help.gsp')}" class="collapsible-header pet"><span class=" font-white"><i class="material-icons">help</i>help</span></a></li>
-			</ul>
 
+			</ul>
+            <div id="result_friends"></div>
 			<ul id='dropdown1' class='dropdown-content'>
 				<sec:ifAllGranted roles="ROLE_USER">
 				<li class="menulat-item-main avatar"><i class="material-icons circle icon-color">perm_identity</i><span class="title left-align">Mi perfil</span></li>
