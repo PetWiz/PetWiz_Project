@@ -160,22 +160,15 @@ footer.page-footer.petwiz-blue{
 }
 
 
-    /*-----------Custom-----------*/
-    .svc-btn{
-          background-color: #027A93 !important;
+/*-----------Custom-----------*/
+.svc-btn{
+    background-color: #027A93;
+}
 
-      }
 
-    .svc-btn2{
-        background-color: #027A93 ;
-    }
-    .svc-btn2:hover{
-        background-color: #02bdd9 !important;
-
-    }
-    .svc-btn:hover{
-    background-color: #02bdd9 !important;
-    }
+.svc-btn:hover{
+    background-color: #02bdd9;
+}
 
 .font-orange{
     color: orange;
@@ -488,15 +481,4 @@ footer.page-footer.petwiz-blue{
 }
 
 
-.card-image.yeih{
-    width: 236px;
-    height: 172px;
-    overflow: hidden;
-}
-
-.card-image.yeih .crop{
-    width: 300px;
-    height: 300px;
-
-}
 

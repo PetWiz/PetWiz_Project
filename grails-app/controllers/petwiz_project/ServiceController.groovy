@@ -13,9 +13,9 @@ class ServiceController {
         render(controller: 'service', view: '/service/createService')
     }
 
-    def saveService(){
+    def saveService() {
         //Obtener la imagen
-        MultipartHttpServletRequest mpr = (MultipartHttpServletRequest)request;
+        MultipartHttpServletRequest mpr = (MultipartHttpServletRequest) request;
         CommonsMultipartFile f = (CommonsMultipartFile) mpr.getFile("avatar")
         if (!okcontents.contains(f.getContentType())) {
             flash.message = "El avatar debe tener alguno de los siguientes formatos: ${okcontents}"
@@ -58,13 +58,13 @@ class ServiceController {
         out.close()
     }
 
-    def visitServicePage(){
+    def visitServicePage() {
         print params.redir
         def url_go = "http://" + params.redir
         redirect(url: url_go)
     }
 
-    def delete(){
+    def delete() {
         print params
         print "service del " + params.name
         def del = ServiceService.delete(params.name)
@@ -73,12 +73,12 @@ class ServiceController {
         else
             flash.error = "Service can't be deleted"
 
-        redirect(action:'service')
+        redirect(action: 'service')
     }
 
-    def update(){
+    def update() {
         print params
-        redirect(action:'service')
+        redirect(action: 'service')
     }
 }
 

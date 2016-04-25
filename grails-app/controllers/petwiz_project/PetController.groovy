@@ -8,39 +8,39 @@ class PetController {
     static allowedMethods = [addPet: "POST", updatePet: "PUT", deletePet: "DELETE"]
 
     def index() {
-        redirect(controller:'pet',action:'viewAddPet')
+        redirect(controller: 'pet', action: 'viewAddPet')
         //render(controller: 'index', view: '/index/index')
     }
 
 
-    public def static viewPets(){
+    public def static viewPets() {
         def pets = Pet.all()
-        def lista =[] as Set
-        pets.each {it->
+        def lista = [] as Set
+        pets.each { it ->
             lista.add(it.getPet_name())
         }
         return lista
     }
 
-    def viewAddPet(){
+    def viewAddPet() {
         println()
 
-        if(session["user"]){
+        if (session["user"]) {
             def pets = viewPets()
             def allPets = PersonController.viewPet(session["user"])
-            render(controller:'pet',view:'/person/mypets',model:[search:pets,pets:allPets,user:Person.findByUsername(Person.name)])
-        }else{
-            redirect(controller:'index',action:'home')
+            render(controller: 'pet', view: '/person/mypets', model: [search: pets, pets: allPets, user: Person.findByUsername(Person.name)])
+        } else {
+            redirect(controller: 'index', action: 'home')
         }
     }
 
-    def viewDeletePet(){
-        if (session["user"]){
+    def viewDeletePet() {
+        if (session["user"]) {
             def pets = viewPets()
             def allPets = PersonController.viewPet(session["user"])
-            render(controller:'pet',view:'/person/mypets',model:[search:pets,pets:allPets,totalPet:Pet.count,user:user])
-        }else{
-            redirect(controller:'index',action:'home')
+            render(controller: 'pet', view: '/person/mypets', model: [search: pets, pets: allPets, totalPet: Pet.count, user: user])
+        } else {
+            redirect(controller: 'index', action: 'home')
         }
     }
 
@@ -67,7 +67,6 @@ class PetController {
             print "Current user: " + user.username
 
             user.save()
-
 
             //def pet
             pet = new Pet(type: typePet, name: name, genre: genre, age: age)
@@ -140,11 +139,11 @@ class PetController {
 
             //pet.pet_name = params.myName
 
-            pet.save(flush:true)
+            pet.save(flush: true)
 
-            redirect(controller: 'person', action:'mypets');
-        }else{
-            redirect(controller: 'person', action:'home');
+            redirect(controller: 'person', action: 'mypets');
+        } else {
+            redirect(controller: 'person', action: 'home');
         }
 
     }
