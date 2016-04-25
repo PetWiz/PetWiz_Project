@@ -23,6 +23,9 @@ class PersonController {
     def myevents() {
         render(controller: 'person', view: '/person/myevents');
     }
+    def myfriends() {
+        render(controller: 'person', view: '/person/myfriends');
+    }
 
     def muestra() {
 

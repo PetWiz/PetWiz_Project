@@ -8,16 +8,13 @@
 
 </head>
 <body>
-<script type = "text/javascript">
-    var _url = '${createLink(controller: 'index' , action:'logout')}?';
-</script>
 <main class="petwiz-blue petwiz-font">
     <div class="slider ">
         <ul class="slides z-depth-4">
             <li>
                 <asset:image src="Dog-Cat-Playing.jpg"/>
                 <div class="caption center-align">
-                    <titulo class="medium-text">Bienvenido A La Mejor Aplicacion para mascotas</titulo>
+                    <titulo class="medium-text trans-text">Bienvenido</titulo>
                 </div>
             </li>
             <li>
@@ -92,4 +89,8 @@
 </main>
 
 </body>
+
+<script type = "text/javascript">
+    var _url = '${createLink(controller: 'index' , action:'logout')}?';
+</script>
 </html>

@@ -22,17 +22,21 @@
             // Logged into your app and Facebook.
             console.log(response.authResponse.accessToken);
 
-            FB.api('/me?fields=id,name,email,birthday,hometown', function(response) {
+            FB.api('/me?fields=id,name,email,birthday,hometown,friends', function(response) {
                 console.log(JSON.stringify(response));
                 var id = response.id;
                 var name = response.name;
                 var email = response.email;
                 var birthday = response.birthday;
                 var hometown = response.hometown;
+                var user_friends = response.friends;
             //Register or login user
                 window.location.href= '${createLink(controller: 'index' , action:'register_login')}?params='
-                        + [id,name,email,birthday,hometown];
+                        + [id,name,email,birthday,hometown,user_friends];
             });
+
+
+
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
             document.getElementById('status').innerHTML = 'Please log ' +
@@ -56,8 +60,8 @@
 
     window.fbAsyncInit = function() {
         FB.init({
-            //appId      : '1525277721114792', //Local Test
-            appId       : '1522101791432385',
+            appId      : '1525277721114792', //Local Test
+            //appId       : '1522101791432385',
             cookie     : true,  // enable cookies to allow the server to access
                                 // the session
             xfbml      : true,  // parse social plugins on this page
@@ -106,7 +110,7 @@
             </div>
             <div class="row">
                 <!--<div class="fb-login-button",  data-max-rows="1" onlogin="checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
-                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true", scope="public_profile,email,user_birthday,user_hometown", onlogin="checkLoginState()">Entra desde Facebok</div><!--,user_birthday,user_hometown-->
+                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true", scope="public_profile,email,user_birthday,user_hometown,user_friends", onlogin="checkLoginState()">Entra desde Facebok</div><!--,user_birthday,user_hometown-->
             </div>
 
         </div>

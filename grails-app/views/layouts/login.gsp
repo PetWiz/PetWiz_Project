@@ -25,11 +25,15 @@
                 <!------------------- lateral Nav Bar---------------------------->
                 <div class="col s2 m1 l1 left">
                     <a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul id="nav-lat"  class="side-nav petwiz-teal petwiz-letra1">
+                    <ul id="nav-lat"  class="side-nav petwiz-smoke petwiz-letra1">
                     <sec:ifAllGranted roles="ROLE_USER">
-                        <li><a href="${createLink(uri:'/person/home.gsp')}" class="white-text"><i class="left material-icons">home</i>Buscar</a></li>
+                        <li><a href="${createLink(uri:'/person/home.gsp')}" class="white-text"><i class="left material-icons">home</i>Home</a></li>
                     </sec:ifAllGranted>
-                        <li><a href="" class="white-text"><i class="left material-icons">search</i>Buscar</a></li>
+                        <li class="input-field menulat-item-da">
+                            <input id="search2" type="search" required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </li>
                         <li><a href="" class="white-text"><i class="left material-icons">help</i>Ayuda</a></li>
                         <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
                     </ul>
@@ -97,11 +101,7 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <asset:javascript src="materialize.js"/>
 <asset:javascript src="init.js"/>
+<asset:javascript src="facelogin.js"/>
 </body>
-
 </body>
-
-
-
-
 </html>
