@@ -25,7 +25,7 @@ class DispServTagLib {
         out <<                          "<i class=\"large material-icons\">pets</i>"
         out <<                      "</a>"
         out <<                      "<ul>"
-        out <<                          "<li class=\"petwiz\"><a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y})\" class=\"btn-floating activator\"><i class=\"material-icons\">insert_chart</i></a></li>"
+        out <<                          "<li class=\"petwiz\"><a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y});\" class=\"btn-floating activator\"><i class=\"material-icons\">insert_chart</i></a></li>"
         out <<                      "</ul>"
         out <<                  "</div>"
     }

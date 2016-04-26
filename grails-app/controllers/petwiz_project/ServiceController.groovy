@@ -1,8 +1,10 @@
 package petwiz_project
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import org.springframework.web.multipart.MultipartHttpServletRequest
 import org.springframework.web.multipart.commons.CommonsMultipartFile
+
 
 @Transactional(readOnly = true)
 class ServiceController {
@@ -42,7 +44,7 @@ class ServiceController {
         redirect(action: "service")
 
     }
-
+    @Secured(['ROLE_USER','ROLE_ADMIN'])
     def imageHandler() {
         def name = params.id.toString()
         def serv = Service.findByName(name)
