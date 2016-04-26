@@ -5,12 +5,30 @@
     <title>index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="layout" content="login"/>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <asset:javascript src="facelogin.js"/>
 
 </head>
 <body>
-
+<div id="fb-root"></div>
 <script>
-    // This is called with the results from from FB.getLoginStatus().
+/*
+    window.fbAsyncInit = function() {
+
+        FB.init({
+            appId      : '1525277721114792',
+            status     : true,
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v2.1'
+        });
+
+
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response, function() {});
+        });
+    };
+
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
@@ -30,7 +48,7 @@
                 var birthday = response.birthday;
                 var hometown = response.hometown;
                 var user_friends = response.friends;
-            //Register or login user
+                //Register or login user
                 window.location.href= '${createLink(controller: 'index' , action:'register_login')}?params='
                         + [id,name,email,birthday,hometown,user_friends];
             });
@@ -48,55 +66,24 @@
                     'into Facebook.';
         }
     }
-
-    // This function is called when someone finishes with the Login
-    // Button.  See the onlogin handler attached to it in the sample
-    // code below.
-    function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
-    }
-
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '1525277721114792', //Local Test
-            //appId       : '1522101791432385',
-            cookie     : true,  // enable cookies to allow the server to access
-                                // the session
-            xfbml      : true,  // parse social plugins on this page
-            version    : 'v2.5' // use graph api version 2.5
-        });
-
-        // Now that we've initialized the JavaScript SDK, we call
-        // FB.getLoginStatus().  This function gets the state of the
-        // person visiting this page and can return one of three states to
-        // the callback you provide.  They can be:
-        //
-        // 1. Logged into your app ('connected')
-        // 2. Logged into Facebook, but not your app ('not_authorized')
-        // 3. Not logged into Facebook and can't tell if they are logged into
-        //    your app or not.
-        //
-        // These three cases are handled in the callback function.
-
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
-
-    };
-
-
-    // Load the SDK asynchronously
-    (function(d, s, id) {
+*/
+        (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-</script>
+    function getData(id, name, email, birthday, hometown, user_friends){
+        $('#facebook-session').find('p').text(name);
+        $('#facebook-session').find('img').attr('src','http://graph.facebook.com/'+id+'/picture?type=large');
+        window.location.href= '${createLink(controller: 'index' , action:'register_login')}?params='
+                + [id,name,email,birthday,hometown,user_friends];
+
+    }
+
+    </script>
 
 
 <main>
@@ -110,7 +97,7 @@
             </div>
             <div class="row">
                 <!--<div class="fb-login-button",  data-max-rows="1" onlogin="checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
-                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true", scope="public_profile,email,user_birthday,user_hometown,user_friends", onlogin="checkLoginState()">Entra desde Facebok</div><!--,user_birthday,user_hometown-->
+                <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true", scope="public_profile,email,user_birthday,user_hometown,user_friends", onlogin="checkLoginState();">Entra desde Facebok</div><!--,user_birthday,user_hometown-->
             </div>
 
         </div>

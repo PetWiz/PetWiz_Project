@@ -20,17 +20,18 @@ class UserService {
             print "not saved"
             def date = Date.parse("dd/MM/yyyy", f[3])
 
-            def user1 = new Person(f[0].toLong(), f[1], date, f[4], f[2], f[0])
-            user1.save()
-            print user1.username
+            user = new Person(f[0].toLong(), f[1], date, f[4], f[2], f[0])
+            user.save()
+            print user.username
             def r1 = Rol.findByAuthority('ROLE_USER')
             print r1.authority
-            def r = SecUserSecRole.create(user1, r1, true)
-
-            print r.print()
-            user1.addToRols(r1)
-            user = user1
+            def r = SecUserSecRole.create(user, r1, true)
             user.save(failOnError: true, flush: true)
+            print r.print()
+            user.addToRols(r1)
+            print "sacando cosas"
+            print user.email
+            print Person.findByEmail("helian94@hotmail.com")
         }
         print "saved"
         print user

@@ -27,7 +27,7 @@
                     <a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-lat"  class="side-nav petwiz-smoke petwiz-letra1">
                     <sec:ifAllGranted roles="ROLE_USER">
-                        <li><a href="${createLink(uri:'/person/home.gsp')}" class="white-text"><i class="left material-icons">home</i>Home</a></li>
+                        <li><a href="${createLink(controller: 'person' , action:'home')}" class="white-text"><i class="left material-icons">home</i>Home</a></li>
                     </sec:ifAllGranted>
                         <li class="input-field menulat-item-da">
                             <input id="search2" type="search" required>
@@ -35,7 +35,7 @@
                             <i class="material-icons">close</i>
                         </li>
                         <li><a href="" class="white-text"><i class="left material-icons">help</i>Ayuda</a></li>
-                        <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
+                        <li><a href="${createLink(controller: 'index' , action:'PetWizTeam')}" class="white-text"><i class="left material-icons">more_vert</i>About Us</a></li>
                     </ul>
                 </div>
                 <!-------------------------Nav Responsive menu--------------------------->
@@ -50,10 +50,10 @@
                             <i class="material-icons">close</i>
                         </li>
                     <sec:ifAllGranted roles="ROLE_USER">
-                        <li><a href="${createLink(uri:'/person/home.gsp')}"><i class="material-icons">home</i></a></li>
+                        <li><a href="${createLink(controller: 'person' , action:'home')}"><i class="material-icons">home</i></a></li>
                     </sec:ifAllGranted>
-                        <li><a href="${createLink(uri:'/index/help.gsp')}"><i class="material-icons">help</i></a></li>
-                        <li><a href="${createLink(uri:'/index/PetWizTeam.gsp')}"><i class="material-icons">more_vert</i></a></li>
+                        <li><a href="${createLink(controller: 'index' , action:'help')}"><i class="material-icons">help</i></a></li>
+                        <li><a href="${createLink(controller: 'index' , action:'PetWizTeam')}"><i class="material-icons">more_vert</i></a></li>
                     </ul>
                 </div>
 
@@ -101,7 +101,7 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <asset:javascript src="materialize.js"/>
 <asset:javascript src="init.js"/>
-<asset:javascript src="facelogin.js"/>
+<!--<asset:javascript src="facelogin.js"/> -->
 </body>
 </body>
 </html>
