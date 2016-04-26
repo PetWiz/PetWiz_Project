@@ -11,6 +11,7 @@ class IndexController {
 
     def UserService
 
+
     def index() {
         render(controller: 'index', view: '/index/index')
     }
@@ -20,11 +21,11 @@ class IndexController {
     }
 
     def help() {
-        render(controller: 'view', view: '/index/help');
+        render(controller: 'index', view: '/index/help');
     }
 
     def contact() {
-        render(controller: 'view', view: '/index/contact');
+        render(controller: 'index', view: '/index/contact');
     }
 
     @Transactional
