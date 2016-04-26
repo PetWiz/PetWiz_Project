@@ -1,7 +1,7 @@
 <%@ page import="petwiz_project.Person" %>
 <html>
 <head>
-    <title>Mascotas</title>
+    <title>Petwiz: Mis mascotas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="layout" content="main" />
 </head>
@@ -16,7 +16,7 @@
     <!-- Modal Structure -->
     <div id="addPet" class="modal small">
         <div class="modal-content font-teal">
-            <g:form action="addPet">
+            <g:form controller="person" action="addPet">
                 <div class="row">
                     <div class="input-field col s12 m12 l12">
                         <input id="pet_name" type="text" class="validate"  name="name" >

@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Index</title>
+    <title>Petwiz: Acerca de nosotros</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="layout" content="login"/>
 
@@ -75,14 +75,14 @@
                     <div id="Santiago" class="modal">
                         <div class="modal-content row">
                             <div class="center">
-                                <img src="" height=200px; width=200px;>
+                                <asset:image src="sablancom.png" style="width: 200px; height: 200px"/>
                             </div>
                             <div class="row">
                                 <div class="col s12 m12 l12">
                                     <div class="card petwiz-blue darken-1" >
                                         <div class="card-content white-text">
                                             <h4><span class="card-title petwiz-font">Santiago</span></h4>
-                                            <p></p>
+                                            <p>Estudiante Ingeniería de Sistemas y Computación de la Universidad Nacional de Colombia. Buena musica y todo bien</p>
                                         </div>
                                     </div>
                                     <a href="#!" class=" modal-action modal-close black waves-effect waves-grey btn">Entendido</a>
@@ -94,14 +94,14 @@
                     <div id="Michael" class="modal">
                         <div class="modal-content row">
                             <div class="center">
-                                <img src="" height=200px; width=200px;>
+                                <asset:image src="zayos.png" style="width: 200px; height: 200px"/>
                             </div>
                             <div class="row">
                                 <div class="col s12 m12 l12">
                                     <div class="card petwiz-blue darken-1" >
                                         <div class="card-content white-text">
                                             <h4><span class="card-title petwiz-font">Michael</span></h4>
-                                            <p> </p>
+                                            <p> Estudiante Ingeniería de Sistemas y Computación de la Universidad Nacional de Colombia. :v</p>
                                         </div>
                                     </div>
                                     <a href="#!" class=" modal-action modal-close black waves-effect waves-grey btn">Entendido</a>
@@ -113,14 +113,14 @@
                     <div id="Erin" class="modal">
                         <div class="modal-content row">
                             <div class="center">
-                                <img src="" height=200px; width=200px;>
+                                <asset:image src="erinsteven.png" style="width: 200px; height: 200px"/>
                             </div>
                             <div class="row">
                                 <div class="col s12 m12 l12">
                                     <div class="card petwiz-blue darken-1" >
                                         <div class="card-content white-text">
                                             <h4><span class="card-title petwiz-font">Erin</span></h4>
-                                            <p> </p>
+                                            <p> Estudiante Ingeniería de Sistemas y Computación de la Universidad Nacional de Colombia. :v</p>
                                         </div>
                                     </div>
                                     <a href="#!" class=" modal-action modal-close black waves-effect waves-grey btn">Entendido</a>

@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Perfil</title>
+    <title>Petwiz: Mis amigos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="layout" content="main"/>
     <asset:javascript src="facelogin.js"/>
