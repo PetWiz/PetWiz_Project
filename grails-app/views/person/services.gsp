@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="layout" content="main"/>
     <style type="text/css">
+    <asset:javascript src="facelogout.js"/>
     html, body { height:100%; width:100%;}
     </style>
 </head>
@@ -32,7 +33,7 @@
     </div>
     <div id="test1" class="row">
         <ul class="col s12 m12 l12">
-         <!--   <li><a href="#" onclick="veterias();">Mostrar Todas las veterinarias</a></li>
+           <!-- <li><a href="#" onclick="veterias();">Mostrar Todas las veterinarias</a></li>
             <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
         </ul>
