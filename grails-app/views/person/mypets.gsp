@@ -18,6 +18,11 @@
     <div id="addPet" class="modal small">
         <div class="modal-content font-teal">
             <g:form controller="person" action="addPet">
+
+                    <div class="input-field  col s12 m12 l12">
+                        <input id="pet_id" type="hidden" class="validate "  value="${petwiz_project.Pet?.count + 1 }" name="id" >
+                    </div>
+
                 <div class="row">
                     <div class="input-field col s12 m12 l12">
                         <input id="pet_name" type="text" class="validate"  name="name" >
@@ -99,21 +104,24 @@
                     <g:set var="i" value="${i+1}" />
                     <div class="modal-content font-teal">
                         <g:form controller="person" action="updatePet">
+                            <div class="input-field  col s12 m12 l12">
+                                <input id="pet_id2" type="hidden" class="validate "  value="${item.getId() }" name="id2" >
+                            </div>
                             <div class="row">
                                 <div class="input-field col s12 m12 l12">
-                                    <input id="pet_name2" type="text" class="validate"   value="${item.pet_name}" name="name" >
+                                    <input id="pet_name2" type="text" class="validate"   value="${item.pet_name}" name="name2" >
                                     <label for="pet_name2" >Nombre de Mascota</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12  m12 l12">
-                                    <input id="pet_type2" type="text" class="validate" value="${item.pet_type}" name="typePet">
+                                    <input id="pet_type2" type="text" class="validate" value="${item.pet_type}" name="typePet2">
                                     <label for="pet_type2">Especie</label></input>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s4 m8 l4">
-                                    <input id="pet_age2" type="number" class="validate" value="${item.pet_age}" name="age">
+                                    <input id="pet_age2" type="number" class="validate" value="${item.pet_age}" name="age2">
                                     <label for="pet_age2" data-error="wrong" data-success="right">Edad</label></input>
                                 </div>
                                 <!-- <div class="input-field col s5 m8 l5 center">
@@ -124,7 +132,7 @@
                             <div class="row">
                                 <div class="input-field col s12 m12 l12">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="pet_genre2" type="text" class="validate" value="${item.pet_genre}" name="genre">
+                                        <input id="pet_genre2" type="text" class="validate" value="${item.pet_genre}" name="genre2">
                                         <label for="pet_genre2" >Género</label></input>
                                     </div>
                                     <!--<input><select id="pet_genre" name="genre">
@@ -134,6 +142,7 @@
                         </select></div></input>-->
                                 </div>
                             </div>
+                           <!--- <g:actionSubmit controller ="person" value="Actualizar mascota" action="saveService" class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>--->
                             <button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Actualizar datos
                                 <i class="material-icons right">send</i>
                             </button>

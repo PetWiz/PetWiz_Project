@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class PersonController {
 
-    static allowedMethods = [addPet: "POST", updatePet: "PUT", deletePet: "DELETE"]
+    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE"]
 
     def home() {
         render(controller: 'person', view: '/person/home');
@@ -49,6 +49,7 @@ class PersonController {
         def name = (params.name).toString()
         def genre = (params.genre).toString()
         def age = (params.age).toInteger()
+        def id = (params.id).toLong()
 
 
 
@@ -56,6 +57,8 @@ class PersonController {
         println("type pet: " + typePet)
         println("age: " + age)
         println("genre: " + genre)
+        println("id: " + id)
+
 
         print "pet not saved"
         if (user) {
@@ -66,7 +69,8 @@ class PersonController {
 
 
             //def pet
-            pet = new Pet(type: typePet, name: name, genre: genre, age: age)
+            pet = new Pet( type: typePet, name: name, genre: genre, age: age)
+
             pet.pet_type = typePet
             pet.pet_name = name
             pet.pet_genre = genre
@@ -113,35 +117,33 @@ class PersonController {
 
         print "Pet deleted"
 
-        redirect(controller: 'person', view: '/person/home');
+        render(controller: 'person', view: '/person/mypets');
 
     }
 
     @Transactional
-    def updatePet(Pet pet) {
+    def updatePet(Pet tmp) {
+        print "shit"
+        def user = Person.findByUsername(session["user"])
+        def typePet = (params.typePet2).toString()
+        def name = (params.name2).toString()
+        def genre = (params.genre2).toString()
+        def age = (params.age2).toInteger()
+        def id = (params.id2).toLong()
 
+        if (user){
 
-        if (session["user"]) {
-            print "Update data..."
-            //def pet = Pet.get(params.infoIdPet)
-            pet.properties = params
-            pet = Pet.get(params.id)
+            tmp = Pet.get(id)
+            tmp.pet_type = typePet
+            tmp.pet_name = name
+            tmp.pet_genre = genre
+            tmp.pet_age = age
+            tmp.save(flush: true)
 
-            pet.pet_type = (params.typePet).toString()
-            pet.pet_name = (params.name).toString()
-            pet.pet_genre = (params.genre).toString()
-            pet.pet_age = (params.age).toInteger()
+            render(controller: 'person', view: '/person/mypets');
 
-            //pet.pet_type = params.myTypePet
-            //pet.pet_name = params.myName
-            //pet.pet_genre = params.myGenre
-            //pet.pet_age = params.myAge
-
-            pet.save(flush:true)
-
-            redirect(controller: 'person', action:'mypets');
         }else{
-            redirect(controller: 'person', action:'home');
+        	redirect(controller:'user',action:'viewHome')
         }
 
     }
