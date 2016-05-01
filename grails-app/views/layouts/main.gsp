@@ -10,7 +10,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Vollkorn:700' rel='stylesheet' type='text/css'>
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<asset:javascript src="facelogout.js"/>
+	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'iconopw.ico')}" type="image/x-icon" />
+	<!--<asset:javascript src="facelogout.js"/>-->
 	<asset:javascript src="facelogin.js"/>
 	<g:layoutHead />
 </head>

@@ -35,10 +35,10 @@ class UserService {
         }
         print "saved"
         print user
-        print user.authorities
+        print user.rols
         List<GrantedAuthority> list = Lists.newArrayList()
         boolean ru = false, ra = false
-        user.authorities.each {x ->if(x.authority.equals('ROLE_USER')) ru = true; if(x.authority.equals('ROLE_ADMIN')) ra = true}
+        user.rols.each {x ->if(x.authority.equals('ROLE_USER')) ru = true; if(x.authority.equals('ROLE_ADMIN')) ra = true}
         if (ru)
             list.add((GrantedAuthority) new GrantedAuthorityImpl("ROLE_USER"))
         if (ra)

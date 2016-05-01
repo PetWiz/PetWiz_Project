@@ -3,7 +3,7 @@
 window.fbAsyncInit = function () {
 
     FB.init({
-        appId: '1522101791432385',
+        appId: '1525277721114792', //local Test/
         status: true,
         cookie: true,
         xfbml: true,
@@ -97,3 +97,14 @@ window.fbAsyncInit = function () {
 
 
      */
+//Logout environment
+function faceLogout() {
+    FB.logout(function(response) {
+        logout();
+    });
+}
+$(document).on('click', '#logout', function(e) {
+    e.preventDefault();
+
+    faceLogout();
+});
