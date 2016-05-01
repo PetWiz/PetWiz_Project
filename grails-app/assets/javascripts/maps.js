@@ -1,4 +1,5 @@
 var markers = [];
+var markersAll = [];
 var map;
 var base='https://raw.githubusercontent.com/PetWiz/PetWiz_Project/petwizMaps/grails-app/assets/images/icons/';
 var cluster;
@@ -21,11 +22,17 @@ function initMap()
 
 function add(lista,image) {
     var marker = new google.maps.Marker({
-        position:lista,
+        position: lista,
         map: map,
         icon: image
     });
+
     cluster.addMarker(marker);
+    markersAll.push(marker);
+}
+
+function addAll() {
+    cluster.addMarkers(markersAll);
 }
 
 
@@ -43,33 +50,34 @@ function showAll(){
     showMarkers();
 }
 
-function addService(x,y){
+function addService(x,y,ima){
     lista = new google.maps.LatLng(x,y);
     console.log(x,y);
-    // console.log(img);
-    /* var type = '';
-     switch(img){
-     case 'veterinaria':
-     type = 'animals.png';
-     break;
-     case 'guarderia':
-     type = 'sign.png'
-     break;
-     case 'cuidadores':
-     type = 'man.png';
-     break;
-     case 'aseo':
-     type = 'scissors.png';
-     break;
-     case 'training':
-     type = 'gym.png';
-     break;
-     case 'hospital':
-     type = 'medical.png';
-     break;
-     }*/
+    switch(ima){
+        case 'veterinaria':
+            typ = 'animals.png';
+            break;
+        case 'guarderia':
+            typ = 'sign.png'
+            break;
+        case 'cuidadores':
+            typ = 'man.png';
+            break;
+        case 'aseo':
+            typ = 'scissors.png';
+            break;
+        case 'training':
+            typ = 'gym.png';
+            break;
+        case 'hospital':
+            typ = 'medical.png';
+            break;
+        default:
+            typ = 'animals.png';
+            break;
+    }
     var image = {
-        url: base + 'animals.png',
+        url: base + typ,
         size: new google.maps.Size(71, 71),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(15, 32),

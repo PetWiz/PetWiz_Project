@@ -10,7 +10,7 @@
     </style>
 </head>
 
-<body>
+<body onload="mas();">
 
 <script type = "text/javascript">
     var _url = '${createLink(controller: 'index' , action:'logout')}?';
@@ -32,16 +32,16 @@
         </div>
     </div>
     <div id="test1" class="row">
-        <ul class="col s12 m12 l12">
-           <!-- <li><a href="#" onclick="veterias();">Mostrar Todas las veterinarias</a></li>
-            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
-            <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
-        </ul>
-        <div class="col s12 m12 l12">
+        <div  class="col s12 m12 l12">
             <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("veterinaria")}">
                 <petwiz:showServ service="${item}" edit="${false}"/>
             </g:each>
         </div>
+        <ul class="col s12 m12 l12">
+            <!-- <li><a href="#" onclick="veterias();">Mostrar Todas las veterinarias</a></li>-->
+            <li><a href="#" onclick="addAll();">Mostrar Los Servicios</a></li>
+            <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
+        </ul>
     </div>
     <div id="test2" class="row">
         <ul class="col s12 m12 l12">

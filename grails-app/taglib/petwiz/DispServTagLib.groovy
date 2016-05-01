@@ -9,7 +9,6 @@ class DispServTagLib {
     def showServ = { attrs ->
         def service = attrs.service
         def edit = attrs.edit
-
         out << "<div class=\"col s12 m12 l3\">"
         out <<      "<div class=\"card hoverable\">"
         out <<          "<div class=\"card-image waves-effect waves-block waves-light\">"
@@ -25,7 +24,7 @@ class DispServTagLib {
             out <<                          "<i class=\"large material-icons\">pets</i>"
             out <<                      "</a>"
             out <<                      "<ul>"
-            out <<                          "<li class=\"petwiz\"><a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y})\" class=\"btn-floating activator\"><i class=\"material-icons\">insert_chart</i></a></li>"
+            out <<                          "<li class=\"petwiz\"><a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y},'${service.serviceType}')\" class=\"btn-floating activator\"><i class=\"material-icons\">insert_chart</i></a></li>"
             out <<                      "</ul>"
             out <<                  "</div>"
         }
@@ -103,19 +102,16 @@ class DispServTagLib {
         out <<          "<div class=\"card-reveal petwiz-grey\">"
         out <<                  "<span class=\"card-title  petwiz-blue-text\">${service.name}<i class=\"material-icons right\">close</i></span>"
         out <<                  "<p class=\" petwiz-blue-text\">"
-        out <<                  "<li><b>Descripción:</b></li>" +
-                " ${service.description}"
-        out <<                  "<li><b>Dirección:</b> </li>" +
-                " ${service.address}"
-        out <<                  "<li><b>Télefono:</b></li>" +
-                " ${service.phone}"
+        out <<                  "<li><b>Descripción:</b></li>" + " ${service.description}"
+        out <<                  "<li><b>Dirección:</b> </li>" + " ${service.address}"
+        out <<                  "<li><b>Télefono:</b></li>" + " ${service.phone}"
+        out <<                  "<li><b>type</b></li>" +"${service.serviceType}"
         out <<                  "<g:if test=\"${!service.webpage}\">"
         out <<                      "<li><a href=\"${createLink(controller: "service", action: "visitServicePage", params: ['redir': service?.webpage])}\" target:\"_blank\">Página Web</a> </li>"
         out <<                  "</g:if>"
         out <<                  "</p>"
         out <<          "</div>"
         out <<      "</div>"
-        out << "</div>"
         out << "</div>"
     }
 }
