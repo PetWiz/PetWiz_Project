@@ -12,12 +12,18 @@
         var _url = '${createLink(controller: 'index' , action:'logout')}?';
         var god = '0'
     </script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('.materialboxed').materialbox();
+
+        });
+    </script>
 
 
     <!-- Modal Structure -->
     <div id="addPet" class="modal small">
         <div class="modal-content font-teal">
-            <g:form controller="person" action="addPet">
+            <g:form controller="person"  action="addPet"  enctype="multipart/form-data">
 
                     <div class="input-field  col s12 m12 l12">
                         <input id="pet_id" type="hidden" class="validate "  value="${petwiz_project.Pet?.count + 1 }" name="id" >
@@ -58,9 +64,17 @@
                         </select></div></input>-->
                     </div>
                 </div>
-                <button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Crear Mascota
+                <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                        <label for="photo" >Imagen </label><br><br>
+                        <g:field id="photo" type="file" class="validate" name="avatar" />
+                    </div>
+                </div>
+                <!--<button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Crear Mascota
                     <i class="material-icons right">send</i>
-                </button>
+                </button>-->
+                <g:actionSubmit controller ="person" value="Crear Mascota" action="addPet"
+                                class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>
             </g:form>
         </div>
     </div>
@@ -72,7 +86,7 @@
                 <div class="col s12 m6 l3">
                     <div class="card small hoverable">
                         <div class="card-image waves-effect waves-block waves-light">
-                            <asset:image src="cat1.jpg" class="activator"/>
+                            <image src="${createLink(controller: 'person', action: 'petImageHandler', id: item.pet_name)}" class="materialboxed" width="650"/>
                         </div>
                         <div class="card-content">
                             <div class="row center"><span class="petwiz-font small-text activator">${item.pet_name}</span></div>
