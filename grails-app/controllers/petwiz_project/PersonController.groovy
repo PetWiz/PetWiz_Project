@@ -99,26 +99,39 @@ class PersonController {
     }
 
     @Transactional
-    def deletePet(Pet pet) {
-        def userD = Person.findByUsername(session["user"])
-        def currentPet = userD.pets[0]
-
-
-
-        print "Select current pet: " + currentPet.pet_name
-
-        print "Deleting pet..."
-        pet = Pet.get(params.id)
-        //def pet = Pet.get(params.getIdentifier())
-        //pet.getId()
-
+    def delete() {
+        def user = Person.findByUsername(session["user"])
+        def pet=Pet.get(params.id)
+        print pet.pet_name
         pet.delete(flush: true)
+        print pet.pet_name
+        def list = user.pets//Para mirar las mascotas que tiene un usuario
+        list.each {
+            def listPetName = it.pet_name
+
+            print "CURRENT PET: " + listPetName
+
+        }
+        print "Number of pets: " + list.size()
+        /*   def userD = Person.findByUsername(session["user"])
+           def currentPet = userD.pets[0]
 
 
-        print "Pet deleted"
 
-        render(controller: 'person', view: '/person/mypets');
+           print "Select current pet: " + currentPet.pet_name
 
+           print "Deleting pet..."
+           pet = Pet.get(params.id)
+           //def pet = Pet.get(params.getIdentifier())
+           //pet.getId()
+
+
+
+
+           print "Pet deleted"
+
+           redirect(controller: 'person', view: '/person/home');*/
+        redirect(action: 'mypets');
     }
 
     @Transactional
