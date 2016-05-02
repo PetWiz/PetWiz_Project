@@ -176,5 +176,23 @@ class PersonController {
 
     }
 
+    def petImageHandler() {
+        def name = params.id.toString()
+        def pet = Pet.findByPet_name(name)
+
+        if (!pet.photo || !pet.photoType) {
+            response.sendError(404)
+            return
+        }
+        response.contentType = pet.photoType
+        response.contentLength = pet.photo.size()
+        OutputStream out = response.outputStream
+        out.write(pet.photo)
+        out.close()
+
+        println "Current name: " + name
+        println "ImgName: "+ pet.photo.getProperties()
+        println "ImgType: "+ pet.photoType
+    }
 }
 
