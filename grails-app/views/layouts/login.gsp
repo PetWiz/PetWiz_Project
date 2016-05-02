@@ -5,12 +5,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <asset:stylesheet src="materialize.min.css" media="screen,projection"/>
     <asset:stylesheet src="IndexStyle.css"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Vollkorn:700' rel='stylesheet' type='text/css'>
-
+    <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'iconopw.ico')}" type="image/x-icon" />
     <g:layoutHead />
 </head>
 <body onload="${pageProperty(name:'body.onload')}">

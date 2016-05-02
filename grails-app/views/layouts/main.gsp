@@ -10,7 +10,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Vollkorn:700' rel='stylesheet' type='text/css'>
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<asset:javascript src="facelogout.js"/>
+	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'iconopw.ico')}" type="image/x-icon" />
+	<!--<asset:javascript src="facelogout.js"/>-->
 	<asset:javascript src="facelogin.js"/>
 	<g:layoutHead />
 </head>
@@ -125,7 +126,12 @@
 				<a href="#" data-activates="nav-lat" class="button-collapse"><i class="material-icons">menu</i></a>
 				<a href="" class="brand-logo"><img src="https://41.media.tumblr.com/4255698e1f0bf60cc578b3e41e1102c2/tumblr_o3y01dJzcZ1solvhmo1_400.png" width=110px height="auto"/></a>
 				<div class="col l12 m9 hide-on-med-and-down" style="margin-top: 10px; padding-left: 4%">
+				<sec:ifAllGranted roles="ROLE_USER">
 					<a href='#' id='logout' class='btn face-log'>Salir</a>
+				</sec:ifAllGranted>
+				<sec:ifNotLoggedIn>
+					<a href="${createLink(controller:'index', action:'index')}"  class='btn face-log'>Entrar</a>
+				</sec:ifNotLoggedIn>
 				<!--		<img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"
 							 width=20px height="auto" style="padding-top: 8px"/>
 					</a>-->
