@@ -10,6 +10,8 @@ class Pet implements Serializable{
     String pet_name;
     String pet_genre;
     int pet_age;
+    byte[] photo
+    String photoType
 
     static belongsTo = [person:Person]
 
@@ -19,5 +21,7 @@ class Pet implements Serializable{
         pet_name(nullable: false,blank:false)
         pet_genre(nullable: false,blank:false)
         pet_age(nullable: true)
+        photo(nullable: true, blank:true, maxSize: 1024 * 1024)
+        photoType(nullable: true, blank:true)
     }
 }

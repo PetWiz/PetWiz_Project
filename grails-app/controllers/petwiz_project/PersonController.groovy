@@ -1,11 +1,14 @@
 package petwiz_project
 
 import grails.transaction.Transactional
+import org.springframework.web.multipart.MultipartHttpServletRequest
+import org.springframework.web.multipart.commons.CommonsMultipartFile
 
 @Transactional(readOnly = true)
 class PersonController {
 
     static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE"]
+    private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
 
     def home() {
         render(controller: 'person', view: '/person/home');
@@ -50,7 +53,8 @@ class PersonController {
         def genre = (params.genre).toString()
         def age = (params.age).toInteger()
         def id = (params.id).toLong()
-
+        def photo = params.photo
+        def photoType = params.photoType
 
 
         println("name pet: " + name)
@@ -58,6 +62,16 @@ class PersonController {
         println("age: " + age)
         println("genre: " + genre)
         println("id: " + id)
+        println("photo: " + photo)
+
+        //Obtener la imagen
+        MultipartHttpServletRequest mpr = (MultipartHttpServletRequest) request;
+        CommonsMultipartFile f = (CommonsMultipartFile) mpr.getFile("avatar")
+        if (!okcontents.contains(f.getContentType())) {
+            flash.message = "El avatar debe tener alguno de los siguientes formatos: ${okcontents}"
+
+        }
+        print f
 
 
         print "pet not saved"
@@ -69,12 +83,13 @@ class PersonController {
 
 
             //def pet
-            pet = new Pet( type: typePet, name: name, genre: genre, age: age)
-
+            pet = new Pet(type: typePet, name: name, genre: genre, age: age, photo:photo, photoType: photoType )
             pet.pet_type = typePet
             pet.pet_name = name
             pet.pet_genre = genre
             pet.pet_age = age
+            pet.photo = f.bytes
+            pet.photoType = f.contentType
             pet.save()
 
             user.addToPets(pet)
@@ -161,5 +176,23 @@ class PersonController {
 
     }
 
+    def petImageHandler() {
+        def name = params.id.toString()
+        def pet = Pet.findByPet_name(name)
+
+        if (!pet.photo || !pet.photoType) {
+            response.sendError(404)
+            return
+        }
+        response.contentType = pet.photoType
+        response.contentLength = pet.photo.size()
+        OutputStream out = response.outputStream
+        out.write(pet.photo)
+        out.close()
+
+        println "Current name: " + name
+        println "ImgName: "+ pet.photo.getProperties()
+        println "ImgType: "+ pet.photoType
+    }
 }
 
