@@ -37,14 +37,39 @@ class ServiceService {
         return false
     }
 
-    def delete(String name){
-        def serv = Service.findByName(name)
+    def delete(String name, float x, float y){
+        def serv = Service.findByNameAndCoordenate_xAndCoordenate_y(name, x, y)
         try {
             serv.delete(flush: true)
             return true
         }catch(DataIntegrityViolationException e){
             return false
         }
+    }
+
+    def update(long id, String name, long phone, String address, String webpage, String description, float coordenate_x,
+               float coordenate_y, byte[] f_bytes, String f_contentType){
+        def serv = Service.findById(id)
+        try{
+            serv.name = name
+            serv.phone = phone
+            serv.address = address
+            serv.webpage = webpage
+            serv.description = description
+            serv.coordenate_x = coordenate_x
+            serv.coordenate_y = coordenate_y
+            if (f_bytes.length > 0) {
+                serv.photo = f_bytes
+                serv.photoType = f_contentType
+            }
+
+            serv.save(flush: true, failOnError: true)
+            return true
+        }catch(Exception e){
+            print e
+            return false
+        }
+
     }
 
 }

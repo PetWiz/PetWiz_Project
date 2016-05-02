@@ -53,11 +53,15 @@ class ServiceController {
             response.sendError(404)
             return
         }
-        response.contentType = serv.photoType
-        response.contentLength = serv.photo.size()
-        OutputStream out = response.outputStream
-        out.write(serv.photo)
-        out.close()
+        try{
+            response.contentType = serv.photoType
+            response.contentLength = serv.photo.size()
+            OutputStream out = response.outputStream
+            out.write(serv.photo)
+            out.close()
+        }catch (Exception e){
+            print e
+        }
     }
 
     def visitServicePage() {
@@ -69,7 +73,7 @@ class ServiceController {
     def delete() {
         print params
         print "service del " + params.name
-        def del = ServiceService.delete(params.name)
+        def del = ServiceService.delete(params.name, Float.parseFloat(params.x), Float.parseFloat(params.y))
         if (del)
             flash.message = "Service Succesfully Deleted"
         else
@@ -79,7 +83,28 @@ class ServiceController {
     }
 
     def update() {
+        print "Service Controller"
         print params
+        byte[] f_byte = null
+        String f_contentType = null
+        print "Parametroos " + params.updphoto
+        MultipartHttpServletRequest mpr = (MultipartHttpServletRequest) request;
+        CommonsMultipartFile f = (CommonsMultipartFile) mpr.getFile("updphoto")
+            if (!okcontents.contains(f.getContentType())) {
+                flash.message = "El avatar debe tener alguno de los siguientes formatos: ${okcontents}"
+            }
+        f_byte = f.bytes
+        f_contentType = f.contentType
+        print f_byte
+
+        def upd = ServiceService.update(Long.valueOf(params.servid), params.updname, params.updphone.toLong(),
+                params.updaddress, params.updpagWeb, params.upddescription,
+                Float.parseFloat(params.updcoordenate_x), Float.parseFloat(params.updcoordenate_y), f_byte, f_contentType)
+        if (upd)
+            flash.message = "Service Succesfully Updated"
+        else
+            flash.error = "Service can't be updated"
+
         redirect(action: 'service')
     }
 }
