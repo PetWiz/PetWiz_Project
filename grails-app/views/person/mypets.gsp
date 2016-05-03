@@ -18,9 +18,7 @@
 
         });
     </script>
-
-
-    <!-- Modal Structure -->
+        <!-- Modal Structure -->
     <div id="addPet" class="modal small">
         <div class="modal-content font-teal">
             <g:form controller="person"  action="addPet"  enctype="multipart/form-data">
@@ -85,8 +83,8 @@
             <g:each  var="item" in="${petwiz_project.Pet?.findAllByPerson(Person.findByUsername(session["user"]))}">
                 <div class="col s12 m6 l3">
                     <div class="card small hoverable">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <image src="${createLink(controller: 'person', action: 'petImageHandler', id: item.pet_name)}" class="materialboxed" width="650"/>
+                        <div class="card-image  waves-effect waves-block waves-light">
+                            <image src="${createLink(controller: 'person', action: 'petImageHandler', id: item.pet_name)}" class="activator" width="650"/>
                         </div>
                         <div class="card-content">
                             <div class="row center"><span class="petwiz-font small-text activator">${item.pet_name}</span></div>
@@ -95,11 +93,8 @@
                                     <i class="large material-icons">pets</i>
                                 </a>
                                 <ul>
-                                    <li class="petwiz"><a class="btn-floating activator"><i class="material-icons">insert_chart</i></a></li>
-                                    <!--<li class="petwiz"><a class="btn-floating" onclick="${remoteFunction(controller: 'person', action: 'deletePet')}"><i class="material-icons">delete</i></a></li>
-                                    -->
-                                    <li class="petwiz"><a class="btn-floating"  href="${createLink(controller: "person", action: "delete", params:['id':item.id])}"><i class="material-icons">delete</i></a></li>
-                                    <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light" href=${"#updatePet" + i}  ><i class="material-icons">edit</i></a></li>
+                                    <li class="petwiz"><a class="btn-floating tooltipped" data-position="bottom" data-delay="50" data-tooltip="Borrar" href="${createLink(controller: "person", action: "delete", params:['id':item.id])}"><i class="material-icons">delete</i></a></li>
+                                    <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar" href=${"#updatePet" + i}  ><i class="material-icons">edit</i></a></li>
                                 </ul>
                             </div>
                         </div>

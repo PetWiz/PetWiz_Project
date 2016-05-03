@@ -366,7 +366,6 @@ footer.page-footer.petwiz-blue{
     margin-left: 0;
     height: 88px;
 }
-
 .collapsible-header.petco:hover{
     background-color: #025c75;
 }
@@ -378,6 +377,18 @@ footer.page-footer.petwiz-blue{
     margin-left: -10px;
     height: 70px;
 }
+
+.collapsible-header.help:hover{
+    background-color: #f56c2a;
+}
+.collapsible-header.help{
+    background-color: #e56a2a;
+
+}
+.help-color{
+    background-color: #fff6e0;
+}
+
 
 .modal.small{
 
@@ -391,15 +402,14 @@ footer.page-footer.petwiz-blue{
 }
 
 .card-image.yeih{
-    width: 236px;
+    width: 250px;
     height: 172px;
     overflow: hidden;
 }
 
 .card-image.yeih .crop{
-    width: 300px;
-    height: 300px;
-
+    width: 400px;
+    max-height: 300px;
 }
 
 /*---------------------------Slider------------------*/

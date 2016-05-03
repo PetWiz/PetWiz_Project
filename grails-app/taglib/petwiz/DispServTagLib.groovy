@@ -12,7 +12,7 @@ class DispServTagLib {
 
         out << "<div class=\"col s12 m12 l3\">"
         out <<      "<div class=\"card hoverable\">"
-        out <<          "<div class=\"card-image waves-effect waves-block waves-light\">"
+        out <<          "<div class=\"card-image yeih waves-effect waves-block waves-light\">"
         if (service.photo.size() > 0) {
             out << "<img class=\"activator crop\" src=\"${createLink(controller: 'service', action: 'imageHandler', id: service.name)}\"/>"
         }
@@ -23,18 +23,6 @@ class DispServTagLib {
         out <<          "<div class=\"card-content\">"
         out <<				"<div class=\"row\">"
         out <<                  "<span class=\"card-title petwiz-font small-text activator\">${service.name}</span>"
-
-        if (!edit) { //Opciones para person/services
-            out <<                  "<div class=\"fixed-action-btn petwiz horizontal\" style=\"padding-left:173px \">"
-            out <<                      "<a class=\"btn-floating btn-large petwiz-blue\">"
-            out <<                          "<i class=\"large material-icons\">pets</i>"
-            out <<                      "</a>"
-            out <<                      "<ul>"
-            out <<                          "<li class=\"petwiz\"><a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y},'${service.serviceType}')\" class=\"btn-floating activator\"><i class=\"material-icons\">insert_chart</i></a></li>"
-            out <<                      "</ul>"
-            out <<                  "</div>"
-        }
-
         if (edit) {  //Opciones para service/createService
             out <<                  "<div class=\"row\">"
             out <<                      "<div class=\"fixed-action-btn petwiz horizontal\" style=\"padding-left:173px \">"
@@ -128,7 +116,6 @@ class DispServTagLib {
         out <<                  "</p>"
         out <<          "</div>"
         out <<      "</div>"
-        out << "</div>"
         out << "</div>"
     }
 }
