@@ -23,6 +23,15 @@ class DispServTagLib {
         out <<          "<div class=\"card-content\">"
         out <<				"<div class=\"row\">"
         out <<                  "<span class=\"card-title petwiz-font small-text activator\">${service.name}</span>"
+
+        if (!edit) { //Opciones para person/services
+            out <<                  "<div class=\"fixed-action-btn petwiz horizontal\" >"
+            out <<                      "<a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y},'${service.serviceType}')\" class=\"btn-floating btn-large petwiz-blue\">"
+            out <<                          "<i class=\"large material-icons\">pets</i>"
+            out <<                      "</a>"
+            out <<                  "</div>"
+        }
+
         if (edit) {  //Opciones para service/createService
             out <<                  "<div class=\"row\">"
             out <<                      "<div class=\"fixed-action-btn petwiz horizontal\" style=\"padding-left:173px \">"

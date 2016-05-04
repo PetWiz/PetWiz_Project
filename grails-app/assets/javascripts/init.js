@@ -7,6 +7,7 @@
         $('.slider').slider({full_width: true});
         $('ul.tabs').tabs();
         $('.modal-trigger').leanModal();
+        $('.materialboxed').materialbox();
         $(document).ready(function() {
             $('select').material_select();
         });
