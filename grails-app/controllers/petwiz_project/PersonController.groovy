@@ -1,5 +1,6 @@
 package petwiz_project
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import org.springframework.web.multipart.MultipartHttpServletRequest
 import org.springframework.web.multipart.commons.CommonsMultipartFile
@@ -149,15 +150,27 @@ class PersonController {
         redirect(action: 'mypets');
     }
 
+
     @Transactional
     def updatePet(Pet tmp) {
-        print "shit"
+
+        def byte[] f_byte = null
+        def String f_contentType = null
+
+        MultipartHttpServletRequest mpr = (MultipartHttpServletRequest) request;
+        CommonsMultipartFile f = (CommonsMultipartFile) mpr.getFile("updphoto")
+        if (!okcontents.contains(f.getContentType())) {
+            flash.message = "El avatar debe tener alguno de los siguientes formatos: ${okcontents}"
+
+        }
         def user = Person.findByUsername(session["user"])
         def typePet = (params.typePet2).toString()
         def name = (params.name2).toString()
         def genre = (params.genre2).toString()
         def age = (params.age2).toInteger()
         def id = (params.id2).toLong()
+        f_byte = f.bytes
+        f_contentType = f.contentType
 
         if (user){
 
@@ -166,6 +179,10 @@ class PersonController {
             tmp.pet_name = name
             tmp.pet_genre = genre
             tmp.pet_age = age
+            if (f_byte.length > 0) {
+                tmp.photo = f_byte
+                tmp.photoType = f_contentType
+            }
             tmp.save(flush: true)
 
             render(controller: 'person', view: '/person/mypets');

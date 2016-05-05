@@ -112,7 +112,8 @@
                 <div id="${"updatePet" + i}" class="modal small">
                     <g:set var="i" value="${i+1}" />
                     <div class="modal-content font-teal">
-                        <g:form controller="person" action="updatePet">
+
+                        <g:form controller="person" action="updatePet" enctype="multipart/form-data">
                             <div class="input-field  col s12 m12 l12">
                                 <input id="pet_id2" type="hidden" class="validate "  value="${item.getId() }" name="id2" >
                             </div>
@@ -150,6 +151,19 @@
                             <option value="Female" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
                         </select></div></input>-->
                                 </div>
+                            </div>
+                            <div class="row">
+
+                               <div class="file-field input-field  col s12 m12 l12">
+                                   <div class="btn">
+                                       <span>File</span>
+                                       <input type="file" name="updphoto" accept="image/*">
+                                   </div>
+                                   <div class="file-path-wrapper">
+                                       <input class="file-path validate" type="text" name="updphoto">
+                                   </div>
+
+                               </div>
                             </div>
                            <!--- <g:actionSubmit controller ="person" value="Actualizar mascota" action="saveService" class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>--->
                             <button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Actualizar datos
