@@ -1,10 +1,6 @@
 package petwiz_project
 
-import com.google.common.collect.Lists
 import grails.transaction.Transactional
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
-import org.springframework.security.core.GrantedAuthority
-import org.springframework.security.core.authority.GrantedAuthorityImpl
 import org.springframework.security.core.context.SecurityContextHolder
 
 class IndexController {
@@ -27,6 +23,17 @@ class IndexController {
     def contact() {
         render(controller: 'index', view: '/index/contact');
     }
+
+    def send(){
+        sendMail{
+            to params.email,"petwiz2016@gmail.com"
+            from "petwiz2016@gmail.com"
+            subject params.subject
+            body params.email+", Saludos, hemos recibido tu solicitud\n" + params.body +"\n Esta sera respondida en el menor tiempo \n Gracias por preferirnos, PetwizTeam"
+        }
+    }
+
+
 
     @Transactional
     def register_login() {
