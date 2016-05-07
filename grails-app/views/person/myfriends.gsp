@@ -15,7 +15,7 @@
 
     <div>
         <div class="row">
-            <div class="col s4 m4 4">
+            <div class="col s12 m8 l4">
                 <div id="result_friends"></div>
             </div>
         </div>
