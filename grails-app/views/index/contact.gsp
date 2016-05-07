@@ -60,11 +60,12 @@
                             <label for="body">Cuentanos que sucede</label>
                         </div>
                     </div>
-                    <a class="waves-effect waves-light btn" type="submit">Enviar</a>
+                    <input class="btn black" type="submit">
                 </g:form>
             </div>
 
         </div>
+
     </div>
 </main>
 </body>

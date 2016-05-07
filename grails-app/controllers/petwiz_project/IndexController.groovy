@@ -31,8 +31,9 @@ class IndexController {
             subject params.subject
             body params.email+", Saludos, hemos recibido tu solicitud\n" + params.body +"\n Esta sera respondida en el menor tiempo \n Gracias por preferirnos, PetwizTeam"
         }
-    }
+        render( view: '/index/confirm',   model: [email:params.email])
 
+    }
 
 
     @Transactional
