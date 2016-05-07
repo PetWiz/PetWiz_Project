@@ -57,6 +57,7 @@ class PersonController {
         def photoType = params.photoType
 
 
+
         println("name pet: " + name)
         println("type pet: " + typePet)
         println("age: " + age)

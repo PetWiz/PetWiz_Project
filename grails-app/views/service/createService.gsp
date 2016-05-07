@@ -30,7 +30,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12  m12 l12">
-                        <g:field id="serv_tel" type="number" class="validate" name="phone" required="true"/>
+                        <g:field id="serv_tel" type="number" class="validate" name="phone" required="true" min="0"/>
                         <label for="serv_tel">Teléfono</label>
                     </div>
                 </div>
