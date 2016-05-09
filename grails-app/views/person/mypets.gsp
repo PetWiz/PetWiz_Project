@@ -95,16 +95,29 @@
                                 <ul>
                                     <li class="petwiz"><a class="btn-floating tooltipped" data-position="bottom" data-delay="50" data-tooltip="Borrar" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" href="${createLink(controller: "person", action: "delete", params:['id':item.id])}"><i class="material-icons">delete</i></a></li>
                                     <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar" href=${"#updatePet" + i}  ><i class="material-icons">edit</i></a></li>
+                                    <li class="petwiz">
+                                        <g:form action="pet">
+                                            <g:hiddenField name="petname" value="${item.pet_name}"/>
+                                            <g:hiddenField name="pettype" value="${item.pet_type}"/>
+                                            <g:hiddenField name="petage" value="${item.pet_age}"/>
+                                            <g:hiddenField name="petgenre" value="${item.pet_genre}"/>
+                                            <button class="btn-floating tooltipped" data-position="bottom" data-delay="50" data-tooltip="perfil" type="submit" name="action">
+                                                <i class="material-icons right">pages</i>
+                                            </button>
+                                        </g:form>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-reveal petwiz-grey">
                             <span class="card-title  petwiz-blue-text">${item.pet_name}<i class="material-icons right">close</i></span>
                             <p class=" petwiz-blue-text">
-                            <li>Especie: ${item.pet_type}</li>
-                            <li>Edad: ${item.pet_age}</li>
-                            <li>Genero: ${item.pet_genre}</li>
-                        </p>
+                            <ul>
+                                <li>Especie: ${item.pet_type}</li>
+                                <li>Edad: ${item.pet_age}</li>
+                                <li>Genero: ${item.pet_genre}</li>
+                            </ul>
+                            </p>
                         </div>
                     </div>
 
@@ -166,6 +179,7 @@
                     <a  href="#addPet" class="modal-trigger btn-floating btn-large waves-effect waves-light petwiz-blue-add"><i class="material-icons">add</i></a>
                 </div>
             </div>
+
 
         </div>
     </div>

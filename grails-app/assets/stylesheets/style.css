@@ -81,7 +81,11 @@ footer, header{
     background-color: #b9cacc;
     color: white;
 }
-
+.petwiz-image-pet{
+    width: 150px;
+    height: 150px;
+    display: inline-flex;
+}
 .petwiz-modal:hover{
     color: white;
     background-color: #027A93;

@@ -26,9 +26,15 @@ class PersonController {
     def myevents() {
         render(controller: 'person', view: '/person/myevents');
     }
+
     def myfriends() {
         render(controller: 'person', view: '/person/myfriends');
     }
+
+    def pet() {
+        render( view: '/person/pet', model: [name:params.petname, age: params.petage, type: params.pettype, genre: params.petgenre  ]);
+    }
+
 
     def muestra() {
 
@@ -40,7 +46,6 @@ class PersonController {
         //[name:name,kind:kind,age:age, genre:genre]
 
     }
-
 
     @Transactional
     def addPet(Pet pet) {
