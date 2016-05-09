@@ -97,6 +97,7 @@
                                     <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar" href=${"#updatePet" + i}  ><i class="material-icons">edit</i></a></li>
                                     <li class="petwiz">
                                         <g:form action="pet">
+                                            <g:hiddenField name="petid" value="${item.id}"/>
                                             <g:hiddenField name="petname" value="${item.pet_name}"/>
                                             <g:hiddenField name="pettype" value="${item.pet_type}"/>
                                             <g:hiddenField name="petage" value="${item.pet_age}"/>

@@ -54,6 +54,7 @@ footer, header{
     .brand-logo{
         margin-left: 0;
     }
+
 }
 @media only screen and (max-width: 0px){
     .face-log{
@@ -82,10 +83,18 @@ footer, header{
     color: white;
 }
 .petwiz-image-pet{
-    width: 150px;
-    height: 150px;
-    display: inline-flex;
+    width: 500px;
+    margin-left: -15px;
+    height: auto;
+    overflow: hidden;
 }
+
+.petwiz-image-pet .crop{
+    max-width: 500px;
+    height: auto;
+    padding-right: 0;
+}
+
 .petwiz-modal:hover{
     color: white;
     background-color: #027A93;

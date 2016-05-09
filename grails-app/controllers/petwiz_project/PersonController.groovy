@@ -32,7 +32,7 @@ class PersonController {
     }
 
     def pet() {
-        render( view: '/person/pet', model: [name:params.petname, age: params.petage, type: params.pettype, genre: params.petgenre  ]);
+        render( view: '/person/pet', model: [id: params.petid, name:params.petname, age: params.petage, type: params.pettype, genre: params.petgenre  ]);
     }
 
 
@@ -182,23 +182,5 @@ class PersonController {
 
     }
 
-    def petImageHandler() {
-        def name = params.id.toString()
-        def pet = Pet.findByPet_name(name)
-
-        if (!pet.photo || !pet.photoType) {
-            response.sendError(404)
-            return
-        }
-        response.contentType = pet.photoType
-        response.contentLength = pet.photo.size()
-        OutputStream out = response.outputStream
-        out.write(pet.photo)
-        out.close()
-
-        println "Current name: " + name
-        println "ImgName: "+ pet.photo.getProperties()
-        println "ImgType: "+ pet.photoType
-    }
 }
 
