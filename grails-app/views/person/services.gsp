@@ -69,8 +69,6 @@
     </div>
     <div id="test4" class="row">
         <ul class="col s12 m12 l12">
-          <!--  <li><a href="#" onclick="Aseo();">Mostrar Todos los Spa's</a></li>
-            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
         </ul>
         <div class="col s12 m12 l12">
@@ -82,8 +80,6 @@
 
     <div id="test5" class="row">
         <ul class="col s12 m12 l12">
-        <!--    <li><a href="#" onclick="Training();">Mostrar Todos Los Entrenadores</a></li>
-            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
         </ul>
         <div class="col s12 m12 l12">
@@ -111,7 +107,9 @@
 
 <asset:javascript src="maps.js"/>
 <asset:javascript src="cluster.js"/>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<asset:javascript src="ranking.js"/>
+<asset:stylesheet src="ranking.css"/>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgobfAe2NzWl-0G2O_khAWLVJ9bCOi4mE&callback=initMap">
 </script>

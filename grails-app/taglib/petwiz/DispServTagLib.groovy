@@ -28,6 +28,14 @@ class DispServTagLib {
         out <<                  "<span class=\"card-title petwiz-font small-text activator\">${service.name}</span>"
 
         if (!edit) { //Opciones para person/services
+            out << " <fieldset class=\"rating\">\n" +
+                    "        <legend>Please rate:</legend>\n" +
+                    "        <input type=\"radio\" id=\"star5\" name=\"rating\" value=\"5\" /><label for=\"star5\" title=\"Rocks!\">5 stars</label>\n" +
+                    "        <input type=\"radio\" id=\"star4\" name=\"rating\" value=\"4\" /><label for=\"star4\" title=\"Pretty good\">4 stars</label>\n" +
+                    "        <input type=\"radio\" id=\"star3\" name=\"rating\" value=\"3\" /><label for=\"star3\" title=\"Meh\">3 stars</label>\n" +
+                    "        <input type=\"radio\" id=\"star2\" name=\"rating\" value=\"2\" /><label for=\"star2\" title=\"Kinda bad\">2 stars</label>\n" +
+                    "        <input type=\"radio\" id=\"star1\" name=\"rating\" value=\"1\" /><label for=\"star1\" title=\"Sucks big time\">1 star</label>\n" +
+                    "    </fieldset>"
             out <<                  "<div class=\"fixed-action-btn petwiz horizontal\" >"
             out <<                      "<a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y},'${service.serviceType}')\" class=\"btn-floating btn-large petwiz-blue\">"
             out <<                          "<i class=\"large material-icons\">pets</i>"

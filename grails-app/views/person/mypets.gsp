@@ -18,64 +18,65 @@
 
         });
     </script>
-        <!-- Modal Structure -->
-    <div id="addPet" class="modal small">
+    <!-- Modal Structure -->
+<div id="addPet" class="modal small">
+    <g:form controller="person"  action="addPet"  enctype="multipart/form-data">
         <div class="modal-content font-teal">
-            <g:form controller="person"  action="addPet"  enctype="multipart/form-data">
+            <div class="input-field  col s12 m12 l12">
+                <input id="pet_id" type="hidden" class="validate "  value="${petwiz_project.Pet?.count + 1 }" name="id" >
+            </div>
 
-                    <div class="input-field  col s12 m12 l12">
-                        <input id="pet_id" type="hidden" class="validate "  value="${petwiz_project.Pet?.count + 1 }" name="id" >
-                    </div>
-
-                <div class="row">
-                    <div class="input-field col s12 m12 l12">
-                        <input id="pet_name" type="text" class="validate"  name="name" >
-                        <label for="pet_name" >Nombre de Mascota</label>
-                    </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <g:field id="pet_name" type="text" class="validate"  name="name" required="true"/>
+                    <label for="pet_name" >Nombre de Mascota</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12  m12 l12">
-                        <input id="pet_type" type="text" class="validate" name="typePet">
-                        <label for="pet_type">Especie</label></input>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12  m12 l12">
+                    <g:field id="pet_type" type="text" class="validate" name="typePet" required="true"/>
+                    <label for="pet_type">Especie</label></input>
                 </div>
-                <div class="row">
-                    <div class="input-field col s4 m8 l4">
+            </div>
+            <div class="row">
+                <!-- <div class="input-field col s4 m8 l4">
                         <input id="pet_age" type="number" class="validate" name="age" min="0">
                         <label for="pet_age" data-error="wrong" data-success="right">Edad</label></input>
-                    </div>
-                    <!-- <div class="input-field col s5 m8 l5 center">
-                        <input type="date" class="datepicker" name="age" id="date">
-                        <label for="date"><i class="material-icons font-teal" style="padding-left: 50px;">today</i></label>
                     </div>-->
+                <div class="input-field col s5 m8 l5 center">
+                    <input type="date" class="datepicker" name="born" id="date" required="true">
+                    <label for="date"><i class="material-icons font-teal" style="padding-left: 50px;">today</i></label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12 m12 l12">
-                        <div class="input-field col s12 m12 l12">
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <!--     <div class="input-field col s12 m12 l12">
                             <input id="pet_genre" type="text" class="validate" name="genre">
                             <label for="pet_genre" >Género</label></input>
-                        </div>
-                        <!--<input><select id="pet_genre" name="genre">
-                            <option class="" value="" disabled selected>Escoja el genero</option>
-                            <option value="male" data-icon="/PetWiz/assets/masc.png" class="circle">Macho</option>
-                            <option value="Female" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
-                        </select></div></input>-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12 m12 l12">
-                        <label for="photo" >Imagen </label><br><br>
-                        <g:field id="photo" type="file" class="validate" name="avatar" accept="image/*"/>
-                    </div>
-                </div>
-                <!--<button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Crear Mascota
-                    <i class="material-icons right">send</i>
-                </button>-->
-                <g:actionSubmit controller ="person" value="Crear Mascota" action="addPet"
-                                class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>
-            </g:form>
+                        </div>-->
+                    <select id="pet_genre" name="genre">
+                        <option class="" value="" disabled selected>Escoja el genero</option>
+                        <option value="Male" data-icon="/PetWiz/assets/masc.png" class="circle">Macho</option>
+                        <option value="Female" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
+                    </select></div>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="input-field col s12 m12 l12">
+                <label for="photo" >Imagen </label><br><br>
+                <g:field id="photo" type="file" class="validate" name="avatar" accept="image/*"/>
+            </div>
+        </div>
+        <!--<button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Crear Mascota
+            <i class="material-icons right">send</i>
+        </button>-->
+        <g:actionSubmit controller ="person" value="Crear Mascota" action="addPet"
+                        class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>
+        <br><br>
+        </div>
+    </g:form>
+</div>
+</div>
 
     <div>
         <div class="row">
@@ -84,10 +85,10 @@
                 <div class="col s12 m6 l3">
                     <div class="card small hoverable">
                         <div class="card-image  waves-effect waves-block waves-light">
-                            <image src="${createLink(controller: 'person', action: 'petImageHandler', id: item.pet_name)}" class="activator" width="650"/>
+                            <image src="${createLink(controller: 'person', action: 'petImageHandler', id: item.name)}" class="activator" width="650"/>
                         </div>
                         <div class="card-content">
-                            <div class="row center"><span class="petwiz-font small-text activator">${item.pet_name}</span></div>
+                            <div class="row center"><span class="petwiz-font small-text activator">${item.name}</span></div>
                             <div class="fixed-action-btn petwiz horizontal">
                                 <a class="btn-floating btn-large petwiz-blue">
                                     <i class="large material-icons">pets</i>
@@ -99,11 +100,12 @@
                             </div>
                         </div>
                         <div class="card-reveal petwiz-grey">
-                            <span class="card-title  petwiz-blue-text">${item.pet_name}<i class="material-icons right">close</i></span>
+                            <span class="card-title  petwiz-blue-text">${item.name}<i class="material-icons right">close</i></span>
                             <p class=" petwiz-blue-text">
-                            <li>Especie: ${item.pet_type}</li>
-                            <li>Edad: ${item.pet_age}</li>
-                            <li>Genero: ${item.pet_genre}</li>
+                            <li>Especie: ${item.type}</li>
+                            <li>Fecha Nacimiento: ${item.getBday()}</li>
+                            <li>Edad: ${item.setAge()}</li>
+                            <li>Genero: ${item.genre}</li>
                         </p>
                         </div>
                     </div>
@@ -118,20 +120,24 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12 m12 l12">
-                                    <input id="pet_name2" type="text" class="validate"   value="${item.pet_name}" name="name2" >
+                                    <input id="pet_name2" type="text" class="validate"   value="${item.name}" name="name2" >
                                     <label for="pet_name2" >Nombre de Mascota</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12  m12 l12">
-                                    <input id="pet_type2" type="text" class="validate" value="${item.pet_type}" name="typePet2">
+                                    <input id="pet_type2" type="text" class="validate" value="${item.type}" name="typePet2">
                                     <label for="pet_type2">Especie</label></input>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s4 m8 l4">
-                                    <input id="pet_age2" type="number" class="validate" value="${item.pet_age}" name="age2" min="0">
+                                <!-- <div class="input-field col s4 m8 l4">
+                                    <input id="pet_age2" type="number" class="validate" value="${item.born}" name="age2" min="0">
                                     <label for="pet_age2" data-error="wrong" data-success="right">Edad</label></input>
+                                </div>-->
+                                <div class="input-field col s5 m8 l5 center">
+                                    <input type="date" class="datepicker" name="ag2" id="pet_age2">
+                                    <label for="date"><i class="material-icons font-teal" style="padding-left: 50px;" ></i></label>
                                 </div>
                                 <!-- <div class="input-field col s5 m8 l5 center">
                         <input type="date" class="datepicker" name="age" id="date">
@@ -141,7 +147,7 @@
                             <div class="row">
                                 <div class="input-field col s12 m12 l12">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="pet_genre2" type="text" class="validate" value="${item.pet_genre}" name="genre2">
+                                        <input id="pet_genre2" type="text" class="validate" value="${item.genre}" name="genre2">
                                         <label for="pet_genre2" >Género</label></input>
                                     </div>
                                     <!--<input><select id="pet_genre" name="genre">
@@ -151,7 +157,7 @@
                         </select></div></input>-->
                                 </div>
                             </div>
-                           <!--- <g:actionSubmit controller ="person" value="Actualizar mascota" action="saveService" class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>--->
+                            <!--- <g:actionSubmit controller ="person" value="Actualizar mascota" action="saveService" class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>--->
                             <button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Actualizar datos
                                 <i class="material-icons right">send</i>
                             </button>
@@ -169,7 +175,9 @@
 
         </div>
     </div>
-
+    <g:if test="${flash.message}">
+        <div class="message" style="display: block">${flash.message}</div>
+    </g:if>
 
 </main>
 </body>

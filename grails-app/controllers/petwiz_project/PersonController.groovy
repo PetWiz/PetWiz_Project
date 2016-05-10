@@ -16,7 +16,6 @@ class PersonController {
 
     def mypets() {
         render(controller: 'person', view: '/person/mypets');
-
     }
 
     def services() {
@@ -30,97 +29,61 @@ class PersonController {
         render(controller: 'person', view: '/person/myfriends');
     }
 
-    def muestra() {
-
-        //def name = params.name
-        //def kind = params.kind
-        //def age = params.age
-        //def genre = params.genre
-
-        //[name:name,kind:kind,age:age, genre:genre]
-
-    }
-
-
     @Transactional
-    def addPet(Pet pet) {
+    def addPet() {
 
         def user = Person.findByUsername(session["user"])
 
-
+        print params
         def typePet = (params.typePet).toString()
         def name = (params.name).toString()
         def genre = (params.genre).toString()
-        def age = (params.age).toInteger()
-        def id = (params.id).toLong()
-        def photo = params.photo
-        def photoType = params.photoType
+        def date = params.born.split('-')
+        def tdate = date[2] + "/" + date[1] + "/" + date[0]
+        def bdate = Date.parse("dd/MM/yyyy", tdate)
+        def currentTime = new Date()
+        print bdate
+        print currentTime
 
-
-
-        println("name pet: " + name)
-        println("type pet: " + typePet)
-        println("age: " + age)
-        println("genre: " + genre)
-        println("id: " + id)
-        println("photo: " + photo)
+        print bdate.after(currentTime)
 
         //Obtener la imagen
         MultipartHttpServletRequest mpr = (MultipartHttpServletRequest) request;
         CommonsMultipartFile f = (CommonsMultipartFile) mpr.getFile("avatar")
         if (!okcontents.contains(f.getContentType())) {
             flash.message = "El avatar debe tener alguno de los siguientes formatos: ${okcontents}"
-
         }
-        print f
-
-
         print "pet not saved"
         if (user) {
-
             print "Current user: " + user.username
-
-            user.save()
-
-
-            //def pet
-            pet = new Pet(type: typePet, name: name, genre: genre, age: age, photo:photo, photoType: photoType )
-            pet.pet_type = typePet
-            pet.pet_name = name
-            pet.pet_genre = genre
-            pet.pet_age = age
-            pet.photo = f.bytes
-            pet.photoType = f.contentType
-            pet.save()
-
-            user.addToPets(pet)
-            user.save(failOnError: true, flush: true)
+            def eqName = false
+            user.pets.each{if (it.name.equals(name)) eqName = true; }
+            if (eqName){
+                flash.message = "El nombre de la Mascota ya existe"
+            }
+            else if(bdate.after(currentTime)){
+                flash.message = "La fecha de nacimiento debe ser menor o igual a la fecha actual: ${currentTime.day}/${currentTime.month}/${currentTime.year}"
+            }
+            else {
+                def pet = new Pet(type: typePet, name: name, genre: genre, born: bdate, photo: f.bytes, photoType: f.contentType)
+                pet.setAge()
+                pet.save()
+                user.addToPets(pet)
+                user.save(failOnError: true, flush: true)
+                print "pet saved"
+                flash.message = "Mascota creada exitosamente"
+            }
         }
-
-        print "pet saved"
-
-        def list = user.pets//Para mirar las mascotas que tiene un usuario
-        list.each {
-            def listPetName = it.pet_name
-
-            print "PET ADDED: " + listPetName
-
-        }
-        print "Number of pets: " + list.size()
-        print "First pet: " + list.getAt(0).pet_name
-
-
         render(controller: 'person', view: '/person/mypets');
-
     }
 
     @Transactional
     def delete() {
         def user = Person.findByUsername(session["user"])
         def pet=Pet.get(params.id)
-        print pet.pet_name
+        print pet.name
         pet.delete(flush: true)
-        print pet.pet_name
+        print pet.name
         def list = user.pets//Para mirar las mascotas que tiene un usuario
         list.each {
             def listPetName = it.pet_name
@@ -129,24 +92,7 @@ class PersonController {
 
         }
         print "Number of pets: " + list.size()
-        /*   def userD = Person.findByUsername(session["user"])
-           def currentPet = userD.pets[0]
 
-
-
-           print "Select current pet: " + currentPet.pet_name
-
-           print "Deleting pet..."
-           pet = Pet.get(params.id)
-           //def pet = Pet.get(params.getIdentifier())
-           //pet.getId()
-
-
-
-
-           print "Pet deleted"
-
-           redirect(controller: 'person', view: '/person/home');*/
         redirect(action: 'mypets');
     }
 
@@ -157,29 +103,28 @@ class PersonController {
         def typePet = (params.typePet2).toString()
         def name = (params.name2).toString()
         def genre = (params.genre2).toString()
-        def age = (params.age2).toInteger()
+        def date = params.ag2.split('-')
+        def tdate = date[2] + "/" + date[1] + "/" + date[0]
+        def bdate = Date.parse("dd/MM/yyyy", tdate)
         def id = (params.id2).toLong()
-
         if (user){
-
             tmp = Pet.get(id)
-            tmp.pet_type = typePet
-            tmp.pet_name = name
-            tmp.pet_genre = genre
-            tmp.pet_age = age
+            tmp.type = typePet
+            tmp.name = name
+            tmp.genre = genre
+            tmp.born = bdate
+            tmp.setAge()
             tmp.save(flush: true)
 
             render(controller: 'person', view: '/person/mypets');
-
         }else{
-        	redirect(controller:'user',action:'viewHome')
+            redirect(controller:'user',action:'viewHome')
         }
-
     }
 
     def petImageHandler() {
         def name = params.id.toString()
-        def pet = Pet.findByPet_name(name)
+        def pet = Pet.findByName(name)
 
         if (!pet.photo || !pet.photoType) {
             response.sendError(404)
@@ -190,10 +135,6 @@ class PersonController {
         OutputStream out = response.outputStream
         out.write(pet.photo)
         out.close()
-
-        println "Current name: " + name
-        println "ImgName: "+ pet.photo.getProperties()
-        println "ImgType: "+ pet.photoType
     }
 }
 
