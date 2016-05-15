@@ -6,10 +6,10 @@ package petwiz_project
 class Pet implements Serializable{
 
 
-    String pet_type;
-    String pet_name;
-    String pet_genre;
-    int pet_age;
+    String pet_type
+    String pet_name
+    String pet_genre
+    int pet_age
     byte[] photo
     String photoType
 

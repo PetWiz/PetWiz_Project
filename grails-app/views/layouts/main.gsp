@@ -99,7 +99,7 @@
 						<sec:ifAllGranted roles="ROLE_USER">
 							<li class="menulat-item-da"><a href="${createLink(controller:'person', action:'myfriends')}"><i class="material-icons circle font-white petwiz-royale">perm_identity</i><span class="title font-white left-align">Mi perfil</span></a></li>
 							<li class="menulat-item-da"><a href="${createLink(controller:'person', action:'mypets')}"><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Mis Mascotas</span></a></li>
-							<li class="menulat-item-da"><a href=""><i class="material-icons circle font-white petwiz-royale">input</i><span class="title font-white left-align">Mis Eventos</span></a></li>
+							<li class="menulat-item-da"><a href="${createLink(controller:'person', action:'myevents')}"><i class="material-icons circle font-white petwiz-royale">input</i><span class="title font-white left-align">Mis Eventos</span></a></li>
 						</sec:ifAllGranted>
 						<sec:ifNotLoggedIn>
 							<li class="menulat-item-da"><a href="${createLink(controller:'index', action:'index')}"><i class="material-icons circle font-white petwiz-royale">pets</i><span class="title font-white left-align">Entrar</span></a></li></span>

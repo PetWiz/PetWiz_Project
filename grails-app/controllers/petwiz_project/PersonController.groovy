@@ -7,7 +7,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile
 @Transactional(readOnly = true)
 class PersonController {
 
-    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE"]
+    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE", addEvent: "POST"]
     private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
 
     def home() {
@@ -195,5 +195,39 @@ class PersonController {
         println "ImgName: "+ pet.photo.getProperties()
         println "ImgType: "+ pet.photoType
     }
-}
+    @Transactional
+    def addEvent() {
+        def user = Person.findByUsername(session["user"])
+        def name = (params.eve_name).toString()
+        def address = (params.eve_address).toString()
+        def id = (params.id).toLong()
+        def description = (params.eve_description).toString()
+        def date = params.date
+        println("name eventt: " + name)
+        println("address event: " + address)
+        println("description event: " + description)
+        println("description date: " + date)
+        println("id: " + id)
+        print "event not saved"
+        if (user) {
+            Event event = new Event(eve_name:name, eve_address:address, eve_description:description, date:date)
+            event.eve_name=name
+            event.eve_address=address
+            event.eve_description=description
+            event.date=date
+            event.id=id
+            event.save()
+            user.addToEvents(event)
+            user.save(failOnError: true, flush: true)
+        }
+        def list = user.events//Para mirar las mascotas que tiene un usuario
+        list.each {
+            def listPetName = it.eve_name
 
+            print "EVENT ADDED: " + listPetName
+
+        }
+        print "Number of events: " + list.size()
+        redirect(action: 'myevents');
+    }
+}
