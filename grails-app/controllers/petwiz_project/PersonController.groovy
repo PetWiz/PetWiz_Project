@@ -7,7 +7,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile
 @Transactional(readOnly = true)
 class PersonController {
 
-    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE", addEvent: "POST"]
+    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE", addEvent: "POST", updateEvent: "POST", deleteEvents: "DELETE"]
     private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
 
     def home() {
@@ -225,6 +225,47 @@ class PersonController {
             def listPetName = it.eve_name
 
             print "EVENT ADDED: " + listPetName
+
+        }
+        print "Number of events: " + list.size()
+        redirect(action: 'myevents');
+    }
+    @Transactional
+    def updateEvent() {
+        def user = Person.findByUsername(session["user"])
+        def name = (params.eve_name).toString()
+        def address = (params.eve_address).toString()
+        def description = (params.eve_description).toString()
+        def date = (params.date)
+        def id = (params.id).toLong()
+
+        if (user){
+            Event tmp = Event.get(id)
+            tmp.eve_name = name
+            tmp.eve_address = address
+            tmp.eve_description = description
+            tmp.date = date
+            tmp.save(flush: true)
+
+            render(controller: 'person', view: '/person/myevents');
+
+        }else{
+            redirect(controller:'person',action:'home')
+        }
+    }
+    @Transactional
+    def deleteEvent() {
+        print "asd"
+        def user = Person.findByUsername(session["user"])
+        def event=Event.get(params.id)
+        print event.eve_name
+        event.delete(flush: true)
+        print event.eve_name
+        def list = user.events//Para mirar las mascotas que tiene un usuario
+        list.each {
+            def listPetName = it.eve_name
+
+            print "CURRENT Event: " + listPetName
 
         }
         print "Number of events: " + list.size()
