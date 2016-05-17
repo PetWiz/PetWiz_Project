@@ -18,7 +18,9 @@ class PersonController {
         render(controller: 'person', view: '/person/mypets');
 
     }
-
+    def events() {
+        render(controller: 'person', view: '/person/events');
+    }
     def services() {
         render(controller: 'person', view: '/person/services');
     }
@@ -270,5 +272,13 @@ class PersonController {
         }
         print "Number of events: " + list.size()
         redirect(action: 'myevents');
+    }
+    def showAvatarPet(){
+        print "ahowPhoto"
+        def pet = Pet.findById(params.id)
+        OutputStream out = response.outputStream
+        out.write(pet.photo)
+        out.close()
+
     }
 }

@@ -56,6 +56,20 @@
 										</div>
 									</li>
 									<li>
+										<div class="collapsible-header petco menulat-item-da">
+											<a href="${createLink(controller: 'person' , action:'events')}">
+												<span class="font-white">Eventos</span>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="collapsible-header petco menulat-item-da">
+											<a href="${createLink(controller: 'person' , action:'services')}">
+												<span class="font-white">Servicios</span>
+											</a>
+										</div>
+									</li>
+							<!--		<li>
 										<div class="collapsible-header petco petwiz-blue" style="padding-left: 100px;">
 											<i class="material-icons" ></i>Eventos</div>
 										<div class="collapsible-body">
@@ -64,7 +78,7 @@
 												<li class="menulat-item-co"><a href="${createLink(controller: 'person' , action:'services')}">Servicios</a></li>
 											</ul>
 										</div>
-									</li>
+									</li>-->
 								</sec:ifAllGranted>
 								<sec:ifAllGranted roles="ROLE_ADMIN">
 									<li class="menulat-item-da"><a href="${createLink(controller: 'service' , action:'service')}" class=""><span class="font-white">Crear Servicio</span></a></li>
