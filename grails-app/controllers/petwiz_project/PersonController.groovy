@@ -66,7 +66,8 @@ class PersonController {
             }
             else {
                 def pet = new Pet(type: typePet, name: name, genre: genre, born: bdate, photo: f.bytes, photoType: f.contentType)
-                pet.setAge()
+                def age = pet.setAge()
+                pet.age = age
                 pet.save()
                 user.addToPets(pet)
                 user.save(failOnError: true, flush: true)

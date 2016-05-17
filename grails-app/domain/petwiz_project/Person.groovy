@@ -20,15 +20,10 @@ class Person implements Serializable{
     Date birthday
     String hometown
     String email;
-    boolean enabled = true
-    boolean accountExpired
-    boolean accountLocked
-    boolean passwordExpired
-
-
     static hasMany = [
-            pets : Pet, events: Event, persons:Person,other_services:Other_Service, rols:Rol
+            pets : Pet, events: Event, persons:Person,other_services:Other_Service, rols:Rol, rank:RankingService
     ]
+
     static transients = ['springSecurityService']
     static constraints = {
         id(nullable: false,blank:false,unique:true)

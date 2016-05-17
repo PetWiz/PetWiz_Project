@@ -1,6 +1,9 @@
 .rating {
     float:left;
 }
+fieldset {
+    border:0px;
+}
 
 /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
    follow these rules. Every browser that supports :checked also supports :not(), so
@@ -37,6 +40,7 @@
 .rating:not(:checked) > label:hover ~ label {
     color: gold;
     text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    transform: rotate(-15deg) scale(1.3);
 }
 
 .rating > input:checked + label:hover,
@@ -88,7 +92,7 @@ label:before {
     width: 0px;
     height: 0px;
     z-index: 0;
-    transition: .28s ease;
+    transition: .2s ease;
 }
 [type="radio"]:not(:checked)+label:before{
     border-radius: 0px;
@@ -106,4 +110,26 @@ label:before {
     -webkit-user-select: none;
     user-select: none!important;
 
+}
+/*
+span.stars, span.stars span {
+    display: block;
+    background: url('../images/stars.png') 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}*/
+
+span.stars, span.stars>* {
+    display: inline-block;
+    background: url('../images/stars.png') 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+span.stars>*{
+    max-width:80px;
+    background-position: 0 0;
 }

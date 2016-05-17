@@ -56,8 +56,8 @@
                         </div>-->
                     <select id="pet_genre" name="genre">
                         <option class="" value="" disabled selected>Escoja el genero</option>
-                        <option value="Male" data-icon="/PetWiz/assets/masc.png" class="circle">Macho</option>
-                        <option value="Female" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
+                        <option value="Macho" data-icon="/PetWiz/assets/masc.png" class="circle">Macho</option>
+                        <option value="Hembra" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
                     </select></div>
             </div>
         </div>
@@ -139,23 +139,17 @@
                                     <input type="date" class="datepicker" name="ag2" id="pet_age2">
                                     <label for="date"><i class="material-icons font-teal" style="padding-left: 50px;" ></i></label>
                                 </div>
-                                <!-- <div class="input-field col s5 m8 l5 center">
-                        <input type="date" class="datepicker" name="age" id="date">
-                        <label for="date"><i class="material-icons font-teal" style="padding-left: 50px;">today</i></label>
-                    </div>-->
                             </div>
                             <div class="row">
                                 <div class="input-field col s12 m12 l12">
                                     <div class="input-field col s12 m12 l12">
-                                        <input id="pet_genre2" type="text" class="validate" value="${item.genre}" name="genre2">
-                                        <label for="pet_genre2" >Género</label></input>
+                                        <select id="genre2" name="genre2">
+                                            <option class="" value="" disabled selected>Escoja el genero</option>
+                                            <option value="Macho" data-icon="/PetWiz/assets/masc.png" class="circle">Macho</option>
+                                            <option value="Hembra" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
+                                        </select>
                                     </div>
-                                    <!--<input><select id="pet_genre" name="genre">
-                            <option class="" value="" disabled selected>Escoja el genero</option>
-                            <option value="male" data-icon="/PetWiz/assets/masc.png" class="circle">Macho</option>
-                            <option value="Female" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
-                        </select></div></input>-->
-                                </div>
+                                                                    </div>
                             </div>
                             <!--- <g:actionSubmit controller ="person" value="Actualizar mascota" action="saveService" class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>--->
                             <button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Actualizar datos

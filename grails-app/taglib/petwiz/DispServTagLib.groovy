@@ -1,9 +1,4 @@
 package petwiz
-
-import petwiz_project.Service
-
-import javax.print.PrintServiceLookup
-
 class DispServTagLib {
     //static defaultEncodeAs = [taglib:'html']
     static namespace = "petwiz"
@@ -25,17 +20,23 @@ class DispServTagLib {
         out <<          "</div>"
         out <<          "<div class=\"card-content\">"
         out <<				"<div class=\"row\">"
-        out <<                  "<span class=\"card-title petwiz-font small-text activator\">${service.name}</span>"
+        out <<                  "<center><span class=\"card-title petwiz-font small-text activator\">${service.name}</span></center>"
 
         if (!edit) { //Opciones para person/services
-            out << " <fieldset class=\"rating\">\n" +
-                    "        <legend>Please rate:</legend>\n" +
-                    "        <input type=\"radio\" id=\"star5\" name=\"rating\" value=\"5\" /><label for=\"star5\" title=\"Rocks!\">5 stars</label>\n" +
-                    "        <input type=\"radio\" id=\"star4\" name=\"rating\" value=\"4\" /><label for=\"star4\" title=\"Pretty good\">4 stars</label>\n" +
-                    "        <input type=\"radio\" id=\"star3\" name=\"rating\" value=\"3\" /><label for=\"star3\" title=\"Meh\">3 stars</label>\n" +
-                    "        <input type=\"radio\" id=\"star2\" name=\"rating\" value=\"2\" /><label for=\"star2\" title=\"Kinda bad\">2 stars</label>\n" +
-                    "        <input type=\"radio\" id=\"star1\" name=\"rating\" value=\"1\" /><label for=\"star1\" title=\"Sucks big time\">1 star</label>\n" +
-                    "    </fieldset>"
+            out <<  "<div id=\"up_${service.getId()}\"><span class=\"stars\">${service.getCalification()}</span></div>"
+            //Votar
+            out << " <div class=\"card-action\">" +
+                    "<form controller=\"ranking\" action=\"setRanking\" id=\"field_${service.getId()}\">\n" +
+                    "     <fieldset style=\"padding: 0.35em 0.125em 0.75em\" class=\"rating\"\" >\n" +
+                    "        <input type=\"hidden\" class=\"validate\" name=\"servid\" value=\"${service.getId()}\">"+
+                    "        <input type=\"radio\" id=\"star5_${service.getId()}\"  name=\"rating_${service.getId()}\" value=\"5\" ><label for=\"star5_${service.getId()}\">5 star</label></input>\n" +
+                    "        <input type=\"radio\" id=\"star4_${service.getId()}\"  name=\"rating_${service.getId()}\" value=\"4\" ><label for=\"star4_${service.getId()}\">4 stars</label></input>\n" +
+                    "        <input type=\"radio\" id=\"star3_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"3\" ><label for=\"star3_${service.getId()}\">3 stars</label></input>\n" +
+                    "        <input type=\"radio\" id=\"star2_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"2\" ><label for=\"star2_${service.getId()}\">2 stars</label></input>\n" +
+                    "        <input type=\"radio\" id=\"star1_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"1\" ><label for=\"star1_${service.getId()}\">1 star</label></input>\n" +
+                    "     </fieldset><br><br>\n<div style=\"margin-left:20%;\">\n"
+            out  << submitToRemote(url:[controller:"ranking", action:"setRanking"], update:"up_${service.getId()}", value:"¡Vota!", class:"btn modal-action modal-close waves-effect waves-grey petwiz-teal", id:"${service.getId()}", onComplete:"updateStars()")
+            out <<  "    </div>\n</form></div>\n"
             out <<                  "<div class=\"fixed-action-btn petwiz horizontal\" >"
             out <<                      "<a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y},'${service.serviceType}')\" class=\"btn-floating btn-large petwiz-blue\">"
             out <<                          "<i class=\"large material-icons\">pets</i>"

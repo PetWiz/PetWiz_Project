@@ -25,7 +25,8 @@ class ServiceService {
                     coordenate_y: coordenate_y,
                     photo: imagen,
                     photoType: imagenType,
-                    serviceType: serviceType.toString()
+                    serviceType: serviceType.toString(),
+                    calification: 0
             )
             service.save(flush: true, failOnError: true)
             print "service Saved"
