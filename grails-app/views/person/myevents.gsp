@@ -7,26 +7,38 @@
     <meta name="layout" content="main" />
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <asset:stylesheet src="test.css"/>
+    <asset:javascript src="geocodification.js"/>
 </head>
-<body>
+<body onload="initialize()">
 <main>
     <script type = "text/javascript">
         var _url = '${createLink(controller: 'index' , action:'logout')}?';
         var god = '0';
+        var getAddresses = function(){
+            var addresses = [];
+            $(".listElement").each(function() {
+                var splited = $("p", this).text().split("\n");
+                addresses.push(splited[1].trim());
+            });
+            return addresses;
+        }
         $(document).on('click', '#submit', function() {
             console.log( $('#event_name').val()+" v "+$('#eve_address').val()+" "+$('#eve_description').val());
         });
         $(document).ready(function(){
-            /*$(".listElement").mouseenter(function(){
-                $(".brtt", this).css("display", "inline-block");
-                $(".brtt", this).fadeIn();
-            });
-            $(".listElement").mouseleave(function(){
-                $(".brtt", this).hide();
-                $(".brtt", this).css("display", "none");;
+           /* var addresses = [];
+            $(".listElement").each(function() {
+                var splited = $("p", this).text().split("\n");
+                addresses.push(splited[1].trim());
             });*/
+           // allMarkers(addresses);
             $(".listElement").click(function(){
+
+                var splited = $("p", this).text().split("\n");
+                console.log(splited[1].trim());
                 if($(".brtt", this).css("display")=="none"){
+                    deleteMarkers();
+                    codeAddress(splited[1].trim(), 1);
                     $(".brtt").css("display", "none");
                     $(".brtt", this).css("display", "inline-block");
                     $(".brtt", this).hide();
@@ -34,6 +46,7 @@
                 }else{
                     $(".brtt", this).hide();
                     $(".brtt", this).css("display", "none");
+                    reset();
                 }
             });
         });
@@ -88,7 +101,10 @@
         </div>
     </div>
     <div>
-        <div class="row">
+        <div id="emap"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initialize"
+                async defer></script>
+        <div class="row" id="events">
             <ul class="collection collapsible" data-collapsible="accordion">
                 <li class="collection-item">
                     <a href="#addEvent" class="modal-trigger btn-floating green"><i class="material-icons">add</i></a>
@@ -108,7 +124,7 @@
                               <!--  <a href="#!" class="secondary-content btt"><i class="material-icons">grade</i></a>-->
 
                         </div>
-                        <div class="collapsible-body"><p>${item.eve_description}</p></div>
+                        <div class="collapsible-body" id="description"><p>${item.eve_description}</p></div>
                     </li>
                     <div id="${"updateEvent" + i}" class="modal medium">
                         <g:set var="i" value="${i+1}" />
