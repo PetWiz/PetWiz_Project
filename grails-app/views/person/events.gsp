@@ -123,10 +123,11 @@
                 <li class="collection-item avatar">
                     <div>
                         <img src="${createLink(controller:'person', action:'showAvatarPet', id:item.id)}" alt="" class="circle">
-                        <span class="title">${item.pet_name}</span>
-                        <p> ${item.pet_type}<br>
-                            ${item.pet_genre}<br>
-                            ${item.pet_age} Años
+                        <span class="title">${item.name}</span>
+                        <p> ${item.type}<br>
+                            ${item.genre}<br>
+                            ${item.getBday()}<br>
+                            ${item.age} Años
                         </p>
                         <div>
                             <input class="thecheck" type="checkbox" id=${item.id} />
