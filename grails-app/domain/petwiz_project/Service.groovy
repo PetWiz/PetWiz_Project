@@ -12,8 +12,10 @@ class Service {
     byte[] photo
     String photoType
     String serviceType
+    double calification
 
-    static hasMany = [persons:Person,pets:Pet]
+    static hasMany = [pets:Pet, person: Person, rank:RankingService]
+    static belongsTo = [person:Person]
 
     static constraints = {
         name(nullable: false,blank:false)

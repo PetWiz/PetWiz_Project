@@ -502,6 +502,8 @@ footer.page-footer.petwiz-blue{
 
     background-color: #02a9c5;
 }
-
+.input-field input[type=date]:focus{
+    background-color: #1A3139;
+}
 
 

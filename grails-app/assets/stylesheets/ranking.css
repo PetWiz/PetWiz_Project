@@ -1,0 +1,151 @@
+.rating {
+    float:left;
+}
+fieldset {
+    border:0px;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:0.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    transform: rotate(-15deg) scale(1.3);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+input[type=radio] {
+    display: none;
+}
+label:before {
+    content: "";
+    display: inline-block;
+    radio: 0px;
+    width: 0px;
+    height: 0px;
+
+    margin-right: 10px;
+    position: absolute;
+    left: -2px;
+    bottom: 1px;
+    background-color: #aaa;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+[type="radio"]:not(:checked)+label:after{
+    border-radius: 0px;
+    border: 0px solid #5a5a5a;
+    z-index: -1;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]+label:before, [type="radio"]+label:after{
+    content: '';
+    position: absolute;
+    left:-2px;
+    top: -8px;
+    margin: 4px;
+    width: 0px;
+    height: 0px;
+    z-index: 0;
+    transition: .2s ease;
+}
+[type="radio"]:not(:checked)+label:before{
+    border-radius: 0px;
+    border: 0px solid #5a5a5a;
+}
+
+[type="radio"]:not(:checked)+label, [type="radio"]:checked+label{
+    position: relative;;
+    padding-left: 29px;
+    cursor: pointer!important;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    transition: .24s ease;
+    -webkit-user-select: none;
+    user-select: none!important;
+
+}
+/*
+span.stars, span.stars span {
+    display: block;
+    background: url('../images/stars.png') 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}*/
+/*
+span.stars, span.stars>* {
+    display: inline-block;
+    background: url('../images/stars.png') 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+span.stars>*{
+    max-width:80px;
+    background-position: 0 0;
+}*/
+
+span.stars, span.stars>* {
+    display: inline-block;
+    background: url('../images/stars_1.png') 0 -22px repeat-x;
+    width: 120px;
+    height: 22px;
+}
+span.stars>*{
+    max-width:180px;
+    background-position: 0 0;
+
+}
+
+.divup{
+    margin: 3px 0px 10px 45px;
+}

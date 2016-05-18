@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Petwiz: Servicios</title>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="layout" content="main"/>
     <style type="text/css">
@@ -31,24 +32,23 @@
             </div>
         </div>
     </div>
+
     <div id="test1" class="row">
         <div  class="col s12 m12 l12">
             <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("veterinaria")}">
-                <petwiz:showServ service="${item}" edit="${false}"/>
+                <petwiz:showServ service="${item}" edit="${false}" />
             </g:each>
         </div>
-        <ul class="col s12 m12 l12">
-            <!-- <li><a href="#" onclick="veterias();">Mostrar Todas las veterinarias</a></li>-->
+       <!-- <ul class="col s12 m12 l12">
             <li><a href="#" onclick="addAll();">Mostrar Los Servicios</a></li>
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
-        </ul>
+        </ul>-->
     </div>
     <div id="test2" class="row">
+        <!--
         <ul class="col s12 m12 l12">
-         <!--   <li><a href="#" onclick="guarderias();">Mostrar Todas las guarderias</a></li>
-            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
-        </ul>
+        </ul>-->
         <div class="col s12 m12 l12">
             <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("guarderia")}">
                 <petwiz:showServ service="${item}" edit="${false}"/>
@@ -56,11 +56,10 @@
         </div>
     </div>
     <div id="test3" class="row">
+        <!--
         <ul class="col s12 m12 l12">
-           <!-- <li><a href="#" onclick="cuidadores();">Mostrar Todas los cuidadores</a></li>
-            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
-        </ul>
+        </ul>-->
         <div class="col s12 m12 l12">
             <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("cuidadores")}">
                 <petwiz:showServ service="${item}" edit="${false}"/>
@@ -68,11 +67,9 @@
         </div>
     </div>
     <div id="test4" class="row">
-        <ul class="col s12 m12 l12">
-          <!--  <li><a href="#" onclick="Aseo();">Mostrar Todos los Spa's</a></li>
-            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
+        <!--<ul class="col s12 m12 l12">
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
-        </ul>
+        </ul>-->
         <div class="col s12 m12 l12">
             <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("aseo")}">
                 <petwiz:showServ service="${item}" edit="${false}"/>
@@ -81,11 +78,9 @@
     </div>
 
     <div id="test5" class="row">
-        <ul class="col s12 m12 l12">
-        <!--    <li><a href="#" onclick="Training();">Mostrar Todos Los Entrenadores</a></li>
-            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
+        <!--<ul class="col s12 m12 l12">
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
-        </ul>
+        </ul>-->
         <div class="col s12 m12 l12">
             <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("training")}">
                 <petwiz:showServ service="${item}" edit="${false}"/>
@@ -93,11 +88,11 @@
         </div>
     </div>
     <div id="test6" class="row">
-        <ul class="col s12 m12 l12">
-         <!--   <li><a href="#" onclick="Hospitales();">Mostrar Todos Los Hospitales</a></li>
-            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>-->
+        <!--<ul class="col s12 m12 l12">
+            <li><a href="#" onclick="Hospitales();">Mostrar Todos Los Hospitales</a></li>
+            <li><a href="#" onclick="showAll();">Mostrar Los Servicios</a></li>
             <li><a href="#" onclick="deleteMarkers();">Ocultar</a></li>
-        </ul>
+        </ul>-->
         <div class="col s12 m12 l12">
             <g:each var="item" in="${petwiz_project.Service?.findAllByServiceType("hospital")}">
                 <petwiz:showServ service="${item}" edit="${false}"/>
@@ -111,10 +106,12 @@
 
 <asset:javascript src="maps.js"/>
 <asset:javascript src="cluster.js"/>
-
+<asset:javascript src="ranking.js"/>
+<asset:stylesheet src="ranking.css"/>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgobfAe2NzWl-0G2O_khAWLVJ9bCOi4mE&callback=initMap">
 </script>
+
 
 </body>
 </html>
