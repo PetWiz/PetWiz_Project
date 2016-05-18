@@ -99,7 +99,9 @@
                             <i class="material-icons circle">folder</i>
                             <span class="title">${item.eve_name}</span>
                             <p> ${item.dateFormat()}<br>
-                                ${item.eve_address}
+                                ${item.eve_address}                         <g:if test="${item.pets.size() > 0}">
+                                                                                ${item.pets.size()} Mascotas asistiran!!
+                                                                            </g:if>
                             </p>
                             <a class="btn-floating blue modal-trigger darken-1 brtt tooltipped modal-trigger" data-position="top" href="#addPetToEvent" data-tooltip="Agregar mascota" id="addToEvent" onclick="setEventId(${item.id});"><i class="material-icons">add</i></a>
 
