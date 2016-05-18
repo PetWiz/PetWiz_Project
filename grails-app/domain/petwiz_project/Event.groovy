@@ -5,7 +5,7 @@ package petwiz_project
  */
 class Event {
 
-    String eve_id;
+
     String eve_name;
     String eve_address;
     String eve_description;
@@ -18,10 +18,15 @@ class Event {
 
 
     static constraints = {
-        eve_id(nullable: false,blank:false,unique:true)
+        person nullable: false
+        pets nullable: true
         eve_name(nullable: false,blank:false)
         eve_address(nullable: false,blank:false)
         eve_description(nullable: false,blank:false)
         date(nullable: false,blank:false)
+    }
+    def dateFormat(){
+        String newDate = date.format( 'd-M-yyyy' )
+        return newDate
     }
 }

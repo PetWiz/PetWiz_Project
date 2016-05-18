@@ -1,0 +1,32 @@
+.brtt{
+    margin-right:10px;
+    top:-64px;
+    float:right;
+    position: relative;
+    display:none;
+    z-index: 10;
+}
+#events{
+    float:right;
+    width:500px;
+    overflow-y:auto;
+    max-height: 400px;
+    margin-right: 10px;
+}
+#emap {
+    float:left;
+    width: 550px;
+    height: 350px;
+    margin-left: 30px;
+    margin-top: 9px;
+    position: absolute;
+    background-color: #CCC;
+}
+#description{
+    width: 450px;
+}
+.check{
+    margin-right:10px;
+    top: -64px;
+    float:right;
+}

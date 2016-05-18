@@ -26,6 +26,7 @@ class Person implements Serializable{
 
     static transients = ['springSecurityService']
     static constraints = {
+        events nullable: true
         id(nullable: false,blank:false,unique:true)
         username(nullable: false,blank:false)
         birthday(nullable: false,blank:false)

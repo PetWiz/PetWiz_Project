@@ -1,7 +1,5 @@
 package petwiz_project
 
-import java.text.SimpleDateFormat
-
 /**
  * Created by Andres on 16/03/2016.
  */
