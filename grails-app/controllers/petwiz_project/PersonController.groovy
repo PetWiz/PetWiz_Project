@@ -7,7 +7,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile
 @Transactional(readOnly = true)
 class PersonController {
 
-    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE", addEvent: "POST", updateEvent: "POST", deleteEvents: "DELETE"]
+    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE", addEvent: "POST", updateEvent: "POST", deleteEvents: "DELETE", addPetToEvents:"POST"]
     private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
 
     def home() {
@@ -274,11 +274,37 @@ class PersonController {
         redirect(action: 'myevents');
     }
     def showAvatarPet(){
-        print "ahowPhoto"
         def pet = Pet.findById(params.id)
         OutputStream out = response.outputStream
         out.write(pet.photo)
         out.close()
 
+    }
+    @Transactional
+    def addPetToEvent(){
+        def f = params.get('params').toString().split(']')
+        print f[0]
+        print f[1]
+        f[0] = f[0][1..-1]
+        f[1] = f[1][1..-1]
+        print f[0] + "ddddddddddddddddddddddddd"
+        def ids = f[0].split(",")
+        print ids
+        def event = Event.findById(f[1].toLong())
+        ids.each {
+            def pet = Pet.findById(it.toLong())
+            event.addToPets(pet)
+            event.save(failOnError: true, flush: true)
+        }
+        def list = Event.list()//Para mirar las mascotas que tiene un usuario
+        list.each {
+            def listPetName = it.eve_name
+
+            print "CURRENT Event: " + listPetName
+            def list2 = it.pets
+            print list2
+        }
+        print "Number of events: " + list.size()
+        redirect(action: 'events')
     }
 }

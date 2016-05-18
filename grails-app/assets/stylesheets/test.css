@@ -25,3 +25,8 @@
 #description{
     width: 450px;
 }
+.check{
+    margin-right:10px;
+    top: -64px;
+    float:right;
+}
