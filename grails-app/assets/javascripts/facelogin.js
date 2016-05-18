@@ -3,8 +3,8 @@
 window.fbAsyncInit = function () {
 
     FB.init({
-
-        appId: '1522101791432385',
+        appId: '1525277721114792',
+        //appId: '1522101791432385',
         //appId: '1525265244449373',
         status: true,
         cookie: true    ,
@@ -55,7 +55,7 @@ window.fbAsyncInit = function () {
 
                 var results = '';
                 for (var i = 0; i < friend_data.length; i++) {
-                    results += '<li alt="" class="collection-item avatar svc-btn2 "><img class="circle" src="https://graph.facebook.com/' + friend_data[i].id + '/picture" ><span class="title black-text responsive">' +friend_data[i].name +'</span> <i class=" material-icons secondary-content ">perm_identity</i></li>';
+                    results += '<li alt="" class="collection-item avatar svc-btn2 "><img class="circle" src="https://graph.facebook.com/' + friend_data[i].id + '/picture" ><span class="title black-text responsive">' +friend_data[i].name +'</span> <br><br><br><br><div class="fixed-action-btn petwiz horizontal"><a class="btn svc-btn" onclick="showP(' + '\'' +friend_data[i].name + '\'' +')">Mascotas<i class="large material-icons">open_in_new</i> </a></div></li>';
 
                 }
                 results += '</ul></div>'

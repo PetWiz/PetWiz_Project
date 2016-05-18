@@ -1,5 +1,7 @@
 package petwiz_project
 
+import grails.converters.JSON
+import grails.converters.JSON.Builder
 import grails.transaction.Transactional
 import org.springframework.web.multipart.MultipartHttpServletRequest
 import org.springframework.web.multipart.commons.CommonsMultipartFile
@@ -7,7 +9,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile
 @Transactional(readOnly = true)
 class PersonController {
 
-    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE"]
+    static allowedMethods = [addPet: "POST", updatePet: "POST", deletePet: "DELETE" , petsFriends: "GET"]
     private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
 
     def home() {
@@ -194,6 +196,16 @@ class PersonController {
         println "Current name: " + name
         println "ImgName: "+ pet.photo.getProperties()
         println "ImgType: "+ pet.photoType
+    }
+    def petsFriends(String username){
+        println "heeeereee";
+        println username.toString();
+        List<Pet> listFriendPets = Pet.findAllByPerson(Person.findByUsername("Michael S. Gonzalez")) ;
+
+        listFriendPets.each {println "${it.pet_name}"};
+        def String  xx = listFriendPets.JSO
+        return xx;
+
     }
 }
 
