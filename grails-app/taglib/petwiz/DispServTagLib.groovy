@@ -1,4 +1,8 @@
 package petwiz
+
+import petwiz_project.Person
+import petwiz_project.RankingService
+
 class DispServTagLib {
     //static defaultEncodeAs = [taglib:'html']
     static namespace = "petwiz"
@@ -7,6 +11,7 @@ class DispServTagLib {
         def service = attrs.service
         def edit = attrs.edit
         def id = service.getId()
+        def user = Person.findByUsername(session["user"])
 
         out << "<div class=\"col s12 m12 l3\">"
         out <<      "<div class=\"card hoverable\">"
@@ -23,21 +28,25 @@ class DispServTagLib {
         out <<                  "<center><span class=\"card-title petwiz-font small-text activator\">${service.name}</span></center>"
 
         if (!edit) { //Opciones para person/services
-            out <<  "<div id=\"up_${service.getId()}\"><span class=\"stars\">${service.getCalification()}</span></div>"
+            out <<  "<div class=\"divup\"id=\"up_${service.getId()}\"><span id=\"star_${service.getId()}\" class=\"stars\">${service.getCalification()}</span></div>"
             //Votar
-            out << " <div class=\"card-action\">" +
-                    "<form controller=\"ranking\" action=\"setRanking\" id=\"field_${service.getId()}\">\n" +
-                    "     <fieldset style=\"padding: 0.35em 0.125em 0.75em\" class=\"rating\"\" >\n" +
-                    "        <input type=\"hidden\" class=\"validate\" name=\"servid\" value=\"${service.getId()}\">"+
-                    "        <input type=\"radio\" id=\"star5_${service.getId()}\"  name=\"rating_${service.getId()}\" value=\"5\" ><label for=\"star5_${service.getId()}\">5 star</label></input>\n" +
-                    "        <input type=\"radio\" id=\"star4_${service.getId()}\"  name=\"rating_${service.getId()}\" value=\"4\" ><label for=\"star4_${service.getId()}\">4 stars</label></input>\n" +
-                    "        <input type=\"radio\" id=\"star3_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"3\" ><label for=\"star3_${service.getId()}\">3 stars</label></input>\n" +
-                    "        <input type=\"radio\" id=\"star2_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"2\" ><label for=\"star2_${service.getId()}\">2 stars</label></input>\n" +
-                    "        <input type=\"radio\" id=\"star1_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"1\" ><label for=\"star1_${service.getId()}\">1 star</label></input>\n" +
-                    "     </fieldset><br><br>\n<div style=\"margin-left:20%;\">\n"
-            out  << submitToRemote(url:[controller:"ranking", action:"setRanking"], update:"up_${service.getId()}", value:"¡Vota!", class:"btn modal-action modal-close waves-effect waves-grey petwiz-teal", id:"${service.getId()}", onComplete:"updateStars()")
-            out <<  "    </div>\n</form></div>\n"
-            out <<                  "<div class=\"fixed-action-btn petwiz horizontal\" >"
+            out << " <div class=\"card-action\">"
+            if (!RankingService.findByAuthorAndService(user,service)) {
+
+                out <<  "<form controller=\"ranking\" action=\"setRanking\" id=\"field_${service.getId()}\">\n" +
+                        "     <fieldset style=\"padding: 0.35em 0.125em 0.75em\" class=\"rating\"\" >\n" +
+                        "        <input type=\"hidden\" class=\"validate\" name=\"servid\" value=\"${service.getId()}\">" +
+                        "        <input type=\"radio\" id=\"star5_${service.getId()}\"  name=\"rating_${service.getId()}\" value=\"5\" ><label for=\"star5_${service.getId()}\">5 star</label></input>\n" +
+                        "        <input type=\"radio\" id=\"star4_${service.getId()}\"  name=\"rating_${service.getId()}\" value=\"4\" ><label for=\"star4_${service.getId()}\">4 stars</label></input>\n" +
+                        "        <input type=\"radio\" id=\"star3_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"3\" ><label for=\"star3_${service.getId()}\">3 stars</label></input>\n" +
+                        "        <input type=\"radio\" id=\"star2_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"2\" ><label for=\"star2_${service.getId()}\">2 stars</label></input>\n" +
+                        "        <input type=\"radio\" id=\"star1_${service.getId()}\" name=\"rating_${service.getId()}\" value=\"1\" ><label for=\"star1_${service.getId()}\">1 star</label></input>\n" +
+                        "     </fieldset><br><br>\n<div style=\"margin-left:20%;\">\n"
+                out << submitToRemote(url: [controller: "ranking", action: "setRanking"], update: "up_${service.getId()}", value: "¡Vota!", class: "btn modal-action modal-close waves-effect waves-grey petwiz-teal", id: "${service.getId()}", onComplete: "updateStars(${service.getId()}); disableButton(${service.getId()});")
+                out << "    </div>\n</form>\n"
+            }
+
+            out <<                  "</div><div class=\"fixed-action-btn petwiz horizontal\" >"
             out <<                      "<a onclick=\"deleteMarkers();addService(${service.coordenate_x}, ${service.coordenate_y},'${service.serviceType}')\" class=\"btn-floating btn-large petwiz-blue\">"
             out <<                          "<i class=\"large material-icons\">pets</i>"
             out <<                      "</a>"

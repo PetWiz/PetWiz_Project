@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Petwiz: Servicios</title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="layout" content="main"/>
     <style type="text/css">

@@ -9,27 +9,31 @@ class RankingController {
     @Secured(['ROLE_USER','ROLE_ADMIN'])
     def setRanking() {
         def user = Person.findByUsername(session["user"])
-        def service = Service.findById(params.servid)
-        print params
-        print params.servid
-        print "service: " + service
-       //  if (!RankingService.findByAuthorAndService(user,service)) {
-        def name = "rating_" + service.id
-        def cal = params[name]
-        def calification = Integer.valueOf(cal)
-            def ranked = new RankingService(author: user, service: service, ranked: true, points: calification)
-            ranked.save()
-            user.addToRank(ranked)
-            service.addToRank(ranked)
-            ranked.serv = service
-            ranked.save(failOnError: true)
-            double average = getAverage(service)
-            service.setCalification(average)
-            service.save(flush:true, failOnError:true)
-            print service.getCalification()
-            //render(params[name] +" " + av)
-        render ("<span class=\"stars\" onload=\"fillstars();\">${service.getCalification()}</span>")
-       // }
+        if (params != null) {
+            def service = Service.findById(params.servid)
+            print params
+            print params.servid
+            print "service: " + service
+            if (!RankingService.findByAuthorAndService(user, service)) {
+                def name = "rating_" + service.id
+                def cal = params[name]
+                def calification = Integer.valueOf(cal)
+                def ranked = new RankingService(author: user, service: service, ranked: true, points: calification)
+                ranked.save()
+                user.addToRank(ranked)
+                service.addToRank(ranked)
+                ranked.serv = service
+                ranked.save(failOnError: true)
+                double average = getAverage(service)
+                service.setCalification(average)
+                service.save(flush: true, failOnError: true)
+                print service.getCalification()
+                //render(params[name] +" " + av)
+
+            }
+            render("<span class=\"stars\" id=\"sr_${service.getId()}\" \">${service.getCalification()}</span>")
+        }
+
        // else render("Usuario ya califico Servicio")
     }
 

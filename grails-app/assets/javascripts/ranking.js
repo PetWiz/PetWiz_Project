@@ -13,42 +13,35 @@ $(document).ready(function(){
           //  ${remoteFunction(controller:'ranking', action:'setRanking', params:'\'userRating=\' + userRating)}
         });
 });
-/*
-$(function() {
-    $('input[type=hidden]').onload(function() {
-        $('p').html('<span class="stars">'+parseFloat($('input[name=amount]').val())+'</span>');
-        console.log($('input[name=amount]').val());
-        $('span.stars').stars();
-    });
-    $('input[type=hidden]').onload();
-});
 
 $.fn.stars = function() {
-    return $(this).each(function() {
-        $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
-    });
-}*/
-$.fn.stars = function() {
-    return this.each(function(i,e){$(e).html($('<span/>').width($(e).text()*16));});
+    return this.each(function(i,e){$(e).html($('<span/>').width($(e).text()*24));});
 };
 
 $('.stars').stars();
-/*
-var jqxhr = $.ajax({ url: "setRanking" })
-    .success(function() { alert("success");
-        $.fn.stars = function() {
-            return this.each(function(i,e){$(e).html($('<span/>').width($(e).text()*16));});
-        };
 
-        $('.stars').stars();})
-    .error(function() { alert("error"); })
-    .complete(function() { alert("complete"); });*/
-function updateStars() {
+function updateStars(id) {
+    console.log(id);
+    var id_1 = '#sr_'+ id;
+    var id_2 = '#up_'+ id;
+    console.log(id_1);
+    console.log(id_2);
+
     $.fn.stars = function () {
-        return this.each(function (i, e) {
-            $(e).html($('<span/>').width($(e).text() * 16));
-        });
-    };
+            return this.each(function (i, e) {
+                $(e).html($('<span/>').width($(e).text() * 24));
 
-    $('.stars').stars();
+            });
+        };
+    addStar();
+    function addStar(){$(id_1).stars();
+    }
+}
+
+function disableButton(id) {
+    var id_1 = "" + id;
+    $(id).click(function () {
+        console.log("hola: " +id);
+        $(id).attr("disabled", true);
+    });
 }
