@@ -31,7 +31,8 @@ class PersonController {
     }
 
     def pet() {
-        render( view: '/person/pet', model: [id: params.petid, name:params.petname, age: params.petage, type: params.pettype, genre: params.petgenre  ]);
+        Pet pet = Pet.findById(params.id)
+        render( view: '/person/pet', model: [id: pet.id, name:pet.name, age: pet.age, type: pet.type, genre: pet.genre, bday:pet.getBday(), photo:pet.photo  ]);
     }
 
 

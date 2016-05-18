@@ -94,6 +94,7 @@
                                     <i class="large material-icons">pets</i>
                                 </a>
                                 <ul>
+                                    <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Ver Perfil" href=${createLink(conroller:'person',action:'pet', params:['id':item.id])}  ><i class="material-icons">table</i></a></li>
                                     <li class="petwiz"><a class="btn-floating tooltipped" data-position="bottom" data-delay="50" data-tooltip="Borrar" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" href="${createLink(controller: "person", action: "delete", params:['id':item.id])}"><i class="material-icons">delete</i></a></li>
                                     <li class="petwiz"><a class="modal-trigger btn-floating waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar" href=${"#updatePet" + i}  ><i class="material-icons">edit</i></a></li>
                                 </ul>

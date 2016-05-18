@@ -15,14 +15,16 @@
 <body>
 
 <main class="petwiz-font">
-    <div class="row prueba-bordes">
+    <div class="row ">
 
-        <div class="col s12 m8 l7 prueba-bordes">
+        <div class="col s12 m8 l7 ">
             <div class="card-panel hoverable">
                 <h5>Nombre:${name}</h5>
+                <h5>Fecha Nacimiento:${bday}</h5>
                 <h5>Edad:${age}</h5>
                 <h5>Especie:${type}</h5>
                 <h5>Genero:${genre}</h5>
+
                 <div class="row center">
                     <a class="modal-trigger btn-floating waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Borrar" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" href="${createLink(controller: "person", action: "delete", params:['id':"${id}"])}">
                         <i class="material-icons">delete</i>
@@ -35,10 +37,10 @@
             </div>
         </div>
 
-        <div class="col s12 m4 l5 prueba-bordes">
+        <div class="col s12 m4 l5 ">
 
             <div class="row center">
-                <div class="petwiz-image-pet yeih prueba-bordes">
+                <div class="petwiz-image-pet yeih ">
                     <image src="${createLink(controller: 'person', action: 'petImageHandler', id: name)}" class="crop"/>
                 </div>
             </div>
