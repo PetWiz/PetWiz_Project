@@ -66,16 +66,22 @@
                                 <label for="pet_type2">Especie</label>
                             </div>
                         </div>
+
                         <div class="row">
-                            <div class="input-field col s4 m8 l4">
-                                <input id="pet_age2" type="number" class="validate" value="${age}" name="age2" min="0">
-                                <label for="pet_age2" data-error="wrong" data-success="right">Edad</label></input>
+                            <div class="input-field col s5 m8 l5 center">
+                                <input type="date" class="datepicker" name="ag2" id="pet_age2">
+                                <label for="date"><i class="material-icons font-teal" style="padding-left: 50px;" ></i></label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
-                                <input id="pet_genre2" type="text" class="validate" value="${genre}" name="genre2">
-                                <label for="pet_genre2" >Género</label></input>
+                                <div class="input-field col s12 m12 l12">
+                                    <select id="genre2" name="genre2">
+                                        <option class="" value="" disabled selected>Escoja el genero</option>
+                                        <option value="Macho" data-icon="/PetWiz/assets/masc.png" class="circle">Macho</option>
+                                        <option value="Hembra" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Actualizar datos

@@ -6178,3 +6178,7 @@ n:1106:org/grails/datastore/mapping/reflect/ClassPropertyFetcher$1
 y:1967:org/grails/datastore/mapping/reflect/ClassPropertyFetcher$GetterPropertyFetcher
 y:5602:org/grails/datastore/mapping/reflect/ReflectionUtils
 n:1561:org/codehaus/groovy/grails/io/support/Resource$exists$7
+n:1885:org/codehaus/groovy/grails/project/compiler/GrailsProjectCompiler$compile$6
+n:1567:org/apache/tools/ant/BuildListener$buildStarted
+n:1573:org/apache/tools/ant/BuildListener$targetFinished$1
+n:1891:org/codehaus/groovy/grails/project/compiler/GrailsProjectCompiler$compileAll$2

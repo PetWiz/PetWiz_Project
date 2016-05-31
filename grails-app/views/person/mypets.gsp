@@ -150,7 +150,7 @@
                                             <option value="Hembra" data-icon="/PetWiz/assets/Femenino.png" class="circle">Hembra</option>
                                         </select>
                                     </div>
-                                                                    </div>
+                                </div>
                             </div>
                             <!--- <g:actionSubmit controller ="person" value="Actualizar mascota" action="saveService" class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" style="padding-top: 10px"/>--->
                             <button class="btn modal-action modal-close waves-effect waves-grey petwiz-teal" name="submit" >Actualizar datos

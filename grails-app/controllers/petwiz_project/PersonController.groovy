@@ -119,22 +119,27 @@ class PersonController {
 
     @Transactional
     def updatePet(Pet tmp) {
-        print "shit"
+        print params
         def user = Person.findByUsername(session["user"])
-        def typePet = (params.typePet2).toString()
-        def name = (params.name2).toString()
-        def genre = (params.genre2).toString()
-        def date = params.ag2.split('-')
-        def tdate = date[2] + "/" + date[1] + "/" + date[0]
-        def bdate = Date.parse("dd/MM/yyyy", tdate)
-        def id = (params.id2).toLong()
+
         if (user){
+            def typePet = (params.typePet2).toString()
+            def name = (params.name2).toString()
+            def genre = (params.genre2).toString()
+            print "Genre: " + genre
+            def id = (params.id2).toLong()
             tmp = Pet.get(id)
+            if ((params.ag2).toString()!='') {
+                def date = params.ag2.split('-')
+                def tdate = date[2] + "/" + date[1] + "/" + date[0]
+                def bdate = Date.parse("dd/MM/yyyy", tdate)
+                tmp.born = bdate
+                tmp.setAge()
+            }
             tmp.type = typePet
             tmp.name = name
-            tmp.genre = genre
-            tmp.born = bdate
-            tmp.setAge()
+            if (genre!='null')
+                tmp.genre = genre
             tmp.save(flush: true)
 
             render(controller: 'person', view: '/person/mypets');
