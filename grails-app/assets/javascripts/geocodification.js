@@ -12,9 +12,16 @@ function initialize() {
     latlng = new google.maps.LatLng(4.6513635, -74.1091934);
     var mapOptions = {
         zoom: 11,
-        center: latlng
+        center: latlng,
+        scrollwheel: true,
+        disableDefaultUI: false
     }
-    map = new google.maps.Map(document.getElementById("emap"), mapOptions);
+    map = new google.maps.Map(document.getElementById("map-responsive"), mapOptions);
+    google.maps.event.addDomListener(window, "resize", function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(center);
+    });
     addresses = getAddresses();
     addresses.forEach(function(entry) {
         console.log(entry);

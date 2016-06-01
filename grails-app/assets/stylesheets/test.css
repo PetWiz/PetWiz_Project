@@ -6,12 +6,12 @@
     display:none;
     z-index: 10;
 }
-#events{
+.events{
     float:right;
-    width:500px;
+    width:250px;
     overflow-y:auto;
     max-height: 400px;
-    margin-right: 10px;
+    position:relative;
 }
 #emap {
     float:left;
@@ -24,6 +24,20 @@
 }
 #description{
     width: 450px;
+}
+.map-responsive{
+    overflow:hidden;
+    overflow-y:auto;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
 .check{
     margin-right:10px;
