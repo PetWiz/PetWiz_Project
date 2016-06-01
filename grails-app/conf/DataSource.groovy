@@ -20,6 +20,7 @@ environments {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:h2:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            DATABASE_URL = "postgres://zxvnsvendhkhkj:bq3-qlYZNGxAoyyZV1o_rKClxD@ec2-54-235-153-179.compute-1.amazonaws.com:5432/d3f3pathbnfqgd"
         }
     }
     test {
